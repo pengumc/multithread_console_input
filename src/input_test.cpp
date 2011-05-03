@@ -15,19 +15,23 @@
 using namespace std;
 int main(){
 //start inputthread
-    int key;
+    int key =0;
     unsigned char running=1;
+    //create thread
     CInputThread inputthread(&key, 200);
     inputthread.start();
+    //main loop
     while(running){
+        //wait for a keypress
         if(inputthread.waitForInput(100)==0){
             if(key != 0){
+                //a key was pressed, do stuff
                 cout << "--" << key << "\n";
-                if(key == 'q') running=0;
+                if(key == 'q') running=0; //q quits the program
             }
             inputthread.reset();
         }
-    }//main
+    }//mainloop
     cout << "stopping input thread...\n";
     inputthread.stop();
     return 0;
