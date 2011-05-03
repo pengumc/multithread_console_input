@@ -2,7 +2,7 @@
 #date: 2011-5-3
 #tabsize: 4 spaces
 
-NAME = input_test
+NAME = maple_test
 CFLAGS = -Isrc -lpthread #windows: remove pthreads
 COMPILER = g++
 OUTPUTNAME = $(NAME) #windows: change to exe
