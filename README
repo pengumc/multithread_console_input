@@ -3,6 +3,15 @@ multithreaded console input handling.
 
 keys mapped:
  'q' : exit
+ 'a' : solve the hardcoded maple equations
+ 'p' : print current X Y
+ '1','2' inc/dec X by 0.5
+ '3','4' inc/dec T by 0.5
 
 Works on windows as well! you need to make some adjustments to the makefile though
+
+MAPLE:
+required environment:
+    MAPLE=maple install dir
+    LD_LIBRARY_PATH=maple binaries dir
 
