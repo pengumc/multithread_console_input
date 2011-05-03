@@ -21,31 +21,29 @@ void *_inputThread(void* args){
     tcgetattr(0, &old_settings);
     new_settings.c_lflag &= ~(new_settings.c_lflag|ICANON);
     tcsetattr(0, TCSANOW, &new_settings);
-	do{
-		if (pthread_mutex_trylock(&_inputMutex)==0){
-			if (*_keyp==0){
-                *_keyp = getc(stdin);
+    do{
+        if (pthread_mutex_trylock(&_inputMutex)==0){
+            if (*_keyp==0){
+                *_keyp = getc(stdin);   
                 pthread_mutex_unlock(&_inputMutex);
-            }
-			else pthread_mutex_unlock(&_inputMutex);
-		}else usleep(20);
-	}while (pthread_mutex_trylock(&_runMutex) != 0);
+            }else pthread_mutex_unlock(&_inputMutex);
+        }else usleep(20);
+    }while (pthread_mutex_trylock(&_runMutex) != 0);
     //put back old terminal settings
     tcsetattr(0, TCSANOW, &old_settings);
-    
 }
 
 class CInputThread{
-	public:
+    public:
         static uint8_t n;
-		CInputThread(int *p, uint32_t ms);
+        CInputThread(int *p, uint32_t ms);
         ~CInputThread(){n--;};
-		void start();
-		void reset();
-		void stop();
-		uint32_t waitForInput(uint32_t ms);
-	private:
-		pthread_t threadID;
+        void start();
+        void reset();
+        void stop();
+        uint32_t waitForInput(uint32_t ms);
+    private:
+        pthread_t threadID;
 };
 
 uint8_t CInputThread::n=0;
@@ -57,27 +55,27 @@ CInputThread::CInputThread(int *p, uint32_t ms){
 }
 
 void CInputThread::start(){
-	pthread_mutex_lock(&_runMutex);
+    pthread_mutex_lock(&_runMutex);
 //TODO check and/or release inputmutex
-	pthread_create(&threadID, NULL, _inputThread, NULL);
+    pthread_create(&threadID, NULL, _inputThread, NULL);
 }
 
 void CInputThread::stop(){
-	pthread_mutex_unlock(&_runMutex);
-	usleep(_interval);
+    pthread_mutex_unlock(&_runMutex);
+    usleep(_interval);
 }
 
 void CInputThread::reset(){
-	*_keyp = 0;
-	pthread_mutex_unlock(&_inputMutex);
+    *_keyp = 0;
+    pthread_mutex_unlock(&_inputMutex);
 }
 uint32_t CInputThread::waitForInput(uint32_t ms){
     //try to lock the mutex for handling the received input
     //sleep otherwise
-	if(pthread_mutex_trylock(&_inputMutex)==0){
-		return 0;
-	}else usleep(ms);
-	return 1;
+    if(pthread_mutex_trylock(&_inputMutex)==0){
+        return 0;
+    }else usleep(ms);
+    return 1;
 }
 
 
