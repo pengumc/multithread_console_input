@@ -1,0 +1,5 @@
+multithreaded console input handling.
+ useful for retrieving a keypress from a terminal
+
+Works on windows as well! you need to make some adjustments to the makefile though
+
