@@ -12,11 +12,11 @@ class CMaple{
         ALGEB eval(char *statement);
         CMaple();
     private:
-        MKernelVector kv;
         MCallBackVectorDesc cb;
-        ALGEB a; //stores last eval result
         char err[2048];
-
+    protected:
+        ALGEB a; //stores last eval result
+        MKernelVector kv;
 };
 
 CMaple::CMaple(){

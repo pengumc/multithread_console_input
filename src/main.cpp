@@ -13,25 +13,10 @@
 #endif
 
 #include "CMaple.cpp"
-
+#include "CPosCalc.cpp"
 
 using namespace std;
 
-void setupMaple(CMaple* m){
-    char statement[100];
-    sprintf(statement, "xpos:=3+6.5*cos(b)+4*cos(c);");
-    m->eval(statement);
-    sprintf(statement, "ypos:=6.5*sin(b)+4*sin(c);");
-    m->eval(statement);
-}
-
-void calculateAngles(CMaple* m, double x, double y){
-    char statement[1024];
-    sprintf(statement,
-        "RealDomain:-solve({xpos=%f,ypos=%f},[b,c],UseAssumptions=true) assuming -Pi<=b,b<=Pi, -Pi<=c,c<=Pi;",
-        x,y);
-    m->eval(statement);
-}
 
 int main(int argc, char *argv[]){
     int key =0;
@@ -44,9 +29,8 @@ int main(int argc, char *argv[]){
     CInputThread inputthread(&key, 200);
     inputthread.start();
     //create maple object
-    CMaple maple;
-    maple.start();
-    setupMaple(&maple);
+    CPosCalc poscalc;
+    poscalc.setup();
     //main loop
     while(running){
         //wait for a keypress
@@ -58,7 +42,8 @@ int main(int argc, char *argv[]){
                     running=0; //q quits the program
                     break;
                 case 'a':
-                    calculateAngles(&maple, X,Y);
+                    poscalc.calculateAngles(X,Y);
+                    printf("beta=%e\ngamma=%e\n",poscalc.beta, poscalc.gamma);
                     break;
                 case '1':
                     X+=0.5;
@@ -85,6 +70,6 @@ int main(int argc, char *argv[]){
     cout << "stopping input thread...\n";
     inputthread.stop();
     cout << "stopping maple...\n";
-    maple.stop();
+    poscalc.stop();
     return 0;
 }
