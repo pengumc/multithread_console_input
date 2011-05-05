@@ -4,8 +4,8 @@ class CPosCalc : public CMaple{
     public:
        void setup();
        void calculateAngles(double x, double y);
-       double beta;
-       double gamma;
+       double beta[2];
+       double gamma[2];
     private:
         char cmd[1024];
 };
@@ -27,11 +27,18 @@ void CPosCalc::calculateAngles(double x, double y){
         sprintf(cmd, "nops(temp):");
         eval(cmd); //stores in a
         uint8_t resultSize = MapleToInteger8(kv, a);
-        if (resultSize > 1){;
-            sprintf(cmd,"rhs(temp[2][1]);");
-            beta = MapleToFloat64(kv,eval(cmd));
-            sprintf(cmd,"rhs(temp[2][2]-rhs(temp[2][1]));");
-            gamma = MapleToFloat64(kv,eval(cmd));
-            //TODO determine best option when there's >1 results
+        printf("%d\n",resultSize);
+        if (resultSize > 0){;
+            sprintf(cmd,"rhs(temp[1][1]):");
+            beta[0] = MapleToFloat64(kv,eval(cmd));
+            sprintf(cmd,"rhs(temp[1][2]-rhs(temp[1][1])):");
+            gamma[0] = MapleToFloat64(kv,eval(cmd));
+            if (resultSize > 1){
+            }
+                sprintf(cmd,"rhs(temp[2][1]):");
+                beta[1] = MapleToFloat64(kv,eval(cmd));
+                sprintf(cmd,"rhs(temp[2][2])-rhs(temp[2][1]):");
+                gamma[1] = MapleToFloat64(kv,eval(cmd));
         }
 }
+

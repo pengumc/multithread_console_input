@@ -14,6 +14,8 @@
 
 #include "CMaple.cpp"
 #include "CPosCalc.cpp"
+#include "CQPed.cpp"
+#include "CUsbDevice.cpp"
 
 using namespace std;
 
@@ -31,6 +33,15 @@ int main(int argc, char *argv[]){
     //create maple object
     CPosCalc poscalc;
     poscalc.setup();
+    //quadraped
+    CQPed quadraped;
+    printf("%e\n",quadraped.servoArray[0].pulsewidthToAngle());
+    printf("%e\n",quadraped.servoArray[0].angle);
+    printf("%d\n",quadraped.servoArray[0].angleToPulsewidth());
+    printf("%d\n",quadraped.servoArray[0].pulsewidth);
+    //device
+    CUsbDevice piet;
+    printf("connect: %d\n",piet.connect());
     //main loop
     while(running){
         //wait for a keypress
@@ -43,7 +54,7 @@ int main(int argc, char *argv[]){
                     break;
                 case 'a':
                     poscalc.calculateAngles(X,Y);
-                    printf("beta=%e\ngamma=%e\n",poscalc.beta, poscalc.gamma);
+
                     break;
                 case '1':
                     X+=0.5;
@@ -59,6 +70,14 @@ int main(int argc, char *argv[]){
                     break;
                 case 'p':
                     printf("X = %f\nY= %f\n",X,Y);
+                    piet.printA();
+                    piet.printB();
+                    break;
+                case 'r':
+                    piet.readServoData();
+                    break;
+                case 's':
+                    piet.sendServoData();
                     break;
                 default:
                     printf("--%c\n",key);

@@ -1,21 +1,34 @@
 #Author: Michiel van der Coelen
-#date: 2011-5-3
+#date: 2011-5-5
 #tabsize: 4
 
 NAME = main
 MAPLE = /home/michiel/maple13/
 LD_LIBRARY_PATH = $(MAPLE)bin.X86_64_LINUX/
-CFLAGS = -L$(LD_LIBRARY_PATH) -lhf -lrt -lprocessor64 -lmaple -lmaplec -std=c++0x -I$(MAPLE)extern/include/ -Isrc -lpthread #windows: remove pthreads
+CFLAGS = -I$(MAPLE)extern/include/ -Isrc 
+CPPFLAGS = $(CFLAGS) -std=c++0x  
+USBLIBS := $(shell libusb-config --libs)
+LIBS =  -L$(LD_LIBRARY_PATH) -lhf -lrt -lprocessor64 -lmaple -lmaplec $(USBLIBS) -lpthread 
 COMPILER = g++
-OUTPUTNAME = $(NAME) #windows: change to exe
+CC = gcc
+OUTPUTNAME = $(NAME) 
+OBJECTS = opendevice.o $(NAME).o
 
 
-.PHONY:all, clean
-all: bin/$(OUTPUTNAME)
+.PHONY:all, clean, force
 
-bin/$(OUTPUTNAME):src/$(NAME).cpp
-	$(COMPILER) src/$(NAME).cpp -o bin/$(OUTPUTNAME) $(CFLAGS)
+all:bin/$(OUTPUTNAME)
 
-clean: 
+force:clean all
+
+bin/$(OUTPUTNAME):$(OBJECTS)
+	$(COMPILER) -o bin/$(OUTPUTNAME) $(OBJECTS) $(LIBS)
+clean:
 	rm bin/$(OUTPUTNAME)
+	rm $(OBJECTS)
 
+%.o:src/%.cpp
+	$(COMPILER) $(CPPFLAGS) -c $<
+
+%.o:src/%.c
+	$(COMPILER) $(CPPFLAGS) -c $<
