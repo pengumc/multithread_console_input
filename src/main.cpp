@@ -14,8 +14,8 @@
 
 #include "CMaple.cpp"
 #include "CPosCalc.cpp"
-#include "CQPed.cpp"
 #include "CUsbDevice.cpp"
+#include "CQPed.cpp"
 
 using namespace std;
 
@@ -23,6 +23,7 @@ using namespace std;
 int main(int argc, char *argv[]){
     int key =0;
     unsigned char running=1;
+    uint8_t servo=0;
     double X,Y;
     X = 9.5;
     Y = -4;
@@ -35,13 +36,10 @@ int main(int argc, char *argv[]){
     poscalc.setup();
     //quadraped
     CQPed quadraped;
-    printf("%e\n",quadraped.servoArray[0].pulsewidthToAngle());
-    printf("%e\n",quadraped.servoArray[0].angle);
-    printf("%d\n",quadraped.servoArray[0].angleToPulsewidth());
-    printf("%d\n",quadraped.servoArray[0].pulsewidth);
-    //device
-    CUsbDevice piet;
-    printf("connect: %d\n",piet.connect());
+    printf("%e\n",quadraped.servoArray[2].pulsewidthToAngle(72));
+    printf("%e\n",quadraped.servoArray[2].angle);
+    printf("%d\n",quadraped.servoArray[2].angleToPulsewidth(.1));
+    printf("%d\n",quadraped.servoArray[2].pulsewidth);
     //main loop
     while(running){
         //wait for a keypress
@@ -54,7 +52,6 @@ int main(int argc, char *argv[]){
                     break;
                 case 'a':
                     poscalc.calculateAngles(X,Y);
-
                     break;
                 case '1':
                     X+=0.5;
@@ -68,16 +65,40 @@ int main(int argc, char *argv[]){
                 case '4':
                     Y-=0.5;
                     break;
+                case '!':
+                    servo = 1;
+                    break;
+                case '@':
+                    servo = 2;
+                    break;
+                case '#':
+                    servo = 3;
+                    break;
+                case '$':
+                    servo = 4;
+                    break;
+                case '%':
+                    servo = 5;
+                    break;
+                case ')':
+                    servo = 0;
+                    break;
+                case '+':
+                    quadraped.changeServo(servo, 0.1);
+                    break;
+                case '-':
+                    quadraped.changeServo(servo, -0.1);
+                    break;
                 case 'p':
                     printf("X = %f\nY= %f\n",X,Y);
-                    piet.printA();
-                    piet.printB();
+                    quadraped.usb.printA();
+                    quadraped.usb.printB();
                     break;
                 case 'r':
-                    piet.readServoData();
+                    quadraped.readFromDev();
                     break;
                 case 's':
-                    piet.sendServoData();
+                    quadraped.sendToDev();
                     break;
                 default:
                     printf("--%c\n",key);
