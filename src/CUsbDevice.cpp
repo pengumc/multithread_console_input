@@ -7,13 +7,13 @@
 #include "requests.h"
 #include "usbconfig.h"
 #include "i2c_header.h"
-#define PI 3.14159265
 #define SERVOS 12
 
 //servo class------------------------------------------------------------------
 class CServo{
     public:
         CServo();
+        void reset();
         uint8_t maxPulse;
         uint8_t minPulse;
         uint8_t midPulse;
@@ -24,6 +24,7 @@ class CServo{
         uint8_t pulsewidth;
 
         uint8_t isValidAngle(double a);
+        void flipDirection();
         char setAngle(double a);
         double pulsewidthToAngle();
         double pulsewidthToAngle(uint8_t pw);
@@ -32,7 +33,9 @@ class CServo{
         friend class CUsbDevice;
 };
 //for servo 2 and 5: direction = -1, offset = -PI/2
-CServo::CServo(){
+CServo::CServo(){reset();}
+
+void CServo::reset(){
     angle=0;
     maxPulse = 96;
     minPulse = 48;
@@ -41,6 +44,21 @@ CServo::CServo(){
     offset = 0;
     K = 0.034;
     pulsewidth = angleToPulsewidth();
+}
+
+void CServo::flipDirection(){
+    char pw;
+    if (direction == -1.0){
+        direction=1.0;
+        pw= maxPulse;
+        maxPulse = minPulse;
+        minPulse = pw;
+    }else{
+        direction = -1.0;
+        pw= maxPulse;
+        maxPulse = minPulse;
+        minPulse = pw;
+    }
 }
 
 uint8_t CServo::isValidAngle(double a){
@@ -52,6 +70,10 @@ uint8_t CServo::isValidAngle(double a){
 char CServo::setAngle(double a){
 //return 0 on success, 1 if maxed
     char tempPW;
+//    printf("setAngle in: %f\n",a);
+//    printf("max angle = %f\n", pulsewidthToAngle(maxPulse));
+//    printf("min angle = %f\n", pulsewidthToAngle(minPulse));
+//    printf("pulsewidth a = %d\n", angleToPulsewidth(a));
     if (a > pulsewidthToAngle(maxPulse)) {
         pulsewidth = maxPulse;
         angle = pulsewidthToAngle(maxPulse);
@@ -70,7 +92,7 @@ uint8_t CServo::angleToPulsewidth(){
 }
 
 uint8_t CServo::angleToPulsewidth(double a){
-    printf("angleToPulsewidth got %f\n",a);
+    //printf("angleToPulsewidth got %f\n",a);
     return (((a-offset) / K) / direction) +midPulse;
 }
 
@@ -95,6 +117,7 @@ class CUsbDevice{
         void sendServoData(CServo *servos);
         void printA();
         void printB();
+        void getData();
 //    private:
         usb_dev_handle *handle;
         char bufferA[BUFLEN_SERVO_DATA];
@@ -117,6 +140,16 @@ CUsbDevice::CUsbDevice(){
     bufferA = SERVO_DATA_EMPTY;
     bufferB = SERVO_DATA_EMPTY;
     usb_init();
+}
+
+void CUsbDevice::getData(){
+    char i;
+    sendCtrlMsg(CUSTOM_RQ_GET_DATA, USB_ENDPOINT_IN,0,0,bufferB);
+        printf("data received %d {",i);
+        for (i=0;i<BUFLEN_SERVO_DATA;i++){
+            printf("0x%hX,",bufferB[i]);
+        }
+        printf("}\n");
 }
 
 void CUsbDevice::printA(){
@@ -150,14 +183,15 @@ uint8_t CUsbDevice::connect(){
 
 void CUsbDevice::readServoData(){
     int i; 
+    char k;
     if (sendCtrlMsg(CUSTOM_RQ_LOAD_POS_FROM_I2C, USB_ENDPOINT_IN,0,0,bufferA)==0){;
         i=sendCtrlMsg(CUSTOM_RQ_GET_POS, USB_ENDPOINT_IN,0,0,bufferA);
         if(i>0){
-            printf("received %d {",i);
-            for (i=0;i<BUFLEN_SERVO_DATA;i++){
-                printf("%d,",bufferA[i]);
-            }
-            printf("}\n");
+                printf("received %d {",i);
+                for (i=0;i<BUFLEN_SERVO_DATA;i++){
+                    printf("%d,",bufferA[i]);
+                }
+                printf("}\n");
         }
         //store in servo's
 
@@ -166,22 +200,29 @@ void CUsbDevice::readServoData(){
 
 void CUsbDevice::readServoData(CServo* servos){
     int i; 
-
-    if (sendCtrlMsg(CUSTOM_RQ_LOAD_POS_FROM_I2C, USB_ENDPOINT_IN,0,0,bufferA)==0){;
+    char k;
+    if (sendCtrlMsg(CUSTOM_RQ_LOAD_POS_FROM_I2C, USB_ENDPOINT_IN,0,0,bufferA)==0){
+        usleep(10000);
         i=sendCtrlMsg(CUSTOM_RQ_GET_POS, USB_ENDPOINT_IN,0,0,bufferA);
         if(i>0){
             printf("received %d {",i);
             for (i=0;i<BUFLEN_SERVO_DATA;i++){
                 printf("%d,",bufferA[i]);
-            }
-            for (i=0;i<BUFLEN_SERVO_DATA;i++){
-                servos[i].pulsewidth = bufferA[i];
-                servos[i].angle = servos[i].pulsewidthToAngle();
+                if ((bufferA[i] != bufferA[0]) || (bufferA[i] > USB_HIGHEST_RQ)) k++;
             }
             printf("}\n");
+            if(k==BUFLEN_SERVO_DATA){
+                for (i=0;i<BUFLEN_SERVO_DATA;i++){
+                    servos[i].pulsewidth = bufferA[i];
+                    servos[i].angle = servos[i].pulsewidthToAngle();
+                }
+            }else {
+                printf("not ready, trying again.\n");
+            }
         }
-
     }else printf("readServoData: device was not ready\n");
+
+
 }
 
 

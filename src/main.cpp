@@ -1,6 +1,7 @@
 //windows: g++ test.cpp -o test.exe
 //linux g++ test.cpp -o test -lpthread
 //------------------------------------------------------------------------------
+#define PI 3.14159265
 #include <iostream>
 #include <stdint.h>
 #include <math.h>
@@ -24,16 +25,13 @@ int main(int argc, char *argv[]){
     int key =0;
     unsigned char running=1;
     uint8_t servo=0;
-    double X,Y;
-    X = 9.5;
-    Y = -4;
 
     //create thread
     CInputThread inputthread(&key, 200);
     inputthread.start();
     //create maple object
-    CPosCalc poscalc;
-    poscalc.setup();
+    //CPosCalc poscalc;
+    //poscalc.setup();
     //quadraped
     CQPed quadraped;
     printf("%e\n",quadraped.servoArray[2].pulsewidthToAngle(72));
@@ -41,6 +39,7 @@ int main(int argc, char *argv[]){
     printf("%d\n",quadraped.servoArray[2].angleToPulsewidth(.1));
     printf("%d\n",quadraped.servoArray[2].pulsewidth);
     //main loop
+    #define SPEED 0.2
     while(running){
         //wait for a keypress
         if(inputthread.waitForInput(100)==0){
@@ -50,20 +49,31 @@ int main(int argc, char *argv[]){
                 case 'q':
                     running=0; //q quits the program
                     break;
-                case 'a':
-                    poscalc.calculateAngles(X,Y);
+                case 'c':
                     break;
-                case '1':
-                    X+=0.5;
+                case 'w':
+                    quadraped.moveRelative(0, -SPEED);
+                    quadraped.sendToDev();
+                    break;
+                case 's':
+                    quadraped.moveRelative(0, SPEED);
+                    quadraped.sendToDev();
+                    break;
+                case 'a':
+                    quadraped.moveRelative(SPEED,0);
+                    quadraped.sendToDev();
+                    break;
+                case 'd':
+                    quadraped.moveRelative(-SPEED, 0);
+                    quadraped.sendToDev();
+                    break;
+               case '1':
                     break;
                 case '2':
-                    X-=0.5;
                     break;
                 case '3':
-                    Y+=0.5;
                     break;
                 case '4':
-                    Y-=0.5;
                     break;
                 case '!':
                     servo = 1;
@@ -90,14 +100,22 @@ int main(int argc, char *argv[]){
                     quadraped.changeServo(servo, -0.1);
                     break;
                 case 'p':
-                    printf("X = %f\nY= %f\n",X,Y);
+                    quadraped.printPos();
                     quadraped.usb.printA();
                     quadraped.usb.printB();
+                    quadraped.printAngles();
                     break;
                 case 'r':
                     quadraped.readFromDev();
                     break;
-                case 's':
+                case 'R':
+                    quadraped.usb.getData();
+                    break;
+                case 'v':
+                    quadraped.sendToDev();
+                    break;
+                case '`':
+                    quadraped.reset();
                     quadraped.sendToDev();
                     break;
                 default:
@@ -109,7 +127,5 @@ int main(int argc, char *argv[]){
     }//mainloop
     cout << "stopping input thread...\n";
     inputthread.stop();
-    cout << "stopping maple...\n";
-    poscalc.stop();
     return 0;
 }
