@@ -109,8 +109,8 @@ double CServo::pulsewidthToAngle(uint8_t pw){
 class CUsbDevice{
     public:
         CUsbDevice();
-        uint8_t connected;
-        uint8_t connect();
+        int8_t connected;
+        int8_t connect();
         void readServoData();
         void readServoData(CServo *servos);
         void sendServoData();
@@ -145,11 +145,15 @@ CUsbDevice::CUsbDevice(){
 void CUsbDevice::getData(){
     char i;
     sendCtrlMsg(CUSTOM_RQ_GET_DATA, USB_ENDPOINT_IN,0,0,bufferB);
-        printf("data received %d {",i);
-        for (i=0;i<BUFLEN_SERVO_DATA;i++){
-            printf("0x%hX,",bufferB[i]);
-        }
-        printf("}\n");
+//    printf("Right X = %d\n",bufferB[5]);
+//    printf("Right Y = %d\n",bufferB[6]);
+//    printf("Left X = %d\n",bufferB[7]);
+//    printf("Left Y = %d\n",bufferB[8]);
+//        printf("data received %d {",i);
+//        for (i=0;i<BUFLEN_SERVO_DATA;i++){
+//            printf("0x%hX,",bufferB[i]);
+//        }
+//        printf("}\n");
 }
 
 void CUsbDevice::printA(){
@@ -169,7 +173,7 @@ void CUsbDevice::printB(){
     printf("}\n");
 }
 
-uint8_t CUsbDevice::connect(){
+int8_t CUsbDevice::connect(){
     if (usbOpenDevice(&handle, vid, vendor, pid, product,
         NULL, NULL, NULL) != 0){
         fprintf(
@@ -259,7 +263,10 @@ int CUsbDevice::sendCtrlMsg(int request, int reqType, int wval, int wind, char *
         if (cnt < 0){
             fprintf(stderr, "usb_control_msg: %s\n",usb_strerror());
         } else connected = USBRETRY;
-    }else printf("sendCtrlMsg: not connected...\n");
+    }else {
+        printf("sendCtrlMsg: not connected...\n");
+        connected--;
+    }
     return cnt;
 }
 

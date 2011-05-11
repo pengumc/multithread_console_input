@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
     #define SPEED 0.2
     while(running){
         //wait for a keypress
-        if(inputthread.waitForInput(100)==0){
+        if(inputthread.waitForInput(1000)==0){
             if(key != 0){
                 //a key was pressed, do stuff
                 switch(key){
@@ -123,9 +123,50 @@ int main(int argc, char *argv[]){
                 }
             }
             inputthread.reset();
+        }else{//input wait
+#define SENS 32
+#define DIV 400
+            char trigger=0;
+            if (quadraped.usb.connected>0){
+            quadraped.usb.getData();
+            //right stick, incremental control
+            int8_t temp = ((uint8_t)quadraped.usb.bufferB[6]-128);
+            if (abs(temp) > SENS) {
+                trigger=1;
+                printf("%d\n",temp);
+                quadraped.moveRelative(0, ((float)temp)/DIV);
+            }
+            temp = ((uint8_t)quadraped.usb.bufferB[5]-128);
+            if (abs(temp) > SENS) {
+                trigger=1;
+                printf("%d\n",temp);
+                quadraped.moveRelative(-((float)temp)/DIV,0);
+            }
+            //left stick, absolute control
+            temp =  ((uint8_t)quadraped.usb.bufferB[7]-128);
+            if(!(quadraped.usb.bufferB[2] & 8)){
+                trigger=1;
+                quadraped.x[0] = 9.0 - ((float)temp)/64;
+                quadraped.x[1] = -7.5 + ((float)temp)/64;
+                quadraped.moveRelative(0,0);
+            }
+            temp =  ((uint8_t)quadraped.usb.bufferB[8]-128);
+            if(!(quadraped.usb.bufferB[2] & 8)){//R1
+                trigger=1;
+                quadraped.y[0] = - 5.5 + (float)(temp/64);
+                quadraped.y[1] = 5.5 + (float)(temp/64);
+                quadraped.moveRelative(0,0);
+            }
+            if(trigger){
+                quadraped.sendToDev();
+                trigger=0;
+                usleep(100);
+            }
+            }
         }
     }//mainloop
     cout << "stopping input thread...\n";
     inputthread.stop();
+    usleep(100);
     return 0;
 }

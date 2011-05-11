@@ -37,8 +37,8 @@ void CQPed::reset(){
     servoArray[5].offset = -(PI/2);
     servoArray[5].flipDirection();
     servoArray[5].setAngle(-PI/2);
-    x[0] = 9.5;
-    x[1] = -8;
+    x[0] = 9;
+    x[1] = -7.5;
     y[0] = -5.5;
     y[1] = 5.5;
     printf("4: max angle=%f\n",servoArray[4].pulsewidthToAngle(96));
