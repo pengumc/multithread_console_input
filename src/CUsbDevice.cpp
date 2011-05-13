@@ -8,12 +8,13 @@
 #include "usbconfig.h"
 #include "i2c_header.h"
 #define SERVOS 12
-
+#include "CAngle.cpp"
 //servo class------------------------------------------------------------------
 class CServo{
     public:
         CServo();
         void reset();
+        void reset_NEW();
         uint8_t maxPulse;
         uint8_t minPulse;
         uint8_t midPulse;
@@ -31,10 +32,17 @@ class CServo{
         uint8_t angleToPulsewidth();
         uint8_t angleToPulsewidth(double a);
         friend class CUsbDevice;
+    private:
+        CAngle phi;
 };
 //for servo 2 and 5: direction = -1, offset = -PI/2
 CServo::CServo(){reset();}
 
+void CServo::reset_NEW(){
+    phi = 0;
+    maxPulse=0;
+}
+/** Default values are hardcoded here.*/
 void CServo::reset(){
     angle=0;
     maxPulse = 96;

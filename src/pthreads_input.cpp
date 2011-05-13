@@ -15,12 +15,6 @@ int* _keyp;
 uint32_t _interval;
 
 void *_inputThread(void* args){
-    //remove line buffering from terminal
-    struct termios new_settings, old_settings;
-    tcgetattr(0, &new_settings);
-    tcgetattr(0, &old_settings);
-    new_settings.c_lflag &= ~(new_settings.c_lflag|ICANON);
-    tcsetattr(0, TCSANOW, &new_settings);
     do{
         if (pthread_mutex_trylock(&_inputMutex)==0){
             if (*_keyp==0){
@@ -30,7 +24,6 @@ void *_inputThread(void* args){
         }else usleep(20);
     }while (pthread_mutex_trylock(&_runMutex) != 0);
     //put back old terminal settings
-    tcsetattr(0, TCSANOW, &old_settings);
 }
 
 class CInputThread{
@@ -44,6 +37,7 @@ class CInputThread{
         uint32_t waitForInput(uint32_t ms);
     private:
         pthread_t threadID;
+        struct termios new_settings, old_settings;
 };
 
 uint8_t CInputThread::n=0;
@@ -55,6 +49,11 @@ CInputThread::CInputThread(int *p, uint32_t ms){
 }
 
 void CInputThread::start(){
+    //remove line buffering from terminal
+    tcgetattr(0, &new_settings);
+    tcgetattr(0, &old_settings);
+    new_settings.c_lflag &= ~(new_settings.c_lflag|ICANON);
+    tcsetattr(0, TCSANOW, &new_settings);
     pthread_mutex_lock(&_runMutex);
 //TODO check and/or release inputmutex
     pthread_create(&threadID, NULL, _inputThread, NULL);
@@ -62,6 +61,7 @@ void CInputThread::start(){
 
 void CInputThread::stop(){
     pthread_mutex_unlock(&_runMutex);
+    tcsetattr(0, TCSANOW, &old_settings);
     usleep(_interval);
 }
 

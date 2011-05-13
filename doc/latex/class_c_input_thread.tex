@@ -1,0 +1,84 @@
+\hypertarget{class_c_input_thread}{
+\section{CInputThread Class Reference}
+\label{class_c_input_thread}\index{CInputThread@{CInputThread}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_input_thread_a46973d13b00057ec0216d02c4760c120}{
+{\bfseries CInputThread} (int $\ast$p, uint32\_\-t ms)}
+\label{class_c_input_thread_a46973d13b00057ec0216d02c4760c120}
+
+\item 
+\hypertarget{class_c_input_thread_ad0f5c0ebf0c02533b0fc70a6f5b07821}{
+void {\bfseries start} ()}
+\label{class_c_input_thread_ad0f5c0ebf0c02533b0fc70a6f5b07821}
+
+\item 
+\hypertarget{class_c_input_thread_afc3a2103f40fadc1bb3c48cf37e46473}{
+void {\bfseries reset} ()}
+\label{class_c_input_thread_afc3a2103f40fadc1bb3c48cf37e46473}
+
+\item 
+\hypertarget{class_c_input_thread_a2e58afc0aa105ddc76bc375d4037d2c7}{
+void {\bfseries stop} ()}
+\label{class_c_input_thread_a2e58afc0aa105ddc76bc375d4037d2c7}
+
+\item 
+\hypertarget{class_c_input_thread_a37d583b0434635b8eb1a4efac75db1dc}{
+uint32\_\-t {\bfseries waitForInput} (uint32\_\-t ms)}
+\label{class_c_input_thread_a37d583b0434635b8eb1a4efac75db1dc}
+
+\item 
+\hypertarget{class_c_input_thread_aaad4023c8a98d90c389537fa1b8d77f4}{
+{\bfseries CInputThread} (int $\ast$p, DWORD ms)}
+\label{class_c_input_thread_aaad4023c8a98d90c389537fa1b8d77f4}
+
+\item 
+\hypertarget{class_c_input_thread_ad0f5c0ebf0c02533b0fc70a6f5b07821}{
+void {\bfseries start} ()}
+\label{class_c_input_thread_ad0f5c0ebf0c02533b0fc70a6f5b07821}
+
+\item 
+\hypertarget{class_c_input_thread_afc3a2103f40fadc1bb3c48cf37e46473}{
+void {\bfseries reset} ()}
+\label{class_c_input_thread_afc3a2103f40fadc1bb3c48cf37e46473}
+
+\item 
+\hypertarget{class_c_input_thread_a2e58afc0aa105ddc76bc375d4037d2c7}{
+void {\bfseries stop} ()}
+\label{class_c_input_thread_a2e58afc0aa105ddc76bc375d4037d2c7}
+
+\item 
+\hypertarget{class_c_input_thread_ae4ba5c7964e36b54930e588b308ae097}{
+DWORD {\bfseries waitForInput} (DWORD ms)}
+\label{class_c_input_thread_ae4ba5c7964e36b54930e588b308ae097}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_input_thread_ab294a9007beb875023ae813b30af0424}{
+static uint8\_\-t {\bfseries n} = 0}
+\label{class_c_input_thread_ab294a9007beb875023ae813b30af0424}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_input_thread_a194d8b4dffd3108196430708b61bd7c0}{
+pthread\_\-t {\bfseries threadID}}
+\label{class_c_input_thread_a194d8b4dffd3108196430708b61bd7c0}
+
+\item 
+\hypertarget{class_c_input_thread_a618a2602b03e499b40e5d64e7c767c1e}{
+struct termios new\_\-settings {\bfseries old\_\-settings}}
+\label{class_c_input_thread_a618a2602b03e499b40e5d64e7c767c1e}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/pthreads\_\-input.cpp\item 
+src/win32\_\-input.cpp\end{DoxyCompactItemize}

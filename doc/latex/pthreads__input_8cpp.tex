@@ -1,0 +1,66 @@
+\hypertarget{pthreads__input_8cpp}{
+\section{src/pthreads\_\-input.cpp File Reference}
+\label{pthreads__input_8cpp}\index{src/pthreads\_\-input.cpp@{src/pthreads\_\-input.cpp}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdint.h$>$}\par
+{\ttfamily \#include $<$pthread.h$>$}\par
+{\ttfamily \#include $<$termios.h$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_input_thread}{CInputThread}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{pthreads__input_8cpp_a2a8021a0c3e6886a75181b5fc7d89a2e}{\_\-inputThread} (void $\ast$args)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+pthread\_\-mutex\_\-t \hyperlink{pthreads__input_8cpp_a8eed0b2f4ded6f182dbf740cef9e4668}{\_\-runMutex}
+\item 
+pthread\_\-mutex\_\-t \hyperlink{pthreads__input_8cpp_aa3bb14f1506685e557c9be28c1af7f04}{\_\-inputMutex}
+\item 
+int $\ast$ \hyperlink{pthreads__input_8cpp_a9f524e4c2e0f8de428fe57f1c5d24cc4}{\_\-keyp}
+\item 
+uint32\_\-t \hyperlink{pthreads__input_8cpp_a2f1450a5d0c88abaf3d1d572c19ed77b}{\_\-interval}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{pthreads__input_8cpp_a2a8021a0c3e6886a75181b5fc7d89a2e}{
+\index{pthreads\_\-input.cpp@{pthreads\_\-input.cpp}!\_\-inputThread@{\_\-inputThread}}
+\index{\_\-inputThread@{\_\-inputThread}!pthreads_input.cpp@{pthreads\_\-input.cpp}}
+\subsubsection[{\_\-inputThread}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ \_\-inputThread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{pthreads__input_8cpp_a2a8021a0c3e6886a75181b5fc7d89a2e}
+
+
+\subsection{Variable Documentation}
+\hypertarget{pthreads__input_8cpp_aa3bb14f1506685e557c9be28c1af7f04}{
+\index{pthreads\_\-input.cpp@{pthreads\_\-input.cpp}!\_\-inputMutex@{\_\-inputMutex}}
+\index{\_\-inputMutex@{\_\-inputMutex}!pthreads_input.cpp@{pthreads\_\-input.cpp}}
+\subsubsection[{\_\-inputMutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\_\-mutex\_\-t {\bf \_\-inputMutex}}}
+\label{pthreads__input_8cpp_aa3bb14f1506685e557c9be28c1af7f04}
+\hypertarget{pthreads__input_8cpp_a2f1450a5d0c88abaf3d1d572c19ed77b}{
+\index{pthreads\_\-input.cpp@{pthreads\_\-input.cpp}!\_\-interval@{\_\-interval}}
+\index{\_\-interval@{\_\-interval}!pthreads_input.cpp@{pthreads\_\-input.cpp}}
+\subsubsection[{\_\-interval}]{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t {\bf \_\-interval}}}
+\label{pthreads__input_8cpp_a2f1450a5d0c88abaf3d1d572c19ed77b}
+\hypertarget{pthreads__input_8cpp_a9f524e4c2e0f8de428fe57f1c5d24cc4}{
+\index{pthreads\_\-input.cpp@{pthreads\_\-input.cpp}!\_\-keyp@{\_\-keyp}}
+\index{\_\-keyp@{\_\-keyp}!pthreads_input.cpp@{pthreads\_\-input.cpp}}
+\subsubsection[{\_\-keyp}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf \_\-keyp}}}
+\label{pthreads__input_8cpp_a9f524e4c2e0f8de428fe57f1c5d24cc4}
+\hypertarget{pthreads__input_8cpp_a8eed0b2f4ded6f182dbf740cef9e4668}{
+\index{pthreads\_\-input.cpp@{pthreads\_\-input.cpp}!\_\-runMutex@{\_\-runMutex}}
+\index{\_\-runMutex@{\_\-runMutex}!pthreads_input.cpp@{pthreads\_\-input.cpp}}
+\subsubsection[{\_\-runMutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\_\-mutex\_\-t {\bf \_\-runMutex}}}
+\label{pthreads__input_8cpp_a8eed0b2f4ded6f182dbf740cef9e4668}

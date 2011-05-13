@@ -1,14 +1,23 @@
-multithreaded console input handling.
- useful for retrieving a keypress from a terminal
+XY control for 2 connected 3DOF legs
+  .___.X.___.
+./           \.
+|             |
 
-keys mapped:
+keyboard:
  'q' : exit
- 'a' : solve the hardcoded maple equations
- 'p' : print current X Y
- '1','2' inc/dec X by 0.5
- '3','4' inc/dec T by 0.5
+ '!' to '%' and ')' : select servo (0..5)
+ '-' '+' : decrement, increment servo angle
+ wasd : change main body posistion (up left down right)
+ '`' : reset and reconnect usb.
+ 'p' : print positions and angles
 
-Works on windows as well! you need to make some adjustments to the makefile though
+psx controller:
+ triangle : switch to analog mode (sticks only work in analog mode, indicated by the red led on the controller)
+ right stick : same as wasd (but analog :p)
+ left stick : nothgin
+ left stick + R1: absolute control. i.e. stick halfway top right = main body halfway top right 
+
+Should work on windows as well! you need to make some adjustments to the makefile though
 
 MAPLE:
 required environment:

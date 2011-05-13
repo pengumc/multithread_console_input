@@ -1,14 +1,17 @@
 #Author: Michiel van der Coelen
-#date: 2011-5-5
+#date: 2011-5-12
 #tabsize: 4
+#make force will recompile everything.
+
 
 NAME = main
-MAPLE = /home/michiel/maple13/
-LD_LIBRARY_PATH = $(MAPLE)bin.X86_64_LINUX/
+MAPLE = /home/michiel/maple13/#change to your maple directory
+LD_LIBRARY_PATH = $(MAPLE)bin.X86_64_LINUX/#change to your maple binaries directory
 CFLAGS = -I$(MAPLE)extern/include/ -Isrc 
 CPPFLAGS = $(CFLAGS) -std=c++0x  
 USBLIBS := $(shell libusb-config --libs)
 LIBS =  -L$(LD_LIBRARY_PATH) -lhf -lrt -lprocessor64 -lmaple -lmaplec $(USBLIBS) -lpthread 
+#pthread library should be omitted on windows
 COMPILER = g++
 CC = gcc
 OUTPUTNAME = $(NAME) 

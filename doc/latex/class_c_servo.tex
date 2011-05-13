@@ -1,0 +1,125 @@
+\hypertarget{class_c_servo}{
+\section{CServo Class Reference}
+\label{class_c_servo}\index{CServo@{CServo}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_servo_a4ca4bca66566dcb5c05edc85ab7a229c}{reset} ()
+\item 
+\hypertarget{class_c_servo_a3bc6713beb1aab1224a0f7a98deb4667}{
+void {\bfseries reset\_\-NEW} ()}
+\label{class_c_servo_a3bc6713beb1aab1224a0f7a98deb4667}
+
+\item 
+\hypertarget{class_c_servo_a087275a1e13fc08af3ce2787f8a6110f}{
+uint8\_\-t {\bfseries isValidAngle} (double a)}
+\label{class_c_servo_a087275a1e13fc08af3ce2787f8a6110f}
+
+\item 
+\hypertarget{class_c_servo_a1fc7088c5c1391663f5fa0955610c4cf}{
+void {\bfseries flipDirection} ()}
+\label{class_c_servo_a1fc7088c5c1391663f5fa0955610c4cf}
+
+\item 
+\hypertarget{class_c_servo_a2a741c0660adf140ca38885e5c4dd7d1}{
+char {\bfseries setAngle} (double a)}
+\label{class_c_servo_a2a741c0660adf140ca38885e5c4dd7d1}
+
+\item 
+\hypertarget{class_c_servo_a5d1af102654eab2e5fbaae2527e51323}{
+double {\bfseries pulsewidthToAngle} ()}
+\label{class_c_servo_a5d1af102654eab2e5fbaae2527e51323}
+
+\item 
+\hypertarget{class_c_servo_acba030bc908615259e3e4e96c8c0b282}{
+double {\bfseries pulsewidthToAngle} (uint8\_\-t pw)}
+\label{class_c_servo_acba030bc908615259e3e4e96c8c0b282}
+
+\item 
+\hypertarget{class_c_servo_ac9a9b126f18ece14cfca0a7791d0ca26}{
+uint8\_\-t {\bfseries angleToPulsewidth} ()}
+\label{class_c_servo_ac9a9b126f18ece14cfca0a7791d0ca26}
+
+\item 
+\hypertarget{class_c_servo_a3ba66ebf5d540d6ab1fe0d8e9746b45a}{
+uint8\_\-t {\bfseries angleToPulsewidth} (double a)}
+\label{class_c_servo_a3ba66ebf5d540d6ab1fe0d8e9746b45a}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_servo_a628ba3aef46603d316d77ff7b76fcc0d}{
+uint8\_\-t {\bfseries maxPulse}}
+\label{class_c_servo_a628ba3aef46603d316d77ff7b76fcc0d}
+
+\item 
+\hypertarget{class_c_servo_a1eb5c44af9d1d89eb2c92a02d40ae5ab}{
+uint8\_\-t {\bfseries minPulse}}
+\label{class_c_servo_a1eb5c44af9d1d89eb2c92a02d40ae5ab}
+
+\item 
+\hypertarget{class_c_servo_a2773fbbc7c689811b6f2e41fe8b9b66f}{
+uint8\_\-t {\bfseries midPulse}}
+\label{class_c_servo_a2773fbbc7c689811b6f2e41fe8b9b66f}
+
+\item 
+\hypertarget{class_c_servo_a3f3d7995f3aa08009bcc4e80722a3903}{
+double {\bfseries direction}}
+\label{class_c_servo_a3f3d7995f3aa08009bcc4e80722a3903}
+
+\item 
+\hypertarget{class_c_servo_a13db5ce69aa664f41cd2d3c24c4f9212}{
+double {\bfseries offset}}
+\label{class_c_servo_a13db5ce69aa664f41cd2d3c24c4f9212}
+
+\item 
+\hypertarget{class_c_servo_acff6d6ff970df4a96ed4d92c896be5d8}{
+double {\bfseries K}}
+\label{class_c_servo_acff6d6ff970df4a96ed4d92c896be5d8}
+
+\item 
+\hypertarget{class_c_servo_a20a671e02ab6416f56136eee32ce8f11}{
+double {\bfseries angle}}
+\label{class_c_servo_a20a671e02ab6416f56136eee32ce8f11}
+
+\item 
+\hypertarget{class_c_servo_a716d1348d87137fbcfdadcfc1a1ac6d0}{
+uint8\_\-t {\bfseries pulsewidth}}
+\label{class_c_servo_a716d1348d87137fbcfdadcfc1a1ac6d0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_servo_acadd986dcf23571b89686d836c70353d}{
+\hyperlink{class_c_angle}{CAngle} {\bfseries phi}}
+\label{class_c_servo_acadd986dcf23571b89686d836c70353d}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_servo_ad63ff9215986fce2c61de3c192df9af8}{
+class \hyperlink{class_c_servo_ad63ff9215986fce2c61de3c192df9af8}{CUsbDevice}}
+\label{class_c_servo_ad63ff9215986fce2c61de3c192df9af8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_servo_a4ca4bca66566dcb5c05edc85ab7a229c}{
+\index{CServo@{CServo}!reset@{reset}}
+\index{reset@{reset}!CServo@{CServo}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void CServo::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_servo_a4ca4bca66566dcb5c05edc85ab7a229c}
+Default values are hardcoded here. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CUsbDevice.cpp\end{DoxyCompactItemize}

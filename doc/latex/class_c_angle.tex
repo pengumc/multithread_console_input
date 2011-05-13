@@ -1,0 +1,119 @@
+\hypertarget{class_c_angle}{
+\section{CAngle Class Reference}
+\label{class_c_angle}\index{CAngle@{CAngle}}
+}
+
+
+Brief this class holds an angle that ranges from -\/PI to PI.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_angle_aa47bc939ce401caa4b7b04153737d4ad}{
+\hyperlink{class_c_angle_aa47bc939ce401caa4b7b04153737d4ad}{CAngle} ()}
+\label{class_c_angle_aa47bc939ce401caa4b7b04153737d4ad}
+
+\begin{DoxyCompactList}\small\item\em create an angle at 0 rad. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_angle_ad1dd62cee0f725de2fa756530cd4f796}{
+\hyperlink{class_c_angle_ad1dd62cee0f725de2fa756530cd4f796}{CAngle} (double s)}
+\label{class_c_angle_ad1dd62cee0f725de2fa756530cd4f796}
+
+\begin{DoxyCompactList}\small\item\em create an angle at s rad. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_angle_a0f561013ffb3ed3c7fcf914a91dad5c2}{
+double \hyperlink{class_c_angle_a0f561013ffb3ed3c7fcf914a91dad5c2}{get} ()}
+\label{class_c_angle_a0f561013ffb3ed3c7fcf914a91dad5c2}
+
+\begin{DoxyCompactList}\small\item\em return the angle in rad. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_angle_a76a13932b26497bb8358c4a3099414a3}{
+void \hyperlink{class_c_angle_a76a13932b26497bb8358c4a3099414a3}{printAngle} ()}
+\label{class_c_angle_a76a13932b26497bb8358c4a3099414a3}
+
+\begin{DoxyCompactList}\small\item\em print the angle in rad to stdout. \item\end{DoxyCompactList}\item 
+char \hyperlink{class_c_angle_ab03cb0f761ee06e80835094b5817ba94}{isBetween} (double min, double max, double test)
+\begin{DoxyCompactList}\small\item\em check if test lies between min and max. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_angle_a72fd75c6aad269f339e0d7fc926e7569}{
+double \hyperlink{class_c_angle_a72fd75c6aad269f339e0d7fc926e7569}{anglize} (double s)}
+\label{class_c_angle_a72fd75c6aad269f339e0d7fc926e7569}
+
+\begin{DoxyCompactList}\small\item\em converts s to a value within the -\/PI..PI range. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_angle_a84945f984d1088fb0fa09b3c44b004ea}{
+void {\bfseries operator=} (double)}
+\label{class_c_angle_a84945f984d1088fb0fa09b3c44b004ea}
+
+\item 
+\hypertarget{class_c_angle_a9ccb59ecd849db986d78a44c69fa284a}{
+\hyperlink{class_c_angle}{CAngle} {\bfseries operator-\/} (double)}
+\label{class_c_angle_a9ccb59ecd849db986d78a44c69fa284a}
+
+\item 
+\hypertarget{class_c_angle_a6eb4a85cbb07d353873a34cfad48f337}{
+\hyperlink{class_c_angle}{CAngle} {\bfseries operator-\/} (\hyperlink{class_c_angle}{CAngle})}
+\label{class_c_angle_a6eb4a85cbb07d353873a34cfad48f337}
+
+\item 
+\hypertarget{class_c_angle_a0069cc4eb3577b04495b63bf1d1e2a15}{
+\hyperlink{class_c_angle}{CAngle} {\bfseries operator+} (double)}
+\label{class_c_angle_a0069cc4eb3577b04495b63bf1d1e2a15}
+
+\item 
+\hypertarget{class_c_angle_a3f041fc220a6d0299f4a9ee770c34af0}{
+\hyperlink{class_c_angle}{CAngle} {\bfseries operator+} (\hyperlink{class_c_angle}{CAngle})}
+\label{class_c_angle_a3f041fc220a6d0299f4a9ee770c34af0}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_angle_ae9806ae61145fe6955ebb26c0799cb9e}{
+void \hyperlink{class_c_angle_ae9806ae61145fe6955ebb26c0799cb9e}{set} (double s)}
+\label{class_c_angle_ae9806ae61145fe6955ebb26c0799cb9e}
+
+\begin{DoxyCompactList}\small\item\em store s in a (after fixing for range). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_angle_aa585e30115aa2ec75186b7dcfe089a93}{
+double \hyperlink{class_c_angle_aa585e30115aa2ec75186b7dcfe089a93}{a}}
+\label{class_c_angle_aa585e30115aa2ec75186b7dcfe089a93}
+
+\begin{DoxyCompactList}\small\item\em the stored angle. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Brief this class holds an angle that ranges from -\/PI to PI. setting an angle outside the range will automatically convert the angle to one within the range:\par
+ \hyperlink{class_c_angle}{CAngle} Phi();\par
+ phi = 3; \par
+will result in a = 3.0\par
+\par
+ phi = 4; \par
+will result in a = 4 -\/ 2$\ast$PI = -\/2.28.... 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_angle_ab03cb0f761ee06e80835094b5817ba94}{
+\index{CAngle@{CAngle}!isBetween@{isBetween}}
+\index{isBetween@{isBetween}!CAngle@{CAngle}}
+\subsubsection[{isBetween}]{\setlength{\rightskip}{0pt plus 5cm}char CAngle::isBetween (
+\begin{DoxyParamCaption}
+\item[{double}]{min, }
+\item[{double}]{max, }
+\item[{double}]{test}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_angle_ab03cb0f761ee06e80835094b5817ba94}
+
+
+check if test lies between min and max. 
+
+returns 0 if test is not between min and max.\par
+ returns 1 otherwise.\par
+\par
+ isBetween( -\/PI/2, PI/2, 0) will return 1.\par
+ isBetween( PI/2, -\/PI/2, 0) will return 0.\par
+ isBetween( -\/PI/2, PI/2, PI) will return 0.\par
+ isBetween( PI/2, -\/PI/2, PI) will return 1.\par
+ 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CAngle.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+\hypertarget{i2c__header_8h}{
+\section{src/i2c\_\-header.h File Reference}
+\label{i2c__header_8h}\index{src/i2c\_\-header.h@{src/i2c\_\-header.h}}
+}
+{\ttfamily \#include $<$util/twi.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{i2c__header_8h_a2ec7e67680ed0484be8a3521db910f04}{I2C\_\-SLAVE\_\-ADDRESS}~0x01
+\item 
+\#define \hyperlink{i2c__header_8h_a3df22e1e7b66be8b74b33ce077824292}{SLA\_\-W}~((I2C\_\-SLAVE\_\-ADDRESS$<$$<$1) $|$ TW\_\-WRITE)
+\item 
+\#define \hyperlink{i2c__header_8h_ae4af1f304be9d3202a445e7d6c235eaa}{SLA\_\-R}~((I2C\_\-SLAVE\_\-ADDRESS$<$$<$1) $|$ TW\_\-READ)
+\item 
+\#define \hyperlink{i2c__header_8h_a1de5e162d548d941337ffd826a31d2f1}{BUFLEN\_\-SERVO\_\-DATA}~12
+\item 
+\#define \hyperlink{i2c__header_8h_a67a91dc1d6abeec0257fde15440fdf85}{SERVO\_\-DATA\_\-EMPTY}~\{72,72,72,72,72,72,72,72,72,72,72,72\}
+\item 
+\#define \hyperlink{i2c__header_8h_ad3f35880eeaaba000fda096039f2f001}{BUFLEN\_\-ACC\_\-DATA}~3
+\item 
+\#define \hyperlink{i2c__header_8h_a4c07e04177570b88693c2df2cbee713b}{ACC\_\-DATA\_\-EMPTY}~\{0,0,0\}
+\item 
+\#define \hyperlink{i2c__header_8h_a1f54914019d4313ea60e8a524a99fd91}{TWACK}~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWEA))
+\item 
+\#define \hyperlink{i2c__header_8h_a6a4900bbe8e17a165dc214f599454a93}{TWNACK}~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN))
+\item 
+\#define \hyperlink{i2c__header_8h_a94e7ec874fb85cca2ef7866b2ca2fc95}{TWSTART}~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWSTA))
+\item 
+\#define \hyperlink{i2c__header_8h_a7d5c26860d9f56f86ac60d021ae0e148}{TWRESET}~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWSTO)$|$(1$<$$<$TWEA))
+\item 
+\#define \hyperlink{i2c__header_8h_acfcc9bfcb236267b7276337d5992c61d}{TWSTOSTA}~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWSTA)$|$(1$<$$<$TWSTO))
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{i2c__header_8h_a4c07e04177570b88693c2df2cbee713b}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!ACC\_\-DATA\_\-EMPTY@{ACC\_\-DATA\_\-EMPTY}}
+\index{ACC\_\-DATA\_\-EMPTY@{ACC\_\-DATA\_\-EMPTY}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{ACC\_\-DATA\_\-EMPTY}]{\setlength{\rightskip}{0pt plus 5cm}\#define ACC\_\-DATA\_\-EMPTY~\{0,0,0\}}}
+\label{i2c__header_8h_a4c07e04177570b88693c2df2cbee713b}
+\hypertarget{i2c__header_8h_ad3f35880eeaaba000fda096039f2f001}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!BUFLEN\_\-ACC\_\-DATA@{BUFLEN\_\-ACC\_\-DATA}}
+\index{BUFLEN\_\-ACC\_\-DATA@{BUFLEN\_\-ACC\_\-DATA}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{BUFLEN\_\-ACC\_\-DATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUFLEN\_\-ACC\_\-DATA~3}}
+\label{i2c__header_8h_ad3f35880eeaaba000fda096039f2f001}
+\hypertarget{i2c__header_8h_a1de5e162d548d941337ffd826a31d2f1}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!BUFLEN\_\-SERVO\_\-DATA@{BUFLEN\_\-SERVO\_\-DATA}}
+\index{BUFLEN\_\-SERVO\_\-DATA@{BUFLEN\_\-SERVO\_\-DATA}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{BUFLEN\_\-SERVO\_\-DATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUFLEN\_\-SERVO\_\-DATA~12}}
+\label{i2c__header_8h_a1de5e162d548d941337ffd826a31d2f1}
+\hypertarget{i2c__header_8h_a2ec7e67680ed0484be8a3521db910f04}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!I2C\_\-SLAVE\_\-ADDRESS@{I2C\_\-SLAVE\_\-ADDRESS}}
+\index{I2C\_\-SLAVE\_\-ADDRESS@{I2C\_\-SLAVE\_\-ADDRESS}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{I2C\_\-SLAVE\_\-ADDRESS}]{\setlength{\rightskip}{0pt plus 5cm}\#define I2C\_\-SLAVE\_\-ADDRESS~0x01}}
+\label{i2c__header_8h_a2ec7e67680ed0484be8a3521db910f04}
+\hypertarget{i2c__header_8h_a67a91dc1d6abeec0257fde15440fdf85}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!SERVO\_\-DATA\_\-EMPTY@{SERVO\_\-DATA\_\-EMPTY}}
+\index{SERVO\_\-DATA\_\-EMPTY@{SERVO\_\-DATA\_\-EMPTY}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{SERVO\_\-DATA\_\-EMPTY}]{\setlength{\rightskip}{0pt plus 5cm}\#define SERVO\_\-DATA\_\-EMPTY~\{72,72,72,72,72,72,72,72,72,72,72,72\}}}
+\label{i2c__header_8h_a67a91dc1d6abeec0257fde15440fdf85}
+\hypertarget{i2c__header_8h_ae4af1f304be9d3202a445e7d6c235eaa}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!SLA\_\-R@{SLA\_\-R}}
+\index{SLA\_\-R@{SLA\_\-R}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{SLA\_\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define SLA\_\-R~((I2C\_\-SLAVE\_\-ADDRESS$<$$<$1) $|$ TW\_\-READ)}}
+\label{i2c__header_8h_ae4af1f304be9d3202a445e7d6c235eaa}
+\hypertarget{i2c__header_8h_a3df22e1e7b66be8b74b33ce077824292}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!SLA\_\-W@{SLA\_\-W}}
+\index{SLA\_\-W@{SLA\_\-W}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{SLA\_\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define SLA\_\-W~((I2C\_\-SLAVE\_\-ADDRESS$<$$<$1) $|$ TW\_\-WRITE)}}
+\label{i2c__header_8h_a3df22e1e7b66be8b74b33ce077824292}
+\hypertarget{i2c__header_8h_a1f54914019d4313ea60e8a524a99fd91}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!TWACK@{TWACK}}
+\index{TWACK@{TWACK}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{TWACK}]{\setlength{\rightskip}{0pt plus 5cm}\#define TWACK~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWEA))}}
+\label{i2c__header_8h_a1f54914019d4313ea60e8a524a99fd91}
+\hypertarget{i2c__header_8h_a6a4900bbe8e17a165dc214f599454a93}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!TWNACK@{TWNACK}}
+\index{TWNACK@{TWNACK}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{TWNACK}]{\setlength{\rightskip}{0pt plus 5cm}\#define TWNACK~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN))}}
+\label{i2c__header_8h_a6a4900bbe8e17a165dc214f599454a93}
+\hypertarget{i2c__header_8h_a7d5c26860d9f56f86ac60d021ae0e148}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!TWRESET@{TWRESET}}
+\index{TWRESET@{TWRESET}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{TWRESET}]{\setlength{\rightskip}{0pt plus 5cm}\#define TWRESET~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWSTO)$|$(1$<$$<$TWEA))}}
+\label{i2c__header_8h_a7d5c26860d9f56f86ac60d021ae0e148}
+\hypertarget{i2c__header_8h_a94e7ec874fb85cca2ef7866b2ca2fc95}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!TWSTART@{TWSTART}}
+\index{TWSTART@{TWSTART}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{TWSTART}]{\setlength{\rightskip}{0pt plus 5cm}\#define TWSTART~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWSTA))}}
+\label{i2c__header_8h_a94e7ec874fb85cca2ef7866b2ca2fc95}
+\hypertarget{i2c__header_8h_acfcc9bfcb236267b7276337d5992c61d}{
+\index{i2c\_\-header.h@{i2c\_\-header.h}!TWSTOSTA@{TWSTOSTA}}
+\index{TWSTOSTA@{TWSTOSTA}!i2c_header.h@{i2c\_\-header.h}}
+\subsubsection[{TWSTOSTA}]{\setlength{\rightskip}{0pt plus 5cm}\#define TWSTOSTA~(TWCR=(1$<$$<$TWINT)$|$(1$<$$<$TWEN)$|$(1$<$$<$TWSTA)$|$(1$<$$<$TWSTO))}}
+\label{i2c__header_8h_acfcc9bfcb236267b7276337d5992c61d}

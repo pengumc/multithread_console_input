@@ -1,0 +1,2638 @@
+\hypertarget{maplec_8h}{
+\section{src/maplec.h File Reference}
+\label{maplec_8h}\index{src/maplec.h@{src/maplec.h}}
+}
+{\ttfamily \#include \char`\"{}mplshlib.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_m_call_back_vector_desc}{MCallBackVectorDesc}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{maplec_8h_a5728c2aa0516dbcb6e21cb2c812b4559}{EXT\_\-DECL}
+\item 
+\#define \hyperlink{maplec_8h_aa484d3c55ea7b7e07e039df1c67adc02}{M\_\-DECL}
+\item 
+\#define \hyperlink{maplec_8h_a0cd3ab29c7e4658bdc927d8fd0f65789}{M\_\-CDECL}
+\item 
+\#define \hyperlink{maplec_8h_a702d8d08280d539fed814e84f4aa3eef}{MAPLE\_\-TEXT\_\-DIAG}~1
+\item 
+\#define \hyperlink{maplec_8h_add0237c0c2edbf2db23b818c07135279}{MAPLE\_\-TEXT\_\-MISC}~2
+\item 
+\#define \hyperlink{maplec_8h_a1a69a2ad07131f7c6b27601ea22968af}{MAPLE\_\-TEXT\_\-OUTPUT}~3
+\item 
+\#define \hyperlink{maplec_8h_a75136a9a958f08c014d01526a2f2d705}{MAPLE\_\-TEXT\_\-QUIT}~4
+\item 
+\#define \hyperlink{maplec_8h_a74f27d2f2dd35ec60a3782ecaae582ee}{MAPLE\_\-TEXT\_\-WARNING}~5
+\item 
+\#define \hyperlink{maplec_8h_a6d44e7689c8a02515a6b2d3ff4057fdf}{MAPLE\_\-TEXT\_\-ERROR}~6
+\item 
+\#define \hyperlink{maplec_8h_af00884a69373de7a4cae413c532cad0f}{MAPLE\_\-TEXT\_\-STATUS}~7
+\item 
+\#define \hyperlink{maplec_8h_a2eeabed6c7790be4a2e4dbd0761c731d}{MAPLE\_\-TEXT\_\-PRETTY}~8
+\item 
+\#define \hyperlink{maplec_8h_a1658cfc669111ad658db6e2a7c16471b}{MAPLE\_\-TEXT\_\-HELP}~9
+\item 
+\#define \hyperlink{maplec_8h_afb60c2e2bb59c25e8dbc01dbca996ba5}{MAPLE\_\-TEXT\_\-DEBUG}~10
+\item 
+\#define \hyperlink{maplec_8h_aea61f6aeb9bab4828b0c045bdb6232a3}{FN\_\-NORM}~0
+\item 
+\#define \hyperlink{maplec_8h_a44eacfdf89e3c5fbde958f359ef7d3f8}{FN\_\-ITAL}~1
+\item 
+\#define \hyperlink{maplec_8h_a56a911b8dd9fd6cb75119fe4acee3666}{FN\_\-BOLD}~3
+\item 
+\#define \hyperlink{maplec_8h_aa5ed896f8345b4d0aeaa6d0619416d29}{FN\_\-UNDER}~4
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_m_call_back_vector_desc}{MCallBackVectorDesc} $\ast$ \hyperlink{maplec_8h_a72366c9cd2587ae08b080aa88622e00e}{MCallBackVector}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+EXT\_\-DECL MKernelVector M\_\-DECL \hyperlink{maplec_8h_af3b2818da8f33fa8ec1371425dafa969}{StartMaple} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, \hyperlink{struct_m_call_back_vector_desc}{MCallBackVector} cb, void $\ast$user\_\-data, void $\ast$info, char $\ast$errstr)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_aa5607de94fd1c8a2d32ca19cb8a2655d}{StopMaple} (MKernelVector kv)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a126816163dff6b6e187981e691c258e1}{RestartMaple} (MKernelVector kv, char $\ast$errstr)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a7ba6ae5a9ca450d2ca87ec2c76166b37}{MapleLibName} (MKernelVector kv, ALGEB expseq)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ae51c271dee57ca2a78c02fc0a48fd214}{MapleKernelOptions} (MKernelVector kv, char $\ast$option, ALGEB val)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a3c3a3b0097f1483aed9c022a93fb0408}{MapleAssign} (MKernelVector kv, ALGEB lhs, ALGEB rhs)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a6d3bb1e95b6ec7ca946d73db2e3e96cd}{MapleAssignIndexed} (MKernelVector kv, ALGEB lhs, M\_\-INT dim, M\_\-INT $\ast$ind, ALGEB rhs)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_ae6f7221da703d8610d4f9fdcc6f64e44}{MapleRaiseError} (MKernelVector kv, char $\ast$msg)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a284c7cbaa01a1d89e80bf0fc6b0b3b58}{MapleRaiseError1} (MKernelVector kv, char $\ast$msg, ALGEB arg1)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a2dcecf78d24cfc1383f303681da80d21}{MapleRaiseError2} (MKernelVector kv, char $\ast$msg, ALGEB arg1, ALGEB arg2)
+\item 
+EXT\_\-DECL void $\ast$M\_\-DECL \hyperlink{maplec_8h_ae03c176a66f3ce298785c405602f4a4a}{MapleTrapError} (MKernelVector kv, void $\ast$(M\_\-DECL $\ast$proc)(void $\ast$data), void $\ast$data, M\_\-BOOL $\ast$errorflag)
+\item 
+EXT\_\-DECL void \hyperlink{maplec_8h_a9f66d2ae47531bba9548ab4c7277a7bb}{MaplePushErrorProc} (MKernelVector kv, void(M\_\-DECL $\ast$errorproc)(char $\ast$, void $\ast$), void $\ast$data)
+\item 
+EXT\_\-DECL void \hyperlink{maplec_8h_a54fc4632f4d327f259e4dcb41b2f3ff0}{MaplePopErrorProc} (MKernelVector kv)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_aea0d12119a5b6332c88576f67f8d1e1f}{MapleUserInfo} (MKernelVector kv, int level, char $\ast$name, char $\ast$msg)
+\item 
+EXT\_\-DECL int M\_\-CDECL \hyperlink{maplec_8h_ab67fd66190360cdaee03acf2f919ea50}{MaplePrintf} (MKernelVector kv, const char $\ast$,...)
+\item 
+EXT\_\-DECL int M\_\-CDECL \hyperlink{maplec_8h_ae2f11852b9e48d5a34ac9e4abc1a2f4b}{MapleALGEB\_\-Printf} (MKernelVector kv, const char $\ast$,...)
+\item 
+EXT\_\-DECL ALGEB M\_\-CDECL \hyperlink{maplec_8h_a1906eb92af4eca3c5124a2f4ddb21563}{MapleALGEB\_\-SPrintf} (MKernelVector kv, const char $\ast$,...)
+\item 
+EXT\_\-DECL int M\_\-DECL \hyperlink{maplec_8h_a829cb29923d268bdeb847b73a42ba4a3}{MapleALGEB\_\-Printf0} (MKernelVector kv, const char $\ast$format)
+\item 
+EXT\_\-DECL int M\_\-DECL \hyperlink{maplec_8h_afd7ff90f7fd9e42755d45f58e6daaa95}{MapleALGEB\_\-Printf1} (MKernelVector kv, const char $\ast$format, ALGEB a1)
+\item 
+EXT\_\-DECL int M\_\-DECL \hyperlink{maplec_8h_a60a492ac491c2d2a12783b5b6ef4389b}{MapleALGEB\_\-Printf2} (MKernelVector kv, const char $\ast$format, ALGEB a1, ALGEB a2)
+\item 
+EXT\_\-DECL int M\_\-DECL \hyperlink{maplec_8h_a977563831b8f167d74f79534852f0094}{MapleALGEB\_\-Printf3} (MKernelVector kv, const char $\ast$format, ALGEB a1, ALGEB a2, ALGEB a3)
+\item 
+EXT\_\-DECL int M\_\-DECL \hyperlink{maplec_8h_a64a978947d940d5ceb38427c66982afe}{MapleALGEB\_\-Printf4} (MKernelVector kv, const char $\ast$format, ALGEB a1, ALGEB a2, ALGEB a3, ALGEB a4)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_af8ba3ecfb3ec9855e26d2b479ca37089}{MapleALGEB\_\-SPrintf0} (MKernelVector kv, const char $\ast$format)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a9fe451426cdf312f4152d71ab75cd5b3}{MapleALGEB\_\-SPrintf1} (MKernelVector kv, const char $\ast$format, ALGEB a1)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a1cd464829ceb8c317442d80120fea7c1}{MapleALGEB\_\-SPrintf2} (MKernelVector kv, const char $\ast$format, ALGEB a1, ALGEB a2)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a24162fcf5420e92def456a41e4e0490d}{MapleALGEB\_\-SPrintf3} (MKernelVector kv, const char $\ast$format, ALGEB a1, ALGEB a2, ALGEB a3)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a9be686f272119da35fbf2132d86931bf}{MapleALGEB\_\-SPrintf4} (MKernelVector kv, const char $\ast$format, ALGEB a1, ALGEB a2, ALGEB a3, ALGEB a4)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_adc5f95591a2104ac92a5fc6cf92f67eb}{InitMaplePrintf} (MKernelVector kv)
+\item 
+EXT\_\-DECL int M\_\-DECL \hyperlink{maplec_8h_aefa77ed5b4e2a8f445c86a61e880be1f}{OldMaplePrintf} (const char $\ast$,...)
+\item 
+EXT\_\-DECL double M\_\-DECL \hyperlink{maplec_8h_ad69bd5662f755d0dced63a52b611c970}{MapleEvalhf} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL double M\_\-DECL \hyperlink{maplec_8h_a79b26992a4b3c935fc480166c3a1445f}{EvalhfMapleProc} (MKernelVector kv, ALGEB fn, int nargs, double $\ast$args)
+\item 
+EXT\_\-DECL hfdata M\_\-DECL \hyperlink{maplec_8h_a7888ece3a687c24ad89be9d5890f8730}{EvalhfDataProc} (MKernelVector kv, ALGEB fn, int nargs, hfdata $\ast$args)
+\item 
+EXT\_\-DECL ALGEB M\_\-CDECL \hyperlink{maplec_8h_a237ee33ad8e6b9a6c12f0939bc26c087}{EvalMapleProc} (MKernelVector kv, ALGEB fn, int nargs,...)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ad74a7a7f960971fef4ce39053f7b5313}{EvalMapleProcedure} (MKernelVector kv, ALGEB fn, ALGEB args)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ad13b487f1f82d27de490a941d303add6}{EvalMapleStatement} (MKernelVector kv, char $\ast$statement)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a0163c7bc387dc6d3d62ab65a1cf91b7c}{MapleEval} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_aabd7df3b20ac5bde9881d9f19a05e35d}{MapleNameValue} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a133b75c40d911c0d4bbe7b83f8bd02cf}{MapleNumericAdd} (MKernelVector kv, ALGEB a, ALGEB b)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_add605f3ded8a19d06a31716bad19d869}{MapleNumericSubtract} (MKernelVector kv, ALGEB a, ALGEB b)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ae8c3ed9a14210857bc70118ae3c853c2}{MapleNumericMultiply} (MKernelVector kv, ALGEB a, ALGEB b)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a9f505c20915c595ed0303401ae5bc7a5}{MapleNumericPower} (MKernelVector kv, ALGEB a, M\_\-INT n)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a94ed2a602be4097ef3b2af21e1698ce6}{MapleIntegerDivide} (MKernelVector kv, ALGEB a, ALGEB b, ALGEB $\ast$r)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a4bb613edd34a121f0c10b629c6e704e4}{MapleFloatDivide} (MKernelVector kv, ALGEB a, ALGEB b)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a799e01318a5a9de42a5c5f02c7c4f2df}{MapleIntegerAbsCompare} (MKernelVector kv, ALGEB a, ALGEB b)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a5688313ba8df1b755f21c85dda688fe1}{IsMapleAssignedName} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_ae7416d3a247ea324dc28822f3c48f120}{IsMapleComplexNumeric} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a6f95d9032963cf1a64319694505c9c54}{IsMapleComplex64} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_ac4b451dd731a0fc9ebc28ac907812b95}{IsMapleNumeric} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_ac5b87df896220b3875aae4427261d2c8}{IsMapleFloat64} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a4654a50a0e6a8a69463577654ccf6965}{IsMapleInteger} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a5c1381979297d694b36c899174b349c2}{IsMapleInteger8} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_aaa1f81bd829d28120a387abb83613f35}{IsMapleInteger16} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a53dc0798e5410cd58c23f5aa48dcb83f}{IsMapleInteger32} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_ab65df619be095e766d4a6605e1e964b8}{IsMapleInteger64} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a4a51ff8092417b49b61884984074666d}{IsMapleList} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a463b85df643349c57c7b8e62a69cb19b}{IsMapleExpressionSequence} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a82e0202f595d950cd617a7f77adadc78}{IsMapleName} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_af8251d53847cd164ab9af7440d95cb4b}{IsMapleNULL} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a70aa7204a4e668fc92b12d23aca8dc31}{IsMaplePointer} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a2bace1e143a2ef988820c1033915e6c8}{IsMaplePointerNULL} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_aab1d389f93525a46bb8fd7973e657f55}{IsMapleProcedure} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a937ebd987018dd9432cc826a23b263c2}{IsMapleRTable} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_afc0ae7be1f74de94919c409e70dbda05}{IsMapleSet} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a79701fa12f2b852887987b3bb5768cce}{IsMapleStop} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_ad2199f7d8aa32e40a0d3c76d0e483082}{IsMapleString} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a213d34749c1de68c020261590dc36b23}{IsMapleTable} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_af94782d58b7bdd1099d4497a1525dad4}{IsMapleTableBasedArray} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_af30f402825bf6e6120d9f6813d9e8bc8}{IsMapleUnassignedName} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_ac2cd9ab5bfe41d1256040edd34c2604b}{IsMapleUnnamedZero} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL MapleID M\_\-DECL \hyperlink{maplec_8h_adc857c10b43759732f0352310470bf59}{GetMapleID} (MKernelVector kv, ALGEB dag)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a032d940d481433a5ad8906db7adec050}{NewMapleExpressionSequence} (MKernelVector kv, int nargs)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a93e36cec5960165c2a4985a9fdaf487f}{MapleExpseqAssign} (MKernelVector kv, ALGEB expseq, M\_\-INT i, ALGEB val)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a95bbd53c1b7a9ddd38a91d50cd98e66d}{MapleExpseqSelect} (MKernelVector kv, ALGEB expseq, M\_\-INT i)
+\item 
+EXT\_\-DECL ALGEB $\ast$M\_\-DECL \hyperlink{maplec_8h_acb53e256e7bc779df8c230ba6ca9a842}{MapleGetElems} (MKernelVector kv, ALGEB container, M\_\-INT $\ast$num\_\-elems)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a5d7d82acf93c6330c519d0822d9f9172}{MapleListAlloc} (MKernelVector kv, M\_\-INT num\_\-members)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a9b4320ef003f80885331b56aa3764147}{MapleListAssign} (MKernelVector kv, ALGEB list, M\_\-INT i, ALGEB val)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a6a6efedebf1532bf23d3f51bebc00d00}{MapleListSelect} (MKernelVector kv, ALGEB list, M\_\-INT i)
+\item 
+EXT\_\-DECL COMPLEXF32 M\_\-DECL \hyperlink{maplec_8h_af4b918ddfe21c56b814df0a803ea6eb2}{MapleToComplexFloat32} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL COMPLEXF64 M\_\-DECL \hyperlink{maplec_8h_ad21badb66f0b4da7c60a50fe520cc714}{MapleToComplexFloat64} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a914576ae7b71d81ae97c3ebdcc8c9742}{MapleToComplexSingle} (MKernelVector kv, ALGEB s, COMPLEXF32 $\ast$c)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_af91bdc2c9589c4b46b08151dab767ee6}{MapleToComplexDouble} (MKernelVector kv, ALGEB s, COMPLEXF64 $\ast$c)
+\item 
+EXT\_\-DECL CXDAG M\_\-DECL \hyperlink{maplec_8h_a3d8b2c8168b81aee9699f5c565e8eb92}{MapleToComplexFloatDAG} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL FLOAT32 M\_\-DECL \hyperlink{maplec_8h_a3dd390f7e9c724ba2e8d316eea6e3dd6}{MapleToFloat32} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL FLOAT64 M\_\-DECL \hyperlink{maplec_8h_ab1f6bb5f373aed5a1dce5779f0e01689}{MapleToFloat64} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL INTEGER8 M\_\-DECL \hyperlink{maplec_8h_ac2cea6ea6cd10f8896abd4099f02226f}{MapleToInteger8} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL INTEGER16 M\_\-DECL \hyperlink{maplec_8h_a8208c635577455b00df231c95811ed5b}{MapleToInteger16} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL INTEGER32 M\_\-DECL \hyperlink{maplec_8h_a3eafae6164d8e6d3315351ff308ed76e}{MapleToInteger32} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL INTEGER64 M\_\-DECL \hyperlink{maplec_8h_a3f2ef93fa871f2c4e86de8ae053d6da9}{MapleToInteger64} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL mpz\_\-ptr M\_\-DECL \hyperlink{maplec_8h_afa534e8b72b9d9e2e2f4276b24a8c13a}{MapleToGMPInteger} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_aaf298621631849e119c0deb167763441}{MapleToM\_\-BOOL} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a76eeb5542407af2c540a91452eb05fc7}{MapleToM\_\-INT} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL void $\ast$M\_\-DECL \hyperlink{maplec_8h_a9b65e27b3d9327b29abb16518149a7e4}{MapleToPointer} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL char $\ast$M\_\-DECL \hyperlink{maplec_8h_a2b144d23226ffcf3d5854f4b61616d64}{MapleToString} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a99bdda9cae7f5ce02da203761874fac6}{MapleTohfData} (MKernelVector kv, ALGEB s, hfdata $\ast$d)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a5bed87edb3cc50486d3cc0f97b8388bd}{DoubleTohfData} (MKernelVector kv, double re, double im, hfdata $\ast$d)
+\item 
+EXT\_\-DECL double M\_\-DECL \hyperlink{maplec_8h_a55833fbed1e866670cd39d46b36ae1ef}{RealhfData} (MKernelVector kv, hfdata d)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_af9b376177a58899698af0f80b5b34c17}{MapleNumArgs} (MKernelVector kv, ALGEB expr)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a974ba02d7dc37ad3bb2d6a3e3caac5c4}{RTableAppendAttribute} (MKernelVector kv, RTableSettings $\ast$s, char $\ast$name)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a5e1283e1cfd3708e5f380c11e17546d9}{RTableAppendIndFn} (MKernelVector kv, RTableSettings $\ast$s, ALGEB indfn)
+\item 
+EXT\_\-DECL RTableData M\_\-DECL \hyperlink{maplec_8h_a7bb85956774c1f5017a738002f0f1e43}{RTableAssign} (MKernelVector kv, ALGEB rt, M\_\-INT $\ast$index, RTableData val)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a1cda6e5fa3908c6c19347f4cba0dba5b}{RTableAssignRef} (MKernelVector kv, ALGEB rt, M\_\-INT $\ast$index, RTableData $\ast$val)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a26bca40409bd46771e9cf44053a1287a}{RTableBounds} (MKernelVector kv, ALGEB rt, M\_\-INT $\ast$bounds)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a617f50b3d352f2f92cf90125c46833dd}{RTableLowerBound} (MKernelVector kv, ALGEB rt, M\_\-INT dim)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a2578f929645e0d556cfb6ced18be9095}{RTableUpperBound} (MKernelVector kv, ALGEB rt, M\_\-INT dim)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a462c050c4dd34cde62bd2d4f23dbf4a6}{RTableCopy} (MKernelVector kv, RTableSettings $\ast$s, ALGEB rt)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a5451965d2be648f9ef4198969980f0f2}{RTableCopyImPart} (MKernelVector kv, RTableSettings $\ast$s, ALGEB rt)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a0fe15f2f87e0658d46de954a6f77ee51}{RTableCopyRealPart} (MKernelVector kv, RTableSettings $\ast$s, ALGEB rt)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ae86355b59405dbf5b237167cf83a3243}{RTableCreate} (MKernelVector kv, RTableSettings $\ast$s, void $\ast$pdata, M\_\-INT $\ast$bounds)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a9088435f5c8ff562411ae0ac97dc59f2}{RTableCreateFromDataBlock} (MKernelVector kv, RTableSettings $\ast$rts, M\_\-INT $\ast$bounds, void $\ast$data\_\-block, M\_\-INT block\_\-datatype)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a0196baca3c37ac3370f64ec364a1ca05}{RTableCreateFromALGEB} (MKernelVector kv, RTableSettings $\ast$s, ALGEB initializer, M\_\-INT $\ast$bounds)
+\item 
+EXT\_\-DECL void $\ast$M\_\-DECL \hyperlink{maplec_8h_a5491dea563a8c569200953c02eb70020}{RTableDataBlock} (MKernelVector kv, ALGEB rt)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_ae4c2d1056ce4f2bb0775d45520a9bb89}{RTableGetDefaults} (MKernelVector kv, RTableSettings $\ast$s)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a1271daf36bf7a5f80ad467e35b10ad06}{RTableGetSettings} (MKernelVector kv, RTableSettings $\ast$s, ALGEB rt)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a91bc2286c170f15b6409deb42fad3e68}{RTableIndFn} (MKernelVector kv, ALGEB rt, M\_\-INT num)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_aa5feb77748208ad2a44786170ab21380}{RTableIndFnArgs} (MKernelVector kv, ALGEB rt, M\_\-INT num)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a26a202c056ff51634b68dc524b9f929d}{RTableIsReal} (MKernelVector kv, ALGEB rt)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a41db2acb34f475c1ef504a06af1ffd74}{RTableNumElements} (MKernelVector kv, ALGEB rt)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a7e1caf9bf2d2ac3961b077a8695525f2}{RTableNumDimensions} (MKernelVector kv, ALGEB rt)
+\item 
+EXT\_\-DECL RTableData M\_\-DECL \hyperlink{maplec_8h_a9bf4f97e9809964cc9ee271ecd3735c7}{RTableSelect} (MKernelVector kv, ALGEB rt, M\_\-INT $\ast$index)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a4f606795ad8c22cac95a85a8063fe2fa}{RTableSetAttribute} (MKernelVector kv, RTableSettings $\ast$s, char $\ast$name)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a8aba5c2b02ebbec6e036a520bffe77ec}{RTableSetIndFn} (MKernelVector kv, RTableSettings $\ast$s, ALGEB indfn)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a8eeb67f8006d6276307190a7ff43deb9}{RTableSetType} (MKernelVector kv, RTableSettings $\ast$s, M\_\-INT id, char $\ast$name)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a13ed291e49ff58a177fbd348a7222dd2}{RTableSparseCompact} (MKernelVector kv, ALGEB rt)
+\item 
+EXT\_\-DECL NAG\_\-INT $\ast$M\_\-DECL \hyperlink{maplec_8h_a541d45cf2c89511cce7e23355c693cce}{RTableSparseIndexRow} (MKernelVector kv, ALGEB rt, M\_\-INT dim)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_aefbc102865aeb1e1482da97f6945a907}{RTableSparseIndexSort} (MKernelVector kv, ALGEB rt, M\_\-INT by\_\-dim)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a2be8b685b71a19571c0b7014a27e4525}{RTableSparseSetNumElems} (MKernelVector kv, ALGEB rt, M\_\-INT num)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a1fe70affbf48ebf8f2dec59a1d64c38f}{RTableSparseSize} (MKernelVector kv, ALGEB rt)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a5f9f5fa604f13147031d821fbdebe913}{RTableSparseResize} (MKernelVector kv, ALGEB rt, M\_\-INT size)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a72051b540c6a4029f07d79898c0b4aee}{RTableZipReIm} (MKernelVector kv, RTableSettings $\ast$s, ALGEB rt\_\-re, ALGEB rt\_\-im)
+\item 
+EXT\_\-DECL void $\ast$M\_\-CDECL \hyperlink{maplec_8h_aa1e185ad30a87a71deb655e33ca44361}{ArrayToMaple} (MKernelVector kv, void $\ast$ptr, M\_\-INT data\_\-type, M\_\-INT storage, M\_\-INT p1, M\_\-INT p2, M\_\-INT order, ALGEB indfn, M\_\-INT subtype, ALGEB $\ast$ref, M\_\-INT num\_\-dims, M\_\-INT offset,...)
+\item 
+EXT\_\-DECL void $\ast$M\_\-CDECL \hyperlink{maplec_8h_a70781124162bb1bc3a4a05a7c9d62ead}{MapleToArray} (MKernelVector kv, ALGEB rt, M\_\-INT data\_\-type, M\_\-INT storage, M\_\-INT p1, M\_\-INT p2, M\_\-INT order, ALGEB indfn, M\_\-INT subtype, ALGEB $\ast$ref, M\_\-INT num\_\-dims, M\_\-INT offset,...)
+\item 
+EXT\_\-DECL void $\ast$M\_\-CDECL \hyperlink{maplec_8h_a6665226e27545835c1ae5b5d0f51db4a}{MapleAllocArray} (MKernelVector kv, ALGEB rt, M\_\-INT data\_\-type, M\_\-INT storage, M\_\-INT p1, M\_\-INT p2, M\_\-INT order, ALGEB indfn, M\_\-INT subtype, ALGEB $\ast$ref, M\_\-INT num\_\-dims, M\_\-INT offset,...)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_af28dc5601ac4b40bfdc39fd39600b127}{MapleSelectImaginaryPart} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a2f1e56770f29de4865ba339db59c8a1c}{MapleSelectIndexed} (MKernelVector kv, ALGEB s, M\_\-INT dim, M\_\-INT $\ast$ind)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ad3f085d7fce43b0578d18f7b6a11888d}{MapleSelectRealPart} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ab021155081eecac4a816f4d0818926dd}{MapleUnique} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a15eb0e0e58b2fdcd487680b1d5c6bd29}{MapleTableAlloc} (MKernelVector kv)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a5c54952d24a438b4de6019351b22edb5}{MapleTableAssign} (MKernelVector kv, ALGEB table, ALGEB ind, ALGEB val)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_aa715427119bc2b8d561693103be24f2d}{MapleTableDelete} (MKernelVector kv, ALGEB table, ALGEB ind)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a5cbc9e07ac9616545c02e16ada4f40c4}{MapleTableHasEntry} (MKernelVector kv, ALGEB table, ALGEB ind)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a3372319f81126c9f4f9568a88f8fd4cc}{MapleTableSelect} (MKernelVector kv, ALGEB table, ALGEB ind)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a60b95a8619d8feddfed69f236e284399}{ToMapleBoolean} (MKernelVector kv, M\_\-INT b)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a28534a6cf2ae5eee7c868db7b91229e2}{ToMapleChar} (MKernelVector kv, M\_\-INT c)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_af82b584ea8bed7bbaa77c7996f4ed8a5}{ToMapleComplex} (MKernelVector kv, double re, double im)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ada60041da6f2fc7b7d7aa87c1c09b889}{ToMapleComplexFloat} (MKernelVector kv, ALGEB re, ALGEB im)
+\item 
+EXT\_\-DECL ALGEB M\_\-CDECL \hyperlink{maplec_8h_af461e4f39e0112aa697348a7cdc10684}{ToMapleExpressionSequence} (MKernelVector kv, int nargs,...)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a071c92fbe18b6af03b62c3fa63bfb6b1}{ToMapleInteger} (MKernelVector kv, M\_\-INT i)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a8a7e1f2737ca051dee164a674d9cd4d1}{ToMapleInteger64} (MKernelVector kv, INTEGER64 i)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ac447cae488d9fd54137fbbce0f840a71}{GMPIntegerToMaple} (MKernelVector kv, mpz\_\-ptr g)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a40245ed9473addc7ebc65c151e2971d4}{ToMapleFloat} (MKernelVector kv, double f)
+\item 
+EXT\_\-DECL ALGEB M\_\-CDECL \hyperlink{maplec_8h_a9678366103eb82fa798a15ab1ea2c14b}{ToMapleFunction} (MKernelVector kv, ALGEB fn, int nargs,...)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a6aec50561a8219ec3eb14ac83745e100}{ToMapleFunc} (MKernelVector kv, ALGEB fn, ALGEB expseq)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ac5c5e2d0d9455d69732f670ea2830e4e}{ToMapleName} (MKernelVector kv, char $\ast$n, M\_\-BOOL is\_\-global)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a13c87c45dab3c6cfb17c31eae993fb8e}{ToMapleNULL} (MKernelVector kv)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a43a7281cc7b88a6f963d5d2231a887df}{ToMapleNULLPointer} (MKernelVector kv)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a54df44559bcf9027dee42cb24122f7f3}{ToMaplePointer} (MKernelVector kv, void $\ast$v, M\_\-INT type)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a398c47d49ce343a9862d594c628fabf6}{ToMapleRelation} (MKernelVector kv, const char $\ast$rel, ALGEB lhs, ALGEB rhs)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ab7deb7227be73dfa1c9db502f537e0ef}{ToMapleString} (MKernelVector kv, char $\ast$s)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a3b390aa8bbfe52de7a63c6c6d1f4017e}{ToMapleUneval} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_afa4b4d3e6dfb3950eaa7db1a71d18855}{ToMaplehfData} (MKernelVector kv, hfdata $\ast$d)
+\item 
+EXT\_\-DECL void $\ast$M\_\-DECL \hyperlink{maplec_8h_ae18811ed3b6c65d67cc7369edd428ecf}{MapleAlloc} (MKernelVector kv, M\_\-INT nbytes)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a967d534449e38e349b8b082821287112}{MapleNew} (MKernelVector kv, MapleID id, M\_\-INT len)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ae2a6d9a154e03126e80bfaaec799e43e}{MapleCreate} (MKernelVector kv, MapleID id, M\_\-INT len, ALGEB $\ast$elems)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_af3fbae21e971663329f1a7a99f243ee5}{MapleDispose} (MKernelVector kv, ALGEB s)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_ac30a01322dd5697435d4e5c7a7013054}{MapleGcAllow} (MKernelVector kv, ALGEB a)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_affeb7ea866750c2dc662d97b646159cc}{MapleGcProtect} (MKernelVector kv, ALGEB a)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a6c48b27cba33c60f70aa767673ea4368}{MapleGcIsProtected} (MKernelVector kv, ALGEB a)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_addf9d94d52021b01736780fc4b2cb229}{MapleGcMark} (MKernelVector kv, ALGEB a)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_ab6fd100efb2289f6a5a532ef2890b667}{MaplePushGMPAllocators} (MKernelVector kv, void $\ast$($\ast$malloc)(size\_\-t), void $\ast$($\ast$realloc)(void $\ast$, size\_\-t, size\_\-t), void($\ast$free)(void $\ast$, size\_\-t))
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a21379e6a8f71054002b62f8cba6a6312}{MaplePopGMPAllocators} (MKernelVector kv)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a78fc73db55b63a01d0b9c953cce500d6}{MaplePointerType} (MKernelVector kv, ALGEB a)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a97bc9239163cc1e881d18d5740c348cf}{MaplePointerSetType} (MKernelVector kv, ALGEB a, M\_\-INT type)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a4c804730cd778036eb2c85b864966bdb}{MaplePointerSetMarkFunction} (MKernelVector kv, ALGEB a, void(M\_\-DECL $\ast$markfn)(ALGEB a))
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a5dd1f55c88e73a343a234242c22aeca4}{MaplePointerSetDisposeFunction} (MKernelVector kv, ALGEB a, void(M\_\-DECL $\ast$disposefn)(ALGEB a))
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a61a3ac8739b41d81b52e23ed443b3eb9}{MaplePointerSetPrintFunction} (MKernelVector kv, ALGEB a, ALGEB(M\_\-DECL $\ast$printfn)(ALGEB a))
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a6f1bf2fd33b1c971b14fcc1df5429cb4}{RegisterRestartCallBack} (MKernelVector kv, void(M\_\-DECL $\ast$restartCB)(void $\ast$data))
+\item 
+EXT\_\-DECL INTEGER32 M\_\-DECL \hyperlink{maplec_8h_a10bca90ff23fd486212f855bd98bf823}{MapleRandomInt32} (MKernelVector kv)
+\item 
+EXT\_\-DECL INTEGER64 M\_\-DECL \hyperlink{maplec_8h_ad41ec0b85fd2947630a39e8827747f35}{MapleRandomInt64} (MKernelVector kv)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_aeff0aea74022a222a3d7ed7b40e1d4db}{MapleRandomM\_\-INT} (MKernelVector kv)
+\item 
+EXT\_\-DECL double M\_\-DECL \hyperlink{maplec_8h_ad2be3a87ab80b1efa2c785a9383941a6}{MapleRandomDouble01} (MKernelVector kv)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_a06210c5d607efb90341f47406e4c6d5c}{MapleRandomSoftwareFloat01} (MKernelVector kv)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_af7f5fee520a01c2afe12288f5561b4d1}{MapleRandomSoftwareInteger} (MKernelVector kv, M\_\-INT bits)
+\item 
+EXT\_\-DECL M\_\-INT M\_\-DECL \hyperlink{maplec_8h_a4c256f699630f2c907c952747f1d118a}{MapleRandomCalcBits} (MKernelVector kv, ALGEB range)
+\item 
+EXT\_\-DECL INTEGER32 M\_\-DECL \hyperlink{maplec_8h_af9b61f21607dcab4d1ef710790b8b6b7}{MapleRandomRangeInt32} (MKernelVector kv, INTEGER32 range, M\_\-INT bits)
+\item 
+EXT\_\-DECL ALGEB M\_\-DECL \hyperlink{maplec_8h_ac47b23a185da760a9c63616719abd00c}{MapleRandomRangeSoftwareInt} (MKernelVector kv, ALGEB range, M\_\-INT bits)
+\item 
+EXT\_\-DECL char $\ast$M\_\-DECL \hyperlink{maplec_8h_ad6b53838b21da470780aebbc5a83f9d6}{MapleHelp} (MKernelVector kv, char $\ast$topic, char $\ast$section, M\_\-BOOL(M\_\-DECL $\ast$writechar)(void $\ast$data, int c), M\_\-BOOL(M\_\-DECL $\ast$writeattrib)(void $\ast$data, int a), int width, void $\ast$data)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_ad347168dc09aa87b54c9af353d3d9aa9}{MapleCheckInterrupt} (MKernelVector kv)
+\item 
+EXT\_\-DECL M\_\-BOOL M\_\-DECL \hyperlink{maplec_8h_a905959fd695f2c410bb77db6bf7df453}{MapleGetInterruptValue} (MKernelVector kv)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a44d16d47bf37e64ca2bb66892249c6b9}{SetMapleVersion} (char $\ast$version)
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a4513dc6b839142eea3300d9d85491a7d}{RegisterPlotCallBack} (MKernelVector kv, void(M\_\-DECL $\ast$callback)(void $\ast$data, void $\ast$))
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_aefe3fa8b1f1f57c4b8e302b99850ef31}{RegisterStreamCallBack} (MKernelVector kv, char $\ast$name, ALGEB(M\_\-DECL $\ast$callback)(void $\ast$data, ALGEB))
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_ad8c816df5cdbbf740dd258c6c87dda99}{RegisterGUIStreamCallBack} (MKernelVector kv, char $\ast$name, ALGEB(M\_\-DECL $\ast$callback)(void $\ast$data, ALGEB))
+\item 
+EXT\_\-DECL void M\_\-DECL \hyperlink{maplec_8h_a69b464f39f0f27ca8be33dd096cb5e52}{RegisterPostRestartCallBack} (MKernelVector kv, void(M\_\-DECL $\ast$callback)(void $\ast$data))
+\item 
+EXT\_\-DECL char $\ast$M\_\-DECL \hyperlink{maplec_8h_a708ffeb1faf288cbbaa1a172df1602c3}{MapleAppendFeature} (MKernelVector kv, char $\ast$, char $\ast$, char $\ast$, char $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{maplec_8h_a5728c2aa0516dbcb6e21cb2c812b4559}{
+\index{maplec.h@{maplec.h}!EXT\_\-DECL@{EXT\_\-DECL}}
+\index{EXT\_\-DECL@{EXT\_\-DECL}!maplec.h@{maplec.h}}
+\subsubsection[{EXT\_\-DECL}]{\setlength{\rightskip}{0pt plus 5cm}\#define EXT\_\-DECL}}
+\label{maplec_8h_a5728c2aa0516dbcb6e21cb2c812b4559}
+\hypertarget{maplec_8h_a56a911b8dd9fd6cb75119fe4acee3666}{
+\index{maplec.h@{maplec.h}!FN\_\-BOLD@{FN\_\-BOLD}}
+\index{FN\_\-BOLD@{FN\_\-BOLD}!maplec.h@{maplec.h}}
+\subsubsection[{FN\_\-BOLD}]{\setlength{\rightskip}{0pt plus 5cm}\#define FN\_\-BOLD~3}}
+\label{maplec_8h_a56a911b8dd9fd6cb75119fe4acee3666}
+\hypertarget{maplec_8h_a44eacfdf89e3c5fbde958f359ef7d3f8}{
+\index{maplec.h@{maplec.h}!FN\_\-ITAL@{FN\_\-ITAL}}
+\index{FN\_\-ITAL@{FN\_\-ITAL}!maplec.h@{maplec.h}}
+\subsubsection[{FN\_\-ITAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define FN\_\-ITAL~1}}
+\label{maplec_8h_a44eacfdf89e3c5fbde958f359ef7d3f8}
+\hypertarget{maplec_8h_aea61f6aeb9bab4828b0c045bdb6232a3}{
+\index{maplec.h@{maplec.h}!FN\_\-NORM@{FN\_\-NORM}}
+\index{FN\_\-NORM@{FN\_\-NORM}!maplec.h@{maplec.h}}
+\subsubsection[{FN\_\-NORM}]{\setlength{\rightskip}{0pt plus 5cm}\#define FN\_\-NORM~0}}
+\label{maplec_8h_aea61f6aeb9bab4828b0c045bdb6232a3}
+\hypertarget{maplec_8h_aa5ed896f8345b4d0aeaa6d0619416d29}{
+\index{maplec.h@{maplec.h}!FN\_\-UNDER@{FN\_\-UNDER}}
+\index{FN\_\-UNDER@{FN\_\-UNDER}!maplec.h@{maplec.h}}
+\subsubsection[{FN\_\-UNDER}]{\setlength{\rightskip}{0pt plus 5cm}\#define FN\_\-UNDER~4}}
+\label{maplec_8h_aa5ed896f8345b4d0aeaa6d0619416d29}
+\hypertarget{maplec_8h_a0cd3ab29c7e4658bdc927d8fd0f65789}{
+\index{maplec.h@{maplec.h}!M\_\-CDECL@{M\_\-CDECL}}
+\index{M\_\-CDECL@{M\_\-CDECL}!maplec.h@{maplec.h}}
+\subsubsection[{M\_\-CDECL}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-CDECL}}
+\label{maplec_8h_a0cd3ab29c7e4658bdc927d8fd0f65789}
+\hypertarget{maplec_8h_aa484d3c55ea7b7e07e039df1c67adc02}{
+\index{maplec.h@{maplec.h}!M\_\-DECL@{M\_\-DECL}}
+\index{M\_\-DECL@{M\_\-DECL}!maplec.h@{maplec.h}}
+\subsubsection[{M\_\-DECL}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-DECL}}
+\label{maplec_8h_aa484d3c55ea7b7e07e039df1c67adc02}
+\hypertarget{maplec_8h_afb60c2e2bb59c25e8dbc01dbca996ba5}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-DEBUG@{MAPLE\_\-TEXT\_\-DEBUG}}
+\index{MAPLE\_\-TEXT\_\-DEBUG@{MAPLE\_\-TEXT\_\-DEBUG}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-DEBUG}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-DEBUG~10}}
+\label{maplec_8h_afb60c2e2bb59c25e8dbc01dbca996ba5}
+\hypertarget{maplec_8h_a702d8d08280d539fed814e84f4aa3eef}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-DIAG@{MAPLE\_\-TEXT\_\-DIAG}}
+\index{MAPLE\_\-TEXT\_\-DIAG@{MAPLE\_\-TEXT\_\-DIAG}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-DIAG}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-DIAG~1}}
+\label{maplec_8h_a702d8d08280d539fed814e84f4aa3eef}
+\hypertarget{maplec_8h_a6d44e7689c8a02515a6b2d3ff4057fdf}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-ERROR@{MAPLE\_\-TEXT\_\-ERROR}}
+\index{MAPLE\_\-TEXT\_\-ERROR@{MAPLE\_\-TEXT\_\-ERROR}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-ERROR~6}}
+\label{maplec_8h_a6d44e7689c8a02515a6b2d3ff4057fdf}
+\hypertarget{maplec_8h_a1658cfc669111ad658db6e2a7c16471b}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-HELP@{MAPLE\_\-TEXT\_\-HELP}}
+\index{MAPLE\_\-TEXT\_\-HELP@{MAPLE\_\-TEXT\_\-HELP}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-HELP}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-HELP~9}}
+\label{maplec_8h_a1658cfc669111ad658db6e2a7c16471b}
+\hypertarget{maplec_8h_add0237c0c2edbf2db23b818c07135279}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-MISC@{MAPLE\_\-TEXT\_\-MISC}}
+\index{MAPLE\_\-TEXT\_\-MISC@{MAPLE\_\-TEXT\_\-MISC}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-MISC}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-MISC~2}}
+\label{maplec_8h_add0237c0c2edbf2db23b818c07135279}
+\hypertarget{maplec_8h_a1a69a2ad07131f7c6b27601ea22968af}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-OUTPUT@{MAPLE\_\-TEXT\_\-OUTPUT}}
+\index{MAPLE\_\-TEXT\_\-OUTPUT@{MAPLE\_\-TEXT\_\-OUTPUT}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-OUTPUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-OUTPUT~3}}
+\label{maplec_8h_a1a69a2ad07131f7c6b27601ea22968af}
+\hypertarget{maplec_8h_a2eeabed6c7790be4a2e4dbd0761c731d}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-PRETTY@{MAPLE\_\-TEXT\_\-PRETTY}}
+\index{MAPLE\_\-TEXT\_\-PRETTY@{MAPLE\_\-TEXT\_\-PRETTY}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-PRETTY}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-PRETTY~8}}
+\label{maplec_8h_a2eeabed6c7790be4a2e4dbd0761c731d}
+\hypertarget{maplec_8h_a75136a9a958f08c014d01526a2f2d705}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-QUIT@{MAPLE\_\-TEXT\_\-QUIT}}
+\index{MAPLE\_\-TEXT\_\-QUIT@{MAPLE\_\-TEXT\_\-QUIT}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-QUIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-QUIT~4}}
+\label{maplec_8h_a75136a9a958f08c014d01526a2f2d705}
+\hypertarget{maplec_8h_af00884a69373de7a4cae413c532cad0f}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-STATUS@{MAPLE\_\-TEXT\_\-STATUS}}
+\index{MAPLE\_\-TEXT\_\-STATUS@{MAPLE\_\-TEXT\_\-STATUS}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-STATUS}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-STATUS~7}}
+\label{maplec_8h_af00884a69373de7a4cae413c532cad0f}
+\hypertarget{maplec_8h_a74f27d2f2dd35ec60a3782ecaae582ee}{
+\index{maplec.h@{maplec.h}!MAPLE\_\-TEXT\_\-WARNING@{MAPLE\_\-TEXT\_\-WARNING}}
+\index{MAPLE\_\-TEXT\_\-WARNING@{MAPLE\_\-TEXT\_\-WARNING}!maplec.h@{maplec.h}}
+\subsubsection[{MAPLE\_\-TEXT\_\-WARNING}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAPLE\_\-TEXT\_\-WARNING~5}}
+\label{maplec_8h_a74f27d2f2dd35ec60a3782ecaae582ee}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{maplec_8h_a72366c9cd2587ae08b080aa88622e00e}{
+\index{maplec.h@{maplec.h}!MCallBackVector@{MCallBackVector}}
+\index{MCallBackVector@{MCallBackVector}!maplec.h@{maplec.h}}
+\subsubsection[{MCallBackVector}]{\setlength{\rightskip}{0pt plus 5cm}typedef  struct {\bf MCallBackVectorDesc} $\ast$ {\bf MCallBackVector}}}
+\label{maplec_8h_a72366c9cd2587ae08b080aa88622e00e}
+
+
+\subsection{Function Documentation}
+\hypertarget{maplec_8h_aa1e185ad30a87a71deb655e33ca44361}{
+\index{maplec.h@{maplec.h}!ArrayToMaple@{ArrayToMaple}}
+\index{ArrayToMaple@{ArrayToMaple}!maplec.h@{maplec.h}}
+\subsubsection[{ArrayToMaple}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void$\ast$ M\_\-CDECL ArrayToMaple (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void $\ast$}]{ptr, }
+\item[{M\_\-INT}]{data\_\-type, }
+\item[{M\_\-INT}]{storage, }
+\item[{M\_\-INT}]{p1, }
+\item[{M\_\-INT}]{p2, }
+\item[{M\_\-INT}]{order, }
+\item[{ALGEB}]{indfn, }
+\item[{M\_\-INT}]{subtype, }
+\item[{ALGEB $\ast$}]{ref, }
+\item[{M\_\-INT}]{num\_\-dims, }
+\item[{M\_\-INT}]{offset, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aa1e185ad30a87a71deb655e33ca44361}
+\hypertarget{maplec_8h_a5bed87edb3cc50486d3cc0f97b8388bd}{
+\index{maplec.h@{maplec.h}!DoubleTohfData@{DoubleTohfData}}
+\index{DoubleTohfData@{DoubleTohfData}!maplec.h@{maplec.h}}
+\subsubsection[{DoubleTohfData}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL DoubleTohfData (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{double}]{re, }
+\item[{double}]{im, }
+\item[{hfdata $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5bed87edb3cc50486d3cc0f97b8388bd}
+\hypertarget{maplec_8h_a7888ece3a687c24ad89be9d5890f8730}{
+\index{maplec.h@{maplec.h}!EvalhfDataProc@{EvalhfDataProc}}
+\index{EvalhfDataProc@{EvalhfDataProc}!maplec.h@{maplec.h}}
+\subsubsection[{EvalhfDataProc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL hfdata M\_\-DECL EvalhfDataProc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{fn, }
+\item[{int}]{nargs, }
+\item[{hfdata $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a7888ece3a687c24ad89be9d5890f8730}
+\hypertarget{maplec_8h_a79b26992a4b3c935fc480166c3a1445f}{
+\index{maplec.h@{maplec.h}!EvalhfMapleProc@{EvalhfMapleProc}}
+\index{EvalhfMapleProc@{EvalhfMapleProc}!maplec.h@{maplec.h}}
+\subsubsection[{EvalhfMapleProc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL double M\_\-DECL EvalhfMapleProc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{fn, }
+\item[{int}]{nargs, }
+\item[{double $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a79b26992a4b3c935fc480166c3a1445f}
+\hypertarget{maplec_8h_a237ee33ad8e6b9a6c12f0939bc26c087}{
+\index{maplec.h@{maplec.h}!EvalMapleProc@{EvalMapleProc}}
+\index{EvalMapleProc@{EvalMapleProc}!maplec.h@{maplec.h}}
+\subsubsection[{EvalMapleProc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-CDECL EvalMapleProc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{fn, }
+\item[{int}]{nargs, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a237ee33ad8e6b9a6c12f0939bc26c087}
+\hypertarget{maplec_8h_ad74a7a7f960971fef4ce39053f7b5313}{
+\index{maplec.h@{maplec.h}!EvalMapleProcedure@{EvalMapleProcedure}}
+\index{EvalMapleProcedure@{EvalMapleProcedure}!maplec.h@{maplec.h}}
+\subsubsection[{EvalMapleProcedure}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL EvalMapleProcedure (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{fn, }
+\item[{ALGEB}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad74a7a7f960971fef4ce39053f7b5313}
+\hypertarget{maplec_8h_ad13b487f1f82d27de490a941d303add6}{
+\index{maplec.h@{maplec.h}!EvalMapleStatement@{EvalMapleStatement}}
+\index{EvalMapleStatement@{EvalMapleStatement}!maplec.h@{maplec.h}}
+\subsubsection[{EvalMapleStatement}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL EvalMapleStatement (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{statement}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad13b487f1f82d27de490a941d303add6}
+\hypertarget{maplec_8h_adc857c10b43759732f0352310470bf59}{
+\index{maplec.h@{maplec.h}!GetMapleID@{GetMapleID}}
+\index{GetMapleID@{GetMapleID}!maplec.h@{maplec.h}}
+\subsubsection[{GetMapleID}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL MapleID M\_\-DECL GetMapleID (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{dag}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_adc857c10b43759732f0352310470bf59}
+\hypertarget{maplec_8h_ac447cae488d9fd54137fbbce0f840a71}{
+\index{maplec.h@{maplec.h}!GMPIntegerToMaple@{GMPIntegerToMaple}}
+\index{GMPIntegerToMaple@{GMPIntegerToMaple}!maplec.h@{maplec.h}}
+\subsubsection[{GMPIntegerToMaple}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL GMPIntegerToMaple (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{mpz\_\-ptr}]{g}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac447cae488d9fd54137fbbce0f840a71}
+\hypertarget{maplec_8h_adc5f95591a2104ac92a5fc6cf92f67eb}{
+\index{maplec.h@{maplec.h}!InitMaplePrintf@{InitMaplePrintf}}
+\index{InitMaplePrintf@{InitMaplePrintf}!maplec.h@{maplec.h}}
+\subsubsection[{InitMaplePrintf}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL InitMaplePrintf (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_adc5f95591a2104ac92a5fc6cf92f67eb}
+\hypertarget{maplec_8h_a5688313ba8df1b755f21c85dda688fe1}{
+\index{maplec.h@{maplec.h}!IsMapleAssignedName@{IsMapleAssignedName}}
+\index{IsMapleAssignedName@{IsMapleAssignedName}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleAssignedName}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleAssignedName (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5688313ba8df1b755f21c85dda688fe1}
+\hypertarget{maplec_8h_a6f95d9032963cf1a64319694505c9c54}{
+\index{maplec.h@{maplec.h}!IsMapleComplex64@{IsMapleComplex64}}
+\index{IsMapleComplex64@{IsMapleComplex64}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleComplex64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleComplex64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a6f95d9032963cf1a64319694505c9c54}
+\hypertarget{maplec_8h_ae7416d3a247ea324dc28822f3c48f120}{
+\index{maplec.h@{maplec.h}!IsMapleComplexNumeric@{IsMapleComplexNumeric}}
+\index{IsMapleComplexNumeric@{IsMapleComplexNumeric}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleComplexNumeric}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleComplexNumeric (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae7416d3a247ea324dc28822f3c48f120}
+\hypertarget{maplec_8h_a463b85df643349c57c7b8e62a69cb19b}{
+\index{maplec.h@{maplec.h}!IsMapleExpressionSequence@{IsMapleExpressionSequence}}
+\index{IsMapleExpressionSequence@{IsMapleExpressionSequence}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleExpressionSequence}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleExpressionSequence (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a463b85df643349c57c7b8e62a69cb19b}
+\hypertarget{maplec_8h_ac5b87df896220b3875aae4427261d2c8}{
+\index{maplec.h@{maplec.h}!IsMapleFloat64@{IsMapleFloat64}}
+\index{IsMapleFloat64@{IsMapleFloat64}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleFloat64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleFloat64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac5b87df896220b3875aae4427261d2c8}
+\hypertarget{maplec_8h_a4654a50a0e6a8a69463577654ccf6965}{
+\index{maplec.h@{maplec.h}!IsMapleInteger@{IsMapleInteger}}
+\index{IsMapleInteger@{IsMapleInteger}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleInteger}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleInteger (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a4654a50a0e6a8a69463577654ccf6965}
+\hypertarget{maplec_8h_aaa1f81bd829d28120a387abb83613f35}{
+\index{maplec.h@{maplec.h}!IsMapleInteger16@{IsMapleInteger16}}
+\index{IsMapleInteger16@{IsMapleInteger16}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleInteger16}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleInteger16 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aaa1f81bd829d28120a387abb83613f35}
+\hypertarget{maplec_8h_a53dc0798e5410cd58c23f5aa48dcb83f}{
+\index{maplec.h@{maplec.h}!IsMapleInteger32@{IsMapleInteger32}}
+\index{IsMapleInteger32@{IsMapleInteger32}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleInteger32}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleInteger32 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a53dc0798e5410cd58c23f5aa48dcb83f}
+\hypertarget{maplec_8h_ab65df619be095e766d4a6605e1e964b8}{
+\index{maplec.h@{maplec.h}!IsMapleInteger64@{IsMapleInteger64}}
+\index{IsMapleInteger64@{IsMapleInteger64}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleInteger64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleInteger64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ab65df619be095e766d4a6605e1e964b8}
+\hypertarget{maplec_8h_a5c1381979297d694b36c899174b349c2}{
+\index{maplec.h@{maplec.h}!IsMapleInteger8@{IsMapleInteger8}}
+\index{IsMapleInteger8@{IsMapleInteger8}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleInteger8}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleInteger8 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5c1381979297d694b36c899174b349c2}
+\hypertarget{maplec_8h_a4a51ff8092417b49b61884984074666d}{
+\index{maplec.h@{maplec.h}!IsMapleList@{IsMapleList}}
+\index{IsMapleList@{IsMapleList}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleList}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleList (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a4a51ff8092417b49b61884984074666d}
+\hypertarget{maplec_8h_a82e0202f595d950cd617a7f77adadc78}{
+\index{maplec.h@{maplec.h}!IsMapleName@{IsMapleName}}
+\index{IsMapleName@{IsMapleName}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleName}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleName (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a82e0202f595d950cd617a7f77adadc78}
+\hypertarget{maplec_8h_af8251d53847cd164ab9af7440d95cb4b}{
+\index{maplec.h@{maplec.h}!IsMapleNULL@{IsMapleNULL}}
+\index{IsMapleNULL@{IsMapleNULL}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleNULL}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleNULL (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af8251d53847cd164ab9af7440d95cb4b}
+\hypertarget{maplec_8h_ac4b451dd731a0fc9ebc28ac907812b95}{
+\index{maplec.h@{maplec.h}!IsMapleNumeric@{IsMapleNumeric}}
+\index{IsMapleNumeric@{IsMapleNumeric}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleNumeric}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleNumeric (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac4b451dd731a0fc9ebc28ac907812b95}
+\hypertarget{maplec_8h_a70aa7204a4e668fc92b12d23aca8dc31}{
+\index{maplec.h@{maplec.h}!IsMaplePointer@{IsMaplePointer}}
+\index{IsMaplePointer@{IsMaplePointer}!maplec.h@{maplec.h}}
+\subsubsection[{IsMaplePointer}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMaplePointer (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a70aa7204a4e668fc92b12d23aca8dc31}
+\hypertarget{maplec_8h_a2bace1e143a2ef988820c1033915e6c8}{
+\index{maplec.h@{maplec.h}!IsMaplePointerNULL@{IsMaplePointerNULL}}
+\index{IsMaplePointerNULL@{IsMaplePointerNULL}!maplec.h@{maplec.h}}
+\subsubsection[{IsMaplePointerNULL}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMaplePointerNULL (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a2bace1e143a2ef988820c1033915e6c8}
+\hypertarget{maplec_8h_aab1d389f93525a46bb8fd7973e657f55}{
+\index{maplec.h@{maplec.h}!IsMapleProcedure@{IsMapleProcedure}}
+\index{IsMapleProcedure@{IsMapleProcedure}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleProcedure}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleProcedure (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aab1d389f93525a46bb8fd7973e657f55}
+\hypertarget{maplec_8h_a937ebd987018dd9432cc826a23b263c2}{
+\index{maplec.h@{maplec.h}!IsMapleRTable@{IsMapleRTable}}
+\index{IsMapleRTable@{IsMapleRTable}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleRTable}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleRTable (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a937ebd987018dd9432cc826a23b263c2}
+\hypertarget{maplec_8h_afc0ae7be1f74de94919c409e70dbda05}{
+\index{maplec.h@{maplec.h}!IsMapleSet@{IsMapleSet}}
+\index{IsMapleSet@{IsMapleSet}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleSet}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleSet (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_afc0ae7be1f74de94919c409e70dbda05}
+\hypertarget{maplec_8h_a79701fa12f2b852887987b3bb5768cce}{
+\index{maplec.h@{maplec.h}!IsMapleStop@{IsMapleStop}}
+\index{IsMapleStop@{IsMapleStop}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleStop}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleStop (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a79701fa12f2b852887987b3bb5768cce}
+\hypertarget{maplec_8h_ad2199f7d8aa32e40a0d3c76d0e483082}{
+\index{maplec.h@{maplec.h}!IsMapleString@{IsMapleString}}
+\index{IsMapleString@{IsMapleString}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleString}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleString (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad2199f7d8aa32e40a0d3c76d0e483082}
+\hypertarget{maplec_8h_a213d34749c1de68c020261590dc36b23}{
+\index{maplec.h@{maplec.h}!IsMapleTable@{IsMapleTable}}
+\index{IsMapleTable@{IsMapleTable}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleTable}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleTable (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a213d34749c1de68c020261590dc36b23}
+\hypertarget{maplec_8h_af94782d58b7bdd1099d4497a1525dad4}{
+\index{maplec.h@{maplec.h}!IsMapleTableBasedArray@{IsMapleTableBasedArray}}
+\index{IsMapleTableBasedArray@{IsMapleTableBasedArray}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleTableBasedArray}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleTableBasedArray (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af94782d58b7bdd1099d4497a1525dad4}
+\hypertarget{maplec_8h_af30f402825bf6e6120d9f6813d9e8bc8}{
+\index{maplec.h@{maplec.h}!IsMapleUnassignedName@{IsMapleUnassignedName}}
+\index{IsMapleUnassignedName@{IsMapleUnassignedName}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleUnassignedName}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleUnassignedName (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af30f402825bf6e6120d9f6813d9e8bc8}
+\hypertarget{maplec_8h_ac2cd9ab5bfe41d1256040edd34c2604b}{
+\index{maplec.h@{maplec.h}!IsMapleUnnamedZero@{IsMapleUnnamedZero}}
+\index{IsMapleUnnamedZero@{IsMapleUnnamedZero}!maplec.h@{maplec.h}}
+\subsubsection[{IsMapleUnnamedZero}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL IsMapleUnnamedZero (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac2cd9ab5bfe41d1256040edd34c2604b}
+\hypertarget{maplec_8h_ae2f11852b9e48d5a34ac9e4abc1a2f4b}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-Printf@{MapleALGEB\_\-Printf}}
+\index{MapleALGEB\_\-Printf@{MapleALGEB\_\-Printf}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-Printf}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-CDECL MapleALGEB\_\-Printf (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae2f11852b9e48d5a34ac9e4abc1a2f4b}
+\hypertarget{maplec_8h_a829cb29923d268bdeb847b73a42ba4a3}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-Printf0@{MapleALGEB\_\-Printf0}}
+\index{MapleALGEB\_\-Printf0@{MapleALGEB\_\-Printf0}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-Printf0}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-DECL MapleALGEB\_\-Printf0 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a829cb29923d268bdeb847b73a42ba4a3}
+\hypertarget{maplec_8h_afd7ff90f7fd9e42755d45f58e6daaa95}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-Printf1@{MapleALGEB\_\-Printf1}}
+\index{MapleALGEB\_\-Printf1@{MapleALGEB\_\-Printf1}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-Printf1}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-DECL MapleALGEB\_\-Printf1 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_afd7ff90f7fd9e42755d45f58e6daaa95}
+\hypertarget{maplec_8h_a60a492ac491c2d2a12783b5b6ef4389b}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-Printf2@{MapleALGEB\_\-Printf2}}
+\index{MapleALGEB\_\-Printf2@{MapleALGEB\_\-Printf2}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-Printf2}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-DECL MapleALGEB\_\-Printf2 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1, }
+\item[{ALGEB}]{a2}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a60a492ac491c2d2a12783b5b6ef4389b}
+\hypertarget{maplec_8h_a977563831b8f167d74f79534852f0094}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-Printf3@{MapleALGEB\_\-Printf3}}
+\index{MapleALGEB\_\-Printf3@{MapleALGEB\_\-Printf3}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-Printf3}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-DECL MapleALGEB\_\-Printf3 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1, }
+\item[{ALGEB}]{a2, }
+\item[{ALGEB}]{a3}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a977563831b8f167d74f79534852f0094}
+\hypertarget{maplec_8h_a64a978947d940d5ceb38427c66982afe}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-Printf4@{MapleALGEB\_\-Printf4}}
+\index{MapleALGEB\_\-Printf4@{MapleALGEB\_\-Printf4}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-Printf4}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-DECL MapleALGEB\_\-Printf4 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1, }
+\item[{ALGEB}]{a2, }
+\item[{ALGEB}]{a3, }
+\item[{ALGEB}]{a4}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a64a978947d940d5ceb38427c66982afe}
+\hypertarget{maplec_8h_a1906eb92af4eca3c5124a2f4ddb21563}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-SPrintf@{MapleALGEB\_\-SPrintf}}
+\index{MapleALGEB\_\-SPrintf@{MapleALGEB\_\-SPrintf}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-SPrintf}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-CDECL MapleALGEB\_\-SPrintf (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a1906eb92af4eca3c5124a2f4ddb21563}
+\hypertarget{maplec_8h_af8ba3ecfb3ec9855e26d2b479ca37089}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-SPrintf0@{MapleALGEB\_\-SPrintf0}}
+\index{MapleALGEB\_\-SPrintf0@{MapleALGEB\_\-SPrintf0}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-SPrintf0}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleALGEB\_\-SPrintf0 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af8ba3ecfb3ec9855e26d2b479ca37089}
+\hypertarget{maplec_8h_a9fe451426cdf312f4152d71ab75cd5b3}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-SPrintf1@{MapleALGEB\_\-SPrintf1}}
+\index{MapleALGEB\_\-SPrintf1@{MapleALGEB\_\-SPrintf1}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-SPrintf1}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleALGEB\_\-SPrintf1 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9fe451426cdf312f4152d71ab75cd5b3}
+\hypertarget{maplec_8h_a1cd464829ceb8c317442d80120fea7c1}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-SPrintf2@{MapleALGEB\_\-SPrintf2}}
+\index{MapleALGEB\_\-SPrintf2@{MapleALGEB\_\-SPrintf2}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-SPrintf2}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleALGEB\_\-SPrintf2 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1, }
+\item[{ALGEB}]{a2}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a1cd464829ceb8c317442d80120fea7c1}
+\hypertarget{maplec_8h_a24162fcf5420e92def456a41e4e0490d}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-SPrintf3@{MapleALGEB\_\-SPrintf3}}
+\index{MapleALGEB\_\-SPrintf3@{MapleALGEB\_\-SPrintf3}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-SPrintf3}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleALGEB\_\-SPrintf3 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1, }
+\item[{ALGEB}]{a2, }
+\item[{ALGEB}]{a3}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a24162fcf5420e92def456a41e4e0490d}
+\hypertarget{maplec_8h_a9be686f272119da35fbf2132d86931bf}{
+\index{maplec.h@{maplec.h}!MapleALGEB\_\-SPrintf4@{MapleALGEB\_\-SPrintf4}}
+\index{MapleALGEB\_\-SPrintf4@{MapleALGEB\_\-SPrintf4}!maplec.h@{maplec.h}}
+\subsubsection[{MapleALGEB\_\-SPrintf4}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleALGEB\_\-SPrintf4 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{format, }
+\item[{ALGEB}]{a1, }
+\item[{ALGEB}]{a2, }
+\item[{ALGEB}]{a3, }
+\item[{ALGEB}]{a4}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9be686f272119da35fbf2132d86931bf}
+\hypertarget{maplec_8h_ae18811ed3b6c65d67cc7369edd428ecf}{
+\index{maplec.h@{maplec.h}!MapleAlloc@{MapleAlloc}}
+\index{MapleAlloc@{MapleAlloc}!maplec.h@{maplec.h}}
+\subsubsection[{MapleAlloc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void$\ast$ M\_\-DECL MapleAlloc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{M\_\-INT}]{nbytes}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae18811ed3b6c65d67cc7369edd428ecf}
+\hypertarget{maplec_8h_a6665226e27545835c1ae5b5d0f51db4a}{
+\index{maplec.h@{maplec.h}!MapleAllocArray@{MapleAllocArray}}
+\index{MapleAllocArray@{MapleAllocArray}!maplec.h@{maplec.h}}
+\subsubsection[{MapleAllocArray}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void$\ast$ M\_\-CDECL MapleAllocArray (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{data\_\-type, }
+\item[{M\_\-INT}]{storage, }
+\item[{M\_\-INT}]{p1, }
+\item[{M\_\-INT}]{p2, }
+\item[{M\_\-INT}]{order, }
+\item[{ALGEB}]{indfn, }
+\item[{M\_\-INT}]{subtype, }
+\item[{ALGEB $\ast$}]{ref, }
+\item[{M\_\-INT}]{num\_\-dims, }
+\item[{M\_\-INT}]{offset, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a6665226e27545835c1ae5b5d0f51db4a}
+\hypertarget{maplec_8h_a708ffeb1faf288cbbaa1a172df1602c3}{
+\index{maplec.h@{maplec.h}!MapleAppendFeature@{MapleAppendFeature}}
+\index{MapleAppendFeature@{MapleAppendFeature}!maplec.h@{maplec.h}}
+\subsubsection[{MapleAppendFeature}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL char$\ast$ M\_\-DECL MapleAppendFeature (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{, }
+\item[{char $\ast$}]{, }
+\item[{char $\ast$}]{, }
+\item[{char $\ast$}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a708ffeb1faf288cbbaa1a172df1602c3}
+\hypertarget{maplec_8h_a3c3a3b0097f1483aed9c022a93fb0408}{
+\index{maplec.h@{maplec.h}!MapleAssign@{MapleAssign}}
+\index{MapleAssign@{MapleAssign}!maplec.h@{maplec.h}}
+\subsubsection[{MapleAssign}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleAssign (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{lhs, }
+\item[{ALGEB}]{rhs}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a3c3a3b0097f1483aed9c022a93fb0408}
+\hypertarget{maplec_8h_a6d3bb1e95b6ec7ca946d73db2e3e96cd}{
+\index{maplec.h@{maplec.h}!MapleAssignIndexed@{MapleAssignIndexed}}
+\index{MapleAssignIndexed@{MapleAssignIndexed}!maplec.h@{maplec.h}}
+\subsubsection[{MapleAssignIndexed}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleAssignIndexed (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{lhs, }
+\item[{M\_\-INT}]{dim, }
+\item[{M\_\-INT $\ast$}]{ind, }
+\item[{ALGEB}]{rhs}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a6d3bb1e95b6ec7ca946d73db2e3e96cd}
+\hypertarget{maplec_8h_ad347168dc09aa87b54c9af353d3d9aa9}{
+\index{maplec.h@{maplec.h}!MapleCheckInterrupt@{MapleCheckInterrupt}}
+\index{MapleCheckInterrupt@{MapleCheckInterrupt}!maplec.h@{maplec.h}}
+\subsubsection[{MapleCheckInterrupt}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleCheckInterrupt (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad347168dc09aa87b54c9af353d3d9aa9}
+\hypertarget{maplec_8h_ae2a6d9a154e03126e80bfaaec799e43e}{
+\index{maplec.h@{maplec.h}!MapleCreate@{MapleCreate}}
+\index{MapleCreate@{MapleCreate}!maplec.h@{maplec.h}}
+\subsubsection[{MapleCreate}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleCreate (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{MapleID}]{id, }
+\item[{M\_\-INT}]{len, }
+\item[{ALGEB $\ast$}]{elems}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae2a6d9a154e03126e80bfaaec799e43e}
+\hypertarget{maplec_8h_af3fbae21e971663329f1a7a99f243ee5}{
+\index{maplec.h@{maplec.h}!MapleDispose@{MapleDispose}}
+\index{MapleDispose@{MapleDispose}!maplec.h@{maplec.h}}
+\subsubsection[{MapleDispose}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleDispose (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af3fbae21e971663329f1a7a99f243ee5}
+\hypertarget{maplec_8h_a0163c7bc387dc6d3d62ab65a1cf91b7c}{
+\index{maplec.h@{maplec.h}!MapleEval@{MapleEval}}
+\index{MapleEval@{MapleEval}!maplec.h@{maplec.h}}
+\subsubsection[{MapleEval}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleEval (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a0163c7bc387dc6d3d62ab65a1cf91b7c}
+\hypertarget{maplec_8h_ad69bd5662f755d0dced63a52b611c970}{
+\index{maplec.h@{maplec.h}!MapleEvalhf@{MapleEvalhf}}
+\index{MapleEvalhf@{MapleEvalhf}!maplec.h@{maplec.h}}
+\subsubsection[{MapleEvalhf}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL double M\_\-DECL MapleEvalhf (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad69bd5662f755d0dced63a52b611c970}
+\hypertarget{maplec_8h_a93e36cec5960165c2a4985a9fdaf487f}{
+\index{maplec.h@{maplec.h}!MapleExpseqAssign@{MapleExpseqAssign}}
+\index{MapleExpseqAssign@{MapleExpseqAssign}!maplec.h@{maplec.h}}
+\subsubsection[{MapleExpseqAssign}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleExpseqAssign (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{expseq, }
+\item[{M\_\-INT}]{i, }
+\item[{ALGEB}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a93e36cec5960165c2a4985a9fdaf487f}
+\hypertarget{maplec_8h_a95bbd53c1b7a9ddd38a91d50cd98e66d}{
+\index{maplec.h@{maplec.h}!MapleExpseqSelect@{MapleExpseqSelect}}
+\index{MapleExpseqSelect@{MapleExpseqSelect}!maplec.h@{maplec.h}}
+\subsubsection[{MapleExpseqSelect}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleExpseqSelect (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{expseq, }
+\item[{M\_\-INT}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a95bbd53c1b7a9ddd38a91d50cd98e66d}
+\hypertarget{maplec_8h_a4bb613edd34a121f0c10b629c6e704e4}{
+\index{maplec.h@{maplec.h}!MapleFloatDivide@{MapleFloatDivide}}
+\index{MapleFloatDivide@{MapleFloatDivide}!maplec.h@{maplec.h}}
+\subsubsection[{MapleFloatDivide}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleFloatDivide (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{ALGEB}]{b}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a4bb613edd34a121f0c10b629c6e704e4}
+\hypertarget{maplec_8h_ac30a01322dd5697435d4e5c7a7013054}{
+\index{maplec.h@{maplec.h}!MapleGcAllow@{MapleGcAllow}}
+\index{MapleGcAllow@{MapleGcAllow}!maplec.h@{maplec.h}}
+\subsubsection[{MapleGcAllow}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleGcAllow (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac30a01322dd5697435d4e5c7a7013054}
+\hypertarget{maplec_8h_a6c48b27cba33c60f70aa767673ea4368}{
+\index{maplec.h@{maplec.h}!MapleGcIsProtected@{MapleGcIsProtected}}
+\index{MapleGcIsProtected@{MapleGcIsProtected}!maplec.h@{maplec.h}}
+\subsubsection[{MapleGcIsProtected}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL MapleGcIsProtected (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a6c48b27cba33c60f70aa767673ea4368}
+\hypertarget{maplec_8h_addf9d94d52021b01736780fc4b2cb229}{
+\index{maplec.h@{maplec.h}!MapleGcMark@{MapleGcMark}}
+\index{MapleGcMark@{MapleGcMark}!maplec.h@{maplec.h}}
+\subsubsection[{MapleGcMark}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleGcMark (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_addf9d94d52021b01736780fc4b2cb229}
+\hypertarget{maplec_8h_affeb7ea866750c2dc662d97b646159cc}{
+\index{maplec.h@{maplec.h}!MapleGcProtect@{MapleGcProtect}}
+\index{MapleGcProtect@{MapleGcProtect}!maplec.h@{maplec.h}}
+\subsubsection[{MapleGcProtect}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleGcProtect (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_affeb7ea866750c2dc662d97b646159cc}
+\hypertarget{maplec_8h_acb53e256e7bc779df8c230ba6ca9a842}{
+\index{maplec.h@{maplec.h}!MapleGetElems@{MapleGetElems}}
+\index{MapleGetElems@{MapleGetElems}!maplec.h@{maplec.h}}
+\subsubsection[{MapleGetElems}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB$\ast$ M\_\-DECL MapleGetElems (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{container, }
+\item[{M\_\-INT $\ast$}]{num\_\-elems}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_acb53e256e7bc779df8c230ba6ca9a842}
+\hypertarget{maplec_8h_a905959fd695f2c410bb77db6bf7df453}{
+\index{maplec.h@{maplec.h}!MapleGetInterruptValue@{MapleGetInterruptValue}}
+\index{MapleGetInterruptValue@{MapleGetInterruptValue}!maplec.h@{maplec.h}}
+\subsubsection[{MapleGetInterruptValue}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL MapleGetInterruptValue (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a905959fd695f2c410bb77db6bf7df453}
+\hypertarget{maplec_8h_ad6b53838b21da470780aebbc5a83f9d6}{
+\index{maplec.h@{maplec.h}!MapleHelp@{MapleHelp}}
+\index{MapleHelp@{MapleHelp}!maplec.h@{maplec.h}}
+\subsubsection[{MapleHelp}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL char$\ast$ M\_\-DECL MapleHelp (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{topic, }
+\item[{char $\ast$}]{section, }
+\item[{M\_\-BOOL(M\_\-DECL $\ast$writechar)(void $\ast$data, int c)}]{, }
+\item[{M\_\-BOOL(M\_\-DECL $\ast$writeattrib)(void $\ast$data, int a)}]{, }
+\item[{int}]{width, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad6b53838b21da470780aebbc5a83f9d6}
+\hypertarget{maplec_8h_a799e01318a5a9de42a5c5f02c7c4f2df}{
+\index{maplec.h@{maplec.h}!MapleIntegerAbsCompare@{MapleIntegerAbsCompare}}
+\index{MapleIntegerAbsCompare@{MapleIntegerAbsCompare}!maplec.h@{maplec.h}}
+\subsubsection[{MapleIntegerAbsCompare}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL MapleIntegerAbsCompare (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{ALGEB}]{b}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a799e01318a5a9de42a5c5f02c7c4f2df}
+\hypertarget{maplec_8h_a94ed2a602be4097ef3b2af21e1698ce6}{
+\index{maplec.h@{maplec.h}!MapleIntegerDivide@{MapleIntegerDivide}}
+\index{MapleIntegerDivide@{MapleIntegerDivide}!maplec.h@{maplec.h}}
+\subsubsection[{MapleIntegerDivide}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleIntegerDivide (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{ALGEB}]{b, }
+\item[{ALGEB $\ast$}]{r}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a94ed2a602be4097ef3b2af21e1698ce6}
+\hypertarget{maplec_8h_ae51c271dee57ca2a78c02fc0a48fd214}{
+\index{maplec.h@{maplec.h}!MapleKernelOptions@{MapleKernelOptions}}
+\index{MapleKernelOptions@{MapleKernelOptions}!maplec.h@{maplec.h}}
+\subsubsection[{MapleKernelOptions}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleKernelOptions (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{option, }
+\item[{ALGEB}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae51c271dee57ca2a78c02fc0a48fd214}
+\hypertarget{maplec_8h_a7ba6ae5a9ca450d2ca87ec2c76166b37}{
+\index{maplec.h@{maplec.h}!MapleLibName@{MapleLibName}}
+\index{MapleLibName@{MapleLibName}!maplec.h@{maplec.h}}
+\subsubsection[{MapleLibName}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleLibName (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{expseq}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a7ba6ae5a9ca450d2ca87ec2c76166b37}
+\hypertarget{maplec_8h_a5d7d82acf93c6330c519d0822d9f9172}{
+\index{maplec.h@{maplec.h}!MapleListAlloc@{MapleListAlloc}}
+\index{MapleListAlloc@{MapleListAlloc}!maplec.h@{maplec.h}}
+\subsubsection[{MapleListAlloc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleListAlloc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{M\_\-INT}]{num\_\-members}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5d7d82acf93c6330c519d0822d9f9172}
+\hypertarget{maplec_8h_a9b4320ef003f80885331b56aa3764147}{
+\index{maplec.h@{maplec.h}!MapleListAssign@{MapleListAssign}}
+\index{MapleListAssign@{MapleListAssign}!maplec.h@{maplec.h}}
+\subsubsection[{MapleListAssign}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleListAssign (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{list, }
+\item[{M\_\-INT}]{i, }
+\item[{ALGEB}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9b4320ef003f80885331b56aa3764147}
+\hypertarget{maplec_8h_a6a6efedebf1532bf23d3f51bebc00d00}{
+\index{maplec.h@{maplec.h}!MapleListSelect@{MapleListSelect}}
+\index{MapleListSelect@{MapleListSelect}!maplec.h@{maplec.h}}
+\subsubsection[{MapleListSelect}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleListSelect (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{list, }
+\item[{M\_\-INT}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a6a6efedebf1532bf23d3f51bebc00d00}
+\hypertarget{maplec_8h_aabd7df3b20ac5bde9881d9f19a05e35d}{
+\index{maplec.h@{maplec.h}!MapleNameValue@{MapleNameValue}}
+\index{MapleNameValue@{MapleNameValue}!maplec.h@{maplec.h}}
+\subsubsection[{MapleNameValue}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleNameValue (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aabd7df3b20ac5bde9881d9f19a05e35d}
+\hypertarget{maplec_8h_a967d534449e38e349b8b082821287112}{
+\index{maplec.h@{maplec.h}!MapleNew@{MapleNew}}
+\index{MapleNew@{MapleNew}!maplec.h@{maplec.h}}
+\subsubsection[{MapleNew}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleNew (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{MapleID}]{id, }
+\item[{M\_\-INT}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a967d534449e38e349b8b082821287112}
+\hypertarget{maplec_8h_af9b376177a58899698af0f80b5b34c17}{
+\index{maplec.h@{maplec.h}!MapleNumArgs@{MapleNumArgs}}
+\index{MapleNumArgs@{MapleNumArgs}!maplec.h@{maplec.h}}
+\subsubsection[{MapleNumArgs}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL MapleNumArgs (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{expr}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af9b376177a58899698af0f80b5b34c17}
+\hypertarget{maplec_8h_a133b75c40d911c0d4bbe7b83f8bd02cf}{
+\index{maplec.h@{maplec.h}!MapleNumericAdd@{MapleNumericAdd}}
+\index{MapleNumericAdd@{MapleNumericAdd}!maplec.h@{maplec.h}}
+\subsubsection[{MapleNumericAdd}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleNumericAdd (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{ALGEB}]{b}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a133b75c40d911c0d4bbe7b83f8bd02cf}
+\hypertarget{maplec_8h_ae8c3ed9a14210857bc70118ae3c853c2}{
+\index{maplec.h@{maplec.h}!MapleNumericMultiply@{MapleNumericMultiply}}
+\index{MapleNumericMultiply@{MapleNumericMultiply}!maplec.h@{maplec.h}}
+\subsubsection[{MapleNumericMultiply}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleNumericMultiply (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{ALGEB}]{b}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae8c3ed9a14210857bc70118ae3c853c2}
+\hypertarget{maplec_8h_a9f505c20915c595ed0303401ae5bc7a5}{
+\index{maplec.h@{maplec.h}!MapleNumericPower@{MapleNumericPower}}
+\index{MapleNumericPower@{MapleNumericPower}!maplec.h@{maplec.h}}
+\subsubsection[{MapleNumericPower}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleNumericPower (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{M\_\-INT}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9f505c20915c595ed0303401ae5bc7a5}
+\hypertarget{maplec_8h_add605f3ded8a19d06a31716bad19d869}{
+\index{maplec.h@{maplec.h}!MapleNumericSubtract@{MapleNumericSubtract}}
+\index{MapleNumericSubtract@{MapleNumericSubtract}!maplec.h@{maplec.h}}
+\subsubsection[{MapleNumericSubtract}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleNumericSubtract (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{ALGEB}]{b}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_add605f3ded8a19d06a31716bad19d869}
+\hypertarget{maplec_8h_a5dd1f55c88e73a343a234242c22aeca4}{
+\index{maplec.h@{maplec.h}!MaplePointerSetDisposeFunction@{MaplePointerSetDisposeFunction}}
+\index{MaplePointerSetDisposeFunction@{MaplePointerSetDisposeFunction}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePointerSetDisposeFunction}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MaplePointerSetDisposeFunction (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{void(M\_\-DECL $\ast$disposefn)(ALGEB a)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5dd1f55c88e73a343a234242c22aeca4}
+\hypertarget{maplec_8h_a4c804730cd778036eb2c85b864966bdb}{
+\index{maplec.h@{maplec.h}!MaplePointerSetMarkFunction@{MaplePointerSetMarkFunction}}
+\index{MaplePointerSetMarkFunction@{MaplePointerSetMarkFunction}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePointerSetMarkFunction}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MaplePointerSetMarkFunction (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{void(M\_\-DECL $\ast$markfn)(ALGEB a)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a4c804730cd778036eb2c85b864966bdb}
+\hypertarget{maplec_8h_a61a3ac8739b41d81b52e23ed443b3eb9}{
+\index{maplec.h@{maplec.h}!MaplePointerSetPrintFunction@{MaplePointerSetPrintFunction}}
+\index{MaplePointerSetPrintFunction@{MaplePointerSetPrintFunction}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePointerSetPrintFunction}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MaplePointerSetPrintFunction (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{ALGEB(M\_\-DECL $\ast$printfn)(ALGEB a)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a61a3ac8739b41d81b52e23ed443b3eb9}
+\hypertarget{maplec_8h_a97bc9239163cc1e881d18d5740c348cf}{
+\index{maplec.h@{maplec.h}!MaplePointerSetType@{MaplePointerSetType}}
+\index{MaplePointerSetType@{MaplePointerSetType}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePointerSetType}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MaplePointerSetType (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a, }
+\item[{M\_\-INT}]{type}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a97bc9239163cc1e881d18d5740c348cf}
+\hypertarget{maplec_8h_a78fc73db55b63a01d0b9c953cce500d6}{
+\index{maplec.h@{maplec.h}!MaplePointerType@{MaplePointerType}}
+\index{MaplePointerType@{MaplePointerType}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePointerType}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL MaplePointerType (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{a}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a78fc73db55b63a01d0b9c953cce500d6}
+\hypertarget{maplec_8h_a54fc4632f4d327f259e4dcb41b2f3ff0}{
+\index{maplec.h@{maplec.h}!MaplePopErrorProc@{MaplePopErrorProc}}
+\index{MaplePopErrorProc@{MaplePopErrorProc}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePopErrorProc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void MaplePopErrorProc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a54fc4632f4d327f259e4dcb41b2f3ff0}
+\hypertarget{maplec_8h_a21379e6a8f71054002b62f8cba6a6312}{
+\index{maplec.h@{maplec.h}!MaplePopGMPAllocators@{MaplePopGMPAllocators}}
+\index{MaplePopGMPAllocators@{MaplePopGMPAllocators}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePopGMPAllocators}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MaplePopGMPAllocators (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a21379e6a8f71054002b62f8cba6a6312}
+\hypertarget{maplec_8h_ab67fd66190360cdaee03acf2f919ea50}{
+\index{maplec.h@{maplec.h}!MaplePrintf@{MaplePrintf}}
+\index{MaplePrintf@{MaplePrintf}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePrintf}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-CDECL MaplePrintf (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ab67fd66190360cdaee03acf2f919ea50}
+\hypertarget{maplec_8h_a9f66d2ae47531bba9548ab4c7277a7bb}{
+\index{maplec.h@{maplec.h}!MaplePushErrorProc@{MaplePushErrorProc}}
+\index{MaplePushErrorProc@{MaplePushErrorProc}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePushErrorProc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void MaplePushErrorProc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void(M\_\-DECL $\ast$errorproc)(char $\ast$, void $\ast$)}]{, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9f66d2ae47531bba9548ab4c7277a7bb}
+\hypertarget{maplec_8h_ab6fd100efb2289f6a5a532ef2890b667}{
+\index{maplec.h@{maplec.h}!MaplePushGMPAllocators@{MaplePushGMPAllocators}}
+\index{MaplePushGMPAllocators@{MaplePushGMPAllocators}!maplec.h@{maplec.h}}
+\subsubsection[{MaplePushGMPAllocators}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MaplePushGMPAllocators (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void $\ast$($\ast$)(size\_\-t)}]{malloc, }
+\item[{void $\ast$($\ast$)(void $\ast$, size\_\-t, size\_\-t)}]{realloc, }
+\item[{void($\ast$)(void $\ast$, size\_\-t)}]{free}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ab6fd100efb2289f6a5a532ef2890b667}
+\hypertarget{maplec_8h_ae6f7221da703d8610d4f9fdcc6f64e44}{
+\index{maplec.h@{maplec.h}!MapleRaiseError@{MapleRaiseError}}
+\index{MapleRaiseError@{MapleRaiseError}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRaiseError}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleRaiseError (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae6f7221da703d8610d4f9fdcc6f64e44}
+\hypertarget{maplec_8h_a284c7cbaa01a1d89e80bf0fc6b0b3b58}{
+\index{maplec.h@{maplec.h}!MapleRaiseError1@{MapleRaiseError1}}
+\index{MapleRaiseError1@{MapleRaiseError1}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRaiseError1}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleRaiseError1 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{msg, }
+\item[{ALGEB}]{arg1}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a284c7cbaa01a1d89e80bf0fc6b0b3b58}
+\hypertarget{maplec_8h_a2dcecf78d24cfc1383f303681da80d21}{
+\index{maplec.h@{maplec.h}!MapleRaiseError2@{MapleRaiseError2}}
+\index{MapleRaiseError2@{MapleRaiseError2}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRaiseError2}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleRaiseError2 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{msg, }
+\item[{ALGEB}]{arg1, }
+\item[{ALGEB}]{arg2}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a2dcecf78d24cfc1383f303681da80d21}
+\hypertarget{maplec_8h_a4c256f699630f2c907c952747f1d118a}{
+\index{maplec.h@{maplec.h}!MapleRandomCalcBits@{MapleRandomCalcBits}}
+\index{MapleRandomCalcBits@{MapleRandomCalcBits}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomCalcBits}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL MapleRandomCalcBits (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{range}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a4c256f699630f2c907c952747f1d118a}
+\hypertarget{maplec_8h_ad2be3a87ab80b1efa2c785a9383941a6}{
+\index{maplec.h@{maplec.h}!MapleRandomDouble01@{MapleRandomDouble01}}
+\index{MapleRandomDouble01@{MapleRandomDouble01}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomDouble01}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL double M\_\-DECL MapleRandomDouble01 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad2be3a87ab80b1efa2c785a9383941a6}
+\hypertarget{maplec_8h_a10bca90ff23fd486212f855bd98bf823}{
+\index{maplec.h@{maplec.h}!MapleRandomInt32@{MapleRandomInt32}}
+\index{MapleRandomInt32@{MapleRandomInt32}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomInt32}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL INTEGER32 M\_\-DECL MapleRandomInt32 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a10bca90ff23fd486212f855bd98bf823}
+\hypertarget{maplec_8h_ad41ec0b85fd2947630a39e8827747f35}{
+\index{maplec.h@{maplec.h}!MapleRandomInt64@{MapleRandomInt64}}
+\index{MapleRandomInt64@{MapleRandomInt64}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomInt64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL INTEGER64 M\_\-DECL MapleRandomInt64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad41ec0b85fd2947630a39e8827747f35}
+\hypertarget{maplec_8h_aeff0aea74022a222a3d7ed7b40e1d4db}{
+\index{maplec.h@{maplec.h}!MapleRandomM\_\-INT@{MapleRandomM\_\-INT}}
+\index{MapleRandomM\_\-INT@{MapleRandomM\_\-INT}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomM\_\-INT}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL MapleRandomM\_\-INT (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aeff0aea74022a222a3d7ed7b40e1d4db}
+\hypertarget{maplec_8h_af9b61f21607dcab4d1ef710790b8b6b7}{
+\index{maplec.h@{maplec.h}!MapleRandomRangeInt32@{MapleRandomRangeInt32}}
+\index{MapleRandomRangeInt32@{MapleRandomRangeInt32}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomRangeInt32}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL INTEGER32 M\_\-DECL MapleRandomRangeInt32 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{INTEGER32}]{range, }
+\item[{M\_\-INT}]{bits}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af9b61f21607dcab4d1ef710790b8b6b7}
+\hypertarget{maplec_8h_ac47b23a185da760a9c63616719abd00c}{
+\index{maplec.h@{maplec.h}!MapleRandomRangeSoftwareInt@{MapleRandomRangeSoftwareInt}}
+\index{MapleRandomRangeSoftwareInt@{MapleRandomRangeSoftwareInt}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomRangeSoftwareInt}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleRandomRangeSoftwareInt (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{range, }
+\item[{M\_\-INT}]{bits}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac47b23a185da760a9c63616719abd00c}
+\hypertarget{maplec_8h_a06210c5d607efb90341f47406e4c6d5c}{
+\index{maplec.h@{maplec.h}!MapleRandomSoftwareFloat01@{MapleRandomSoftwareFloat01}}
+\index{MapleRandomSoftwareFloat01@{MapleRandomSoftwareFloat01}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomSoftwareFloat01}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleRandomSoftwareFloat01 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a06210c5d607efb90341f47406e4c6d5c}
+\hypertarget{maplec_8h_af7f5fee520a01c2afe12288f5561b4d1}{
+\index{maplec.h@{maplec.h}!MapleRandomSoftwareInteger@{MapleRandomSoftwareInteger}}
+\index{MapleRandomSoftwareInteger@{MapleRandomSoftwareInteger}!maplec.h@{maplec.h}}
+\subsubsection[{MapleRandomSoftwareInteger}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleRandomSoftwareInteger (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{M\_\-INT}]{bits}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af7f5fee520a01c2afe12288f5561b4d1}
+\hypertarget{maplec_8h_af28dc5601ac4b40bfdc39fd39600b127}{
+\index{maplec.h@{maplec.h}!MapleSelectImaginaryPart@{MapleSelectImaginaryPart}}
+\index{MapleSelectImaginaryPart@{MapleSelectImaginaryPart}!maplec.h@{maplec.h}}
+\subsubsection[{MapleSelectImaginaryPart}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleSelectImaginaryPart (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af28dc5601ac4b40bfdc39fd39600b127}
+\hypertarget{maplec_8h_a2f1e56770f29de4865ba339db59c8a1c}{
+\index{maplec.h@{maplec.h}!MapleSelectIndexed@{MapleSelectIndexed}}
+\index{MapleSelectIndexed@{MapleSelectIndexed}!maplec.h@{maplec.h}}
+\subsubsection[{MapleSelectIndexed}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleSelectIndexed (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s, }
+\item[{M\_\-INT}]{dim, }
+\item[{M\_\-INT $\ast$}]{ind}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a2f1e56770f29de4865ba339db59c8a1c}
+\hypertarget{maplec_8h_ad3f085d7fce43b0578d18f7b6a11888d}{
+\index{maplec.h@{maplec.h}!MapleSelectRealPart@{MapleSelectRealPart}}
+\index{MapleSelectRealPart@{MapleSelectRealPart}!maplec.h@{maplec.h}}
+\subsubsection[{MapleSelectRealPart}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleSelectRealPart (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad3f085d7fce43b0578d18f7b6a11888d}
+\hypertarget{maplec_8h_a15eb0e0e58b2fdcd487680b1d5c6bd29}{
+\index{maplec.h@{maplec.h}!MapleTableAlloc@{MapleTableAlloc}}
+\index{MapleTableAlloc@{MapleTableAlloc}!maplec.h@{maplec.h}}
+\subsubsection[{MapleTableAlloc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleTableAlloc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a15eb0e0e58b2fdcd487680b1d5c6bd29}
+\hypertarget{maplec_8h_a5c54952d24a438b4de6019351b22edb5}{
+\index{maplec.h@{maplec.h}!MapleTableAssign@{MapleTableAssign}}
+\index{MapleTableAssign@{MapleTableAssign}!maplec.h@{maplec.h}}
+\subsubsection[{MapleTableAssign}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleTableAssign (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{table, }
+\item[{ALGEB}]{ind, }
+\item[{ALGEB}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5c54952d24a438b4de6019351b22edb5}
+\hypertarget{maplec_8h_aa715427119bc2b8d561693103be24f2d}{
+\index{maplec.h@{maplec.h}!MapleTableDelete@{MapleTableDelete}}
+\index{MapleTableDelete@{MapleTableDelete}!maplec.h@{maplec.h}}
+\subsubsection[{MapleTableDelete}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleTableDelete (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{table, }
+\item[{ALGEB}]{ind}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aa715427119bc2b8d561693103be24f2d}
+\hypertarget{maplec_8h_a5cbc9e07ac9616545c02e16ada4f40c4}{
+\index{maplec.h@{maplec.h}!MapleTableHasEntry@{MapleTableHasEntry}}
+\index{MapleTableHasEntry@{MapleTableHasEntry}!maplec.h@{maplec.h}}
+\subsubsection[{MapleTableHasEntry}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL MapleTableHasEntry (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{table, }
+\item[{ALGEB}]{ind}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5cbc9e07ac9616545c02e16ada4f40c4}
+\hypertarget{maplec_8h_a3372319f81126c9f4f9568a88f8fd4cc}{
+\index{maplec.h@{maplec.h}!MapleTableSelect@{MapleTableSelect}}
+\index{MapleTableSelect@{MapleTableSelect}!maplec.h@{maplec.h}}
+\subsubsection[{MapleTableSelect}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleTableSelect (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{table, }
+\item[{ALGEB}]{ind}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a3372319f81126c9f4f9568a88f8fd4cc}
+\hypertarget{maplec_8h_a70781124162bb1bc3a4a05a7c9d62ead}{
+\index{maplec.h@{maplec.h}!MapleToArray@{MapleToArray}}
+\index{MapleToArray@{MapleToArray}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToArray}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void$\ast$ M\_\-CDECL MapleToArray (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{data\_\-type, }
+\item[{M\_\-INT}]{storage, }
+\item[{M\_\-INT}]{p1, }
+\item[{M\_\-INT}]{p2, }
+\item[{M\_\-INT}]{order, }
+\item[{ALGEB}]{indfn, }
+\item[{M\_\-INT}]{subtype, }
+\item[{ALGEB $\ast$}]{ref, }
+\item[{M\_\-INT}]{num\_\-dims, }
+\item[{M\_\-INT}]{offset, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a70781124162bb1bc3a4a05a7c9d62ead}
+\hypertarget{maplec_8h_af91bdc2c9589c4b46b08151dab767ee6}{
+\index{maplec.h@{maplec.h}!MapleToComplexDouble@{MapleToComplexDouble}}
+\index{MapleToComplexDouble@{MapleToComplexDouble}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToComplexDouble}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleToComplexDouble (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s, }
+\item[{COMPLEXF64 $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af91bdc2c9589c4b46b08151dab767ee6}
+\hypertarget{maplec_8h_af4b918ddfe21c56b814df0a803ea6eb2}{
+\index{maplec.h@{maplec.h}!MapleToComplexFloat32@{MapleToComplexFloat32}}
+\index{MapleToComplexFloat32@{MapleToComplexFloat32}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToComplexFloat32}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL COMPLEXF32 M\_\-DECL MapleToComplexFloat32 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af4b918ddfe21c56b814df0a803ea6eb2}
+\hypertarget{maplec_8h_ad21badb66f0b4da7c60a50fe520cc714}{
+\index{maplec.h@{maplec.h}!MapleToComplexFloat64@{MapleToComplexFloat64}}
+\index{MapleToComplexFloat64@{MapleToComplexFloat64}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToComplexFloat64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL COMPLEXF64 M\_\-DECL MapleToComplexFloat64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad21badb66f0b4da7c60a50fe520cc714}
+\hypertarget{maplec_8h_a3d8b2c8168b81aee9699f5c565e8eb92}{
+\index{maplec.h@{maplec.h}!MapleToComplexFloatDAG@{MapleToComplexFloatDAG}}
+\index{MapleToComplexFloatDAG@{MapleToComplexFloatDAG}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToComplexFloatDAG}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL CXDAG M\_\-DECL MapleToComplexFloatDAG (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a3d8b2c8168b81aee9699f5c565e8eb92}
+\hypertarget{maplec_8h_a914576ae7b71d81ae97c3ebdcc8c9742}{
+\index{maplec.h@{maplec.h}!MapleToComplexSingle@{MapleToComplexSingle}}
+\index{MapleToComplexSingle@{MapleToComplexSingle}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToComplexSingle}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleToComplexSingle (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s, }
+\item[{COMPLEXF32 $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a914576ae7b71d81ae97c3ebdcc8c9742}
+\hypertarget{maplec_8h_a3dd390f7e9c724ba2e8d316eea6e3dd6}{
+\index{maplec.h@{maplec.h}!MapleToFloat32@{MapleToFloat32}}
+\index{MapleToFloat32@{MapleToFloat32}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToFloat32}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL FLOAT32 M\_\-DECL MapleToFloat32 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a3dd390f7e9c724ba2e8d316eea6e3dd6}
+\hypertarget{maplec_8h_ab1f6bb5f373aed5a1dce5779f0e01689}{
+\index{maplec.h@{maplec.h}!MapleToFloat64@{MapleToFloat64}}
+\index{MapleToFloat64@{MapleToFloat64}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToFloat64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL FLOAT64 M\_\-DECL MapleToFloat64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ab1f6bb5f373aed5a1dce5779f0e01689}
+\hypertarget{maplec_8h_afa534e8b72b9d9e2e2f4276b24a8c13a}{
+\index{maplec.h@{maplec.h}!MapleToGMPInteger@{MapleToGMPInteger}}
+\index{MapleToGMPInteger@{MapleToGMPInteger}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToGMPInteger}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL mpz\_\-ptr M\_\-DECL MapleToGMPInteger (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_afa534e8b72b9d9e2e2f4276b24a8c13a}
+\hypertarget{maplec_8h_a99bdda9cae7f5ce02da203761874fac6}{
+\index{maplec.h@{maplec.h}!MapleTohfData@{MapleTohfData}}
+\index{MapleTohfData@{MapleTohfData}!maplec.h@{maplec.h}}
+\subsubsection[{MapleTohfData}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleTohfData (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s, }
+\item[{hfdata $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a99bdda9cae7f5ce02da203761874fac6}
+\hypertarget{maplec_8h_a8208c635577455b00df231c95811ed5b}{
+\index{maplec.h@{maplec.h}!MapleToInteger16@{MapleToInteger16}}
+\index{MapleToInteger16@{MapleToInteger16}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToInteger16}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL INTEGER16 M\_\-DECL MapleToInteger16 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a8208c635577455b00df231c95811ed5b}
+\hypertarget{maplec_8h_a3eafae6164d8e6d3315351ff308ed76e}{
+\index{maplec.h@{maplec.h}!MapleToInteger32@{MapleToInteger32}}
+\index{MapleToInteger32@{MapleToInteger32}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToInteger32}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL INTEGER32 M\_\-DECL MapleToInteger32 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a3eafae6164d8e6d3315351ff308ed76e}
+\hypertarget{maplec_8h_a3f2ef93fa871f2c4e86de8ae053d6da9}{
+\index{maplec.h@{maplec.h}!MapleToInteger64@{MapleToInteger64}}
+\index{MapleToInteger64@{MapleToInteger64}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToInteger64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL INTEGER64 M\_\-DECL MapleToInteger64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a3f2ef93fa871f2c4e86de8ae053d6da9}
+\hypertarget{maplec_8h_ac2cea6ea6cd10f8896abd4099f02226f}{
+\index{maplec.h@{maplec.h}!MapleToInteger8@{MapleToInteger8}}
+\index{MapleToInteger8@{MapleToInteger8}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToInteger8}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL INTEGER8 M\_\-DECL MapleToInteger8 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac2cea6ea6cd10f8896abd4099f02226f}
+\hypertarget{maplec_8h_aaf298621631849e119c0deb167763441}{
+\index{maplec.h@{maplec.h}!MapleToM\_\-BOOL@{MapleToM\_\-BOOL}}
+\index{MapleToM\_\-BOOL@{MapleToM\_\-BOOL}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToM\_\-BOOL}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL MapleToM\_\-BOOL (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aaf298621631849e119c0deb167763441}
+\hypertarget{maplec_8h_a76eeb5542407af2c540a91452eb05fc7}{
+\index{maplec.h@{maplec.h}!MapleToM\_\-INT@{MapleToM\_\-INT}}
+\index{MapleToM\_\-INT@{MapleToM\_\-INT}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToM\_\-INT}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL MapleToM\_\-INT (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a76eeb5542407af2c540a91452eb05fc7}
+\hypertarget{maplec_8h_a9b65e27b3d9327b29abb16518149a7e4}{
+\index{maplec.h@{maplec.h}!MapleToPointer@{MapleToPointer}}
+\index{MapleToPointer@{MapleToPointer}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToPointer}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void$\ast$ M\_\-DECL MapleToPointer (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9b65e27b3d9327b29abb16518149a7e4}
+\hypertarget{maplec_8h_a2b144d23226ffcf3d5854f4b61616d64}{
+\index{maplec.h@{maplec.h}!MapleToString@{MapleToString}}
+\index{MapleToString@{MapleToString}!maplec.h@{maplec.h}}
+\subsubsection[{MapleToString}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL char$\ast$ M\_\-DECL MapleToString (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a2b144d23226ffcf3d5854f4b61616d64}
+\hypertarget{maplec_8h_ae03c176a66f3ce298785c405602f4a4a}{
+\index{maplec.h@{maplec.h}!MapleTrapError@{MapleTrapError}}
+\index{MapleTrapError@{MapleTrapError}!maplec.h@{maplec.h}}
+\subsubsection[{MapleTrapError}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void$\ast$ M\_\-DECL MapleTrapError (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void $\ast$}]{M\_\-DECL $\ast$proc)(void $\ast$data, }
+\item[{void $\ast$}]{data, }
+\item[{M\_\-BOOL $\ast$}]{errorflag}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae03c176a66f3ce298785c405602f4a4a}
+\hypertarget{maplec_8h_ab021155081eecac4a816f4d0818926dd}{
+\index{maplec.h@{maplec.h}!MapleUnique@{MapleUnique}}
+\index{MapleUnique@{MapleUnique}!maplec.h@{maplec.h}}
+\subsubsection[{MapleUnique}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL MapleUnique (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ab021155081eecac4a816f4d0818926dd}
+\hypertarget{maplec_8h_aea0d12119a5b6332c88576f67f8d1e1f}{
+\index{maplec.h@{maplec.h}!MapleUserInfo@{MapleUserInfo}}
+\index{MapleUserInfo@{MapleUserInfo}!maplec.h@{maplec.h}}
+\subsubsection[{MapleUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL MapleUserInfo (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{int}]{level, }
+\item[{char $\ast$}]{name, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aea0d12119a5b6332c88576f67f8d1e1f}
+\hypertarget{maplec_8h_a032d940d481433a5ad8906db7adec050}{
+\index{maplec.h@{maplec.h}!NewMapleExpressionSequence@{NewMapleExpressionSequence}}
+\index{NewMapleExpressionSequence@{NewMapleExpressionSequence}!maplec.h@{maplec.h}}
+\subsubsection[{NewMapleExpressionSequence}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL NewMapleExpressionSequence (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{int}]{nargs}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a032d940d481433a5ad8906db7adec050}
+\hypertarget{maplec_8h_aefa77ed5b4e2a8f445c86a61e880be1f}{
+\index{maplec.h@{maplec.h}!OldMaplePrintf@{OldMaplePrintf}}
+\index{OldMaplePrintf@{OldMaplePrintf}!maplec.h@{maplec.h}}
+\subsubsection[{OldMaplePrintf}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL int M\_\-DECL OldMaplePrintf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aefa77ed5b4e2a8f445c86a61e880be1f}
+\hypertarget{maplec_8h_a55833fbed1e866670cd39d46b36ae1ef}{
+\index{maplec.h@{maplec.h}!RealhfData@{RealhfData}}
+\index{RealhfData@{RealhfData}!maplec.h@{maplec.h}}
+\subsubsection[{RealhfData}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL double M\_\-DECL RealhfData (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{hfdata}]{d}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a55833fbed1e866670cd39d46b36ae1ef}
+\hypertarget{maplec_8h_ad8c816df5cdbbf740dd258c6c87dda99}{
+\index{maplec.h@{maplec.h}!RegisterGUIStreamCallBack@{RegisterGUIStreamCallBack}}
+\index{RegisterGUIStreamCallBack@{RegisterGUIStreamCallBack}!maplec.h@{maplec.h}}
+\subsubsection[{RegisterGUIStreamCallBack}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RegisterGUIStreamCallBack (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{name, }
+\item[{ALGEB(M\_\-DECL $\ast$callback)(void $\ast$data, ALGEB)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ad8c816df5cdbbf740dd258c6c87dda99}
+\hypertarget{maplec_8h_a4513dc6b839142eea3300d9d85491a7d}{
+\index{maplec.h@{maplec.h}!RegisterPlotCallBack@{RegisterPlotCallBack}}
+\index{RegisterPlotCallBack@{RegisterPlotCallBack}!maplec.h@{maplec.h}}
+\subsubsection[{RegisterPlotCallBack}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RegisterPlotCallBack (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void(M\_\-DECL $\ast$callback)(void $\ast$data, void $\ast$)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a4513dc6b839142eea3300d9d85491a7d}
+\hypertarget{maplec_8h_a69b464f39f0f27ca8be33dd096cb5e52}{
+\index{maplec.h@{maplec.h}!RegisterPostRestartCallBack@{RegisterPostRestartCallBack}}
+\index{RegisterPostRestartCallBack@{RegisterPostRestartCallBack}!maplec.h@{maplec.h}}
+\subsubsection[{RegisterPostRestartCallBack}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RegisterPostRestartCallBack (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void(M\_\-DECL $\ast$callback)(void $\ast$data)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a69b464f39f0f27ca8be33dd096cb5e52}
+\hypertarget{maplec_8h_a6f1bf2fd33b1c971b14fcc1df5429cb4}{
+\index{maplec.h@{maplec.h}!RegisterRestartCallBack@{RegisterRestartCallBack}}
+\index{RegisterRestartCallBack@{RegisterRestartCallBack}!maplec.h@{maplec.h}}
+\subsubsection[{RegisterRestartCallBack}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RegisterRestartCallBack (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void(M\_\-DECL $\ast$restartCB)(void $\ast$data)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a6f1bf2fd33b1c971b14fcc1df5429cb4}
+\hypertarget{maplec_8h_aefe3fa8b1f1f57c4b8e302b99850ef31}{
+\index{maplec.h@{maplec.h}!RegisterStreamCallBack@{RegisterStreamCallBack}}
+\index{RegisterStreamCallBack@{RegisterStreamCallBack}!maplec.h@{maplec.h}}
+\subsubsection[{RegisterStreamCallBack}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RegisterStreamCallBack (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{name, }
+\item[{ALGEB(M\_\-DECL $\ast$callback)(void $\ast$data, ALGEB)}]{}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aefe3fa8b1f1f57c4b8e302b99850ef31}
+\hypertarget{maplec_8h_a126816163dff6b6e187981e691c258e1}{
+\index{maplec.h@{maplec.h}!RestartMaple@{RestartMaple}}
+\index{RestartMaple@{RestartMaple}!maplec.h@{maplec.h}}
+\subsubsection[{RestartMaple}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL RestartMaple (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{errstr}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a126816163dff6b6e187981e691c258e1}
+\hypertarget{maplec_8h_a974ba02d7dc37ad3bb2d6a3e3caac5c4}{
+\index{maplec.h@{maplec.h}!RTableAppendAttribute@{RTableAppendAttribute}}
+\index{RTableAppendAttribute@{RTableAppendAttribute}!maplec.h@{maplec.h}}
+\subsubsection[{RTableAppendAttribute}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableAppendAttribute (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a974ba02d7dc37ad3bb2d6a3e3caac5c4}
+\hypertarget{maplec_8h_a5e1283e1cfd3708e5f380c11e17546d9}{
+\index{maplec.h@{maplec.h}!RTableAppendIndFn@{RTableAppendIndFn}}
+\index{RTableAppendIndFn@{RTableAppendIndFn}!maplec.h@{maplec.h}}
+\subsubsection[{RTableAppendIndFn}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableAppendIndFn (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{indfn}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5e1283e1cfd3708e5f380c11e17546d9}
+\hypertarget{maplec_8h_a7bb85956774c1f5017a738002f0f1e43}{
+\index{maplec.h@{maplec.h}!RTableAssign@{RTableAssign}}
+\index{RTableAssign@{RTableAssign}!maplec.h@{maplec.h}}
+\subsubsection[{RTableAssign}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL RTableData M\_\-DECL RTableAssign (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT $\ast$}]{index, }
+\item[{RTableData}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a7bb85956774c1f5017a738002f0f1e43}
+\hypertarget{maplec_8h_a1cda6e5fa3908c6c19347f4cba0dba5b}{
+\index{maplec.h@{maplec.h}!RTableAssignRef@{RTableAssignRef}}
+\index{RTableAssignRef@{RTableAssignRef}!maplec.h@{maplec.h}}
+\subsubsection[{RTableAssignRef}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableAssignRef (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT $\ast$}]{index, }
+\item[{RTableData $\ast$}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a1cda6e5fa3908c6c19347f4cba0dba5b}
+\hypertarget{maplec_8h_a26bca40409bd46771e9cf44053a1287a}{
+\index{maplec.h@{maplec.h}!RTableBounds@{RTableBounds}}
+\index{RTableBounds@{RTableBounds}!maplec.h@{maplec.h}}
+\subsubsection[{RTableBounds}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableBounds (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT $\ast$}]{bounds}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a26bca40409bd46771e9cf44053a1287a}
+\hypertarget{maplec_8h_a462c050c4dd34cde62bd2d4f23dbf4a6}{
+\index{maplec.h@{maplec.h}!RTableCopy@{RTableCopy}}
+\index{RTableCopy@{RTableCopy}!maplec.h@{maplec.h}}
+\subsubsection[{RTableCopy}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableCopy (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a462c050c4dd34cde62bd2d4f23dbf4a6}
+\hypertarget{maplec_8h_a5451965d2be648f9ef4198969980f0f2}{
+\index{maplec.h@{maplec.h}!RTableCopyImPart@{RTableCopyImPart}}
+\index{RTableCopyImPart@{RTableCopyImPart}!maplec.h@{maplec.h}}
+\subsubsection[{RTableCopyImPart}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableCopyImPart (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5451965d2be648f9ef4198969980f0f2}
+\hypertarget{maplec_8h_a0fe15f2f87e0658d46de954a6f77ee51}{
+\index{maplec.h@{maplec.h}!RTableCopyRealPart@{RTableCopyRealPart}}
+\index{RTableCopyRealPart@{RTableCopyRealPart}!maplec.h@{maplec.h}}
+\subsubsection[{RTableCopyRealPart}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableCopyRealPart (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a0fe15f2f87e0658d46de954a6f77ee51}
+\hypertarget{maplec_8h_ae86355b59405dbf5b237167cf83a3243}{
+\index{maplec.h@{maplec.h}!RTableCreate@{RTableCreate}}
+\index{RTableCreate@{RTableCreate}!maplec.h@{maplec.h}}
+\subsubsection[{RTableCreate}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableCreate (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{void $\ast$}]{pdata, }
+\item[{M\_\-INT $\ast$}]{bounds}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae86355b59405dbf5b237167cf83a3243}
+\hypertarget{maplec_8h_a0196baca3c37ac3370f64ec364a1ca05}{
+\index{maplec.h@{maplec.h}!RTableCreateFromALGEB@{RTableCreateFromALGEB}}
+\index{RTableCreateFromALGEB@{RTableCreateFromALGEB}!maplec.h@{maplec.h}}
+\subsubsection[{RTableCreateFromALGEB}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableCreateFromALGEB (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{initializer, }
+\item[{M\_\-INT $\ast$}]{bounds}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a0196baca3c37ac3370f64ec364a1ca05}
+\hypertarget{maplec_8h_a9088435f5c8ff562411ae0ac97dc59f2}{
+\index{maplec.h@{maplec.h}!RTableCreateFromDataBlock@{RTableCreateFromDataBlock}}
+\index{RTableCreateFromDataBlock@{RTableCreateFromDataBlock}!maplec.h@{maplec.h}}
+\subsubsection[{RTableCreateFromDataBlock}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableCreateFromDataBlock (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{rts, }
+\item[{M\_\-INT $\ast$}]{bounds, }
+\item[{void $\ast$}]{data\_\-block, }
+\item[{M\_\-INT}]{block\_\-datatype}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9088435f5c8ff562411ae0ac97dc59f2}
+\hypertarget{maplec_8h_a5491dea563a8c569200953c02eb70020}{
+\index{maplec.h@{maplec.h}!RTableDataBlock@{RTableDataBlock}}
+\index{RTableDataBlock@{RTableDataBlock}!maplec.h@{maplec.h}}
+\subsubsection[{RTableDataBlock}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void$\ast$ M\_\-DECL RTableDataBlock (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5491dea563a8c569200953c02eb70020}
+\hypertarget{maplec_8h_ae4c2d1056ce4f2bb0775d45520a9bb89}{
+\index{maplec.h@{maplec.h}!RTableGetDefaults@{RTableGetDefaults}}
+\index{RTableGetDefaults@{RTableGetDefaults}!maplec.h@{maplec.h}}
+\subsubsection[{RTableGetDefaults}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableGetDefaults (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ae4c2d1056ce4f2bb0775d45520a9bb89}
+\hypertarget{maplec_8h_a1271daf36bf7a5f80ad467e35b10ad06}{
+\index{maplec.h@{maplec.h}!RTableGetSettings@{RTableGetSettings}}
+\index{RTableGetSettings@{RTableGetSettings}!maplec.h@{maplec.h}}
+\subsubsection[{RTableGetSettings}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableGetSettings (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a1271daf36bf7a5f80ad467e35b10ad06}
+\hypertarget{maplec_8h_a91bc2286c170f15b6409deb42fad3e68}{
+\index{maplec.h@{maplec.h}!RTableIndFn@{RTableIndFn}}
+\index{RTableIndFn@{RTableIndFn}!maplec.h@{maplec.h}}
+\subsubsection[{RTableIndFn}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL RTableIndFn (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{num}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a91bc2286c170f15b6409deb42fad3e68}
+\hypertarget{maplec_8h_aa5feb77748208ad2a44786170ab21380}{
+\index{maplec.h@{maplec.h}!RTableIndFnArgs@{RTableIndFnArgs}}
+\index{RTableIndFnArgs@{RTableIndFnArgs}!maplec.h@{maplec.h}}
+\subsubsection[{RTableIndFnArgs}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableIndFnArgs (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{num}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aa5feb77748208ad2a44786170ab21380}
+\hypertarget{maplec_8h_a26a202c056ff51634b68dc524b9f929d}{
+\index{maplec.h@{maplec.h}!RTableIsReal@{RTableIsReal}}
+\index{RTableIsReal@{RTableIsReal}!maplec.h@{maplec.h}}
+\subsubsection[{RTableIsReal}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-BOOL M\_\-DECL RTableIsReal (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a26a202c056ff51634b68dc524b9f929d}
+\hypertarget{maplec_8h_a617f50b3d352f2f92cf90125c46833dd}{
+\index{maplec.h@{maplec.h}!RTableLowerBound@{RTableLowerBound}}
+\index{RTableLowerBound@{RTableLowerBound}!maplec.h@{maplec.h}}
+\subsubsection[{RTableLowerBound}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL RTableLowerBound (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{dim}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a617f50b3d352f2f92cf90125c46833dd}
+\hypertarget{maplec_8h_a7e1caf9bf2d2ac3961b077a8695525f2}{
+\index{maplec.h@{maplec.h}!RTableNumDimensions@{RTableNumDimensions}}
+\index{RTableNumDimensions@{RTableNumDimensions}!maplec.h@{maplec.h}}
+\subsubsection[{RTableNumDimensions}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL RTableNumDimensions (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a7e1caf9bf2d2ac3961b077a8695525f2}
+\hypertarget{maplec_8h_a41db2acb34f475c1ef504a06af1ffd74}{
+\index{maplec.h@{maplec.h}!RTableNumElements@{RTableNumElements}}
+\index{RTableNumElements@{RTableNumElements}!maplec.h@{maplec.h}}
+\subsubsection[{RTableNumElements}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL RTableNumElements (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a41db2acb34f475c1ef504a06af1ffd74}
+\hypertarget{maplec_8h_a9bf4f97e9809964cc9ee271ecd3735c7}{
+\index{maplec.h@{maplec.h}!RTableSelect@{RTableSelect}}
+\index{RTableSelect@{RTableSelect}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSelect}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL RTableData M\_\-DECL RTableSelect (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT $\ast$}]{index}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9bf4f97e9809964cc9ee271ecd3735c7}
+\hypertarget{maplec_8h_a4f606795ad8c22cac95a85a8063fe2fa}{
+\index{maplec.h@{maplec.h}!RTableSetAttribute@{RTableSetAttribute}}
+\index{RTableSetAttribute@{RTableSetAttribute}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSetAttribute}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableSetAttribute (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a4f606795ad8c22cac95a85a8063fe2fa}
+\hypertarget{maplec_8h_a8aba5c2b02ebbec6e036a520bffe77ec}{
+\index{maplec.h@{maplec.h}!RTableSetIndFn@{RTableSetIndFn}}
+\index{RTableSetIndFn@{RTableSetIndFn}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSetIndFn}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableSetIndFn (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{indfn}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a8aba5c2b02ebbec6e036a520bffe77ec}
+\hypertarget{maplec_8h_a8eeb67f8006d6276307190a7ff43deb9}{
+\index{maplec.h@{maplec.h}!RTableSetType@{RTableSetType}}
+\index{RTableSetType@{RTableSetType}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSetType}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableSetType (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{M\_\-INT}]{id, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a8eeb67f8006d6276307190a7ff43deb9}
+\hypertarget{maplec_8h_a13ed291e49ff58a177fbd348a7222dd2}{
+\index{maplec.h@{maplec.h}!RTableSparseCompact@{RTableSparseCompact}}
+\index{RTableSparseCompact@{RTableSparseCompact}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSparseCompact}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableSparseCompact (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a13ed291e49ff58a177fbd348a7222dd2}
+\hypertarget{maplec_8h_a541d45cf2c89511cce7e23355c693cce}{
+\index{maplec.h@{maplec.h}!RTableSparseIndexRow@{RTableSparseIndexRow}}
+\index{RTableSparseIndexRow@{RTableSparseIndexRow}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSparseIndexRow}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL NAG\_\-INT$\ast$ M\_\-DECL RTableSparseIndexRow (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{dim}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a541d45cf2c89511cce7e23355c693cce}
+\hypertarget{maplec_8h_aefbc102865aeb1e1482da97f6945a907}{
+\index{maplec.h@{maplec.h}!RTableSparseIndexSort@{RTableSparseIndexSort}}
+\index{RTableSparseIndexSort@{RTableSparseIndexSort}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSparseIndexSort}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableSparseIndexSort (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{by\_\-dim}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aefbc102865aeb1e1482da97f6945a907}
+\hypertarget{maplec_8h_a5f9f5fa604f13147031d821fbdebe913}{
+\index{maplec.h@{maplec.h}!RTableSparseResize@{RTableSparseResize}}
+\index{RTableSparseResize@{RTableSparseResize}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSparseResize}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableSparseResize (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a5f9f5fa604f13147031d821fbdebe913}
+\hypertarget{maplec_8h_a2be8b685b71a19571c0b7014a27e4525}{
+\index{maplec.h@{maplec.h}!RTableSparseSetNumElems@{RTableSparseSetNumElems}}
+\index{RTableSparseSetNumElems@{RTableSparseSetNumElems}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSparseSetNumElems}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL RTableSparseSetNumElems (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{num}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a2be8b685b71a19571c0b7014a27e4525}
+\hypertarget{maplec_8h_a1fe70affbf48ebf8f2dec59a1d64c38f}{
+\index{maplec.h@{maplec.h}!RTableSparseSize@{RTableSparseSize}}
+\index{RTableSparseSize@{RTableSparseSize}!maplec.h@{maplec.h}}
+\subsubsection[{RTableSparseSize}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL RTableSparseSize (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a1fe70affbf48ebf8f2dec59a1d64c38f}
+\hypertarget{maplec_8h_a2578f929645e0d556cfb6ced18be9095}{
+\index{maplec.h@{maplec.h}!RTableUpperBound@{RTableUpperBound}}
+\index{RTableUpperBound@{RTableUpperBound}!maplec.h@{maplec.h}}
+\subsubsection[{RTableUpperBound}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL M\_\-INT M\_\-DECL RTableUpperBound (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{rt, }
+\item[{M\_\-INT}]{dim}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a2578f929645e0d556cfb6ced18be9095}
+\hypertarget{maplec_8h_a72051b540c6a4029f07d79898c0b4aee}{
+\index{maplec.h@{maplec.h}!RTableZipReIm@{RTableZipReIm}}
+\index{RTableZipReIm@{RTableZipReIm}!maplec.h@{maplec.h}}
+\subsubsection[{RTableZipReIm}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL RTableZipReIm (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{RTableSettings $\ast$}]{s, }
+\item[{ALGEB}]{rt\_\-re, }
+\item[{ALGEB}]{rt\_\-im}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a72051b540c6a4029f07d79898c0b4aee}
+\hypertarget{maplec_8h_a44d16d47bf37e64ca2bb66892249c6b9}{
+\index{maplec.h@{maplec.h}!SetMapleVersion@{SetMapleVersion}}
+\index{SetMapleVersion@{SetMapleVersion}!maplec.h@{maplec.h}}
+\subsubsection[{SetMapleVersion}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL SetMapleVersion (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{version}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a44d16d47bf37e64ca2bb66892249c6b9}
+\hypertarget{maplec_8h_af3b2818da8f33fa8ec1371425dafa969}{
+\index{maplec.h@{maplec.h}!StartMaple@{StartMaple}}
+\index{StartMaple@{StartMaple}!maplec.h@{maplec.h}}
+\subsubsection[{StartMaple}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL MKernelVector M\_\-DECL StartMaple (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf MCallBackVector}}]{cb, }
+\item[{void $\ast$}]{user\_\-data, }
+\item[{void $\ast$}]{info, }
+\item[{char $\ast$}]{errstr}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af3b2818da8f33fa8ec1371425dafa969}
+\hypertarget{maplec_8h_aa5607de94fd1c8a2d32ca19cb8a2655d}{
+\index{maplec.h@{maplec.h}!StopMaple@{StopMaple}}
+\index{StopMaple@{StopMaple}!maplec.h@{maplec.h}}
+\subsubsection[{StopMaple}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL void M\_\-DECL StopMaple (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_aa5607de94fd1c8a2d32ca19cb8a2655d}
+\hypertarget{maplec_8h_a60b95a8619d8feddfed69f236e284399}{
+\index{maplec.h@{maplec.h}!ToMapleBoolean@{ToMapleBoolean}}
+\index{ToMapleBoolean@{ToMapleBoolean}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleBoolean}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleBoolean (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{M\_\-INT}]{b}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a60b95a8619d8feddfed69f236e284399}
+\hypertarget{maplec_8h_a28534a6cf2ae5eee7c868db7b91229e2}{
+\index{maplec.h@{maplec.h}!ToMapleChar@{ToMapleChar}}
+\index{ToMapleChar@{ToMapleChar}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleChar}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleChar (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{M\_\-INT}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a28534a6cf2ae5eee7c868db7b91229e2}
+\hypertarget{maplec_8h_af82b584ea8bed7bbaa77c7996f4ed8a5}{
+\index{maplec.h@{maplec.h}!ToMapleComplex@{ToMapleComplex}}
+\index{ToMapleComplex@{ToMapleComplex}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleComplex}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleComplex (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{double}]{re, }
+\item[{double}]{im}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af82b584ea8bed7bbaa77c7996f4ed8a5}
+\hypertarget{maplec_8h_ada60041da6f2fc7b7d7aa87c1c09b889}{
+\index{maplec.h@{maplec.h}!ToMapleComplexFloat@{ToMapleComplexFloat}}
+\index{ToMapleComplexFloat@{ToMapleComplexFloat}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleComplexFloat}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleComplexFloat (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{re, }
+\item[{ALGEB}]{im}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ada60041da6f2fc7b7d7aa87c1c09b889}
+\hypertarget{maplec_8h_af461e4f39e0112aa697348a7cdc10684}{
+\index{maplec.h@{maplec.h}!ToMapleExpressionSequence@{ToMapleExpressionSequence}}
+\index{ToMapleExpressionSequence@{ToMapleExpressionSequence}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleExpressionSequence}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-CDECL ToMapleExpressionSequence (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{int}]{nargs, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_af461e4f39e0112aa697348a7cdc10684}
+\hypertarget{maplec_8h_a40245ed9473addc7ebc65c151e2971d4}{
+\index{maplec.h@{maplec.h}!ToMapleFloat@{ToMapleFloat}}
+\index{ToMapleFloat@{ToMapleFloat}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleFloat}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleFloat (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a40245ed9473addc7ebc65c151e2971d4}
+\hypertarget{maplec_8h_a6aec50561a8219ec3eb14ac83745e100}{
+\index{maplec.h@{maplec.h}!ToMapleFunc@{ToMapleFunc}}
+\index{ToMapleFunc@{ToMapleFunc}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleFunc}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleFunc (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{fn, }
+\item[{ALGEB}]{expseq}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a6aec50561a8219ec3eb14ac83745e100}
+\hypertarget{maplec_8h_a9678366103eb82fa798a15ab1ea2c14b}{
+\index{maplec.h@{maplec.h}!ToMapleFunction@{ToMapleFunction}}
+\index{ToMapleFunction@{ToMapleFunction}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleFunction}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-CDECL ToMapleFunction (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{fn, }
+\item[{int}]{nargs, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a9678366103eb82fa798a15ab1ea2c14b}
+\hypertarget{maplec_8h_afa4b4d3e6dfb3950eaa7db1a71d18855}{
+\index{maplec.h@{maplec.h}!ToMaplehfData@{ToMaplehfData}}
+\index{ToMaplehfData@{ToMaplehfData}!maplec.h@{maplec.h}}
+\subsubsection[{ToMaplehfData}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMaplehfData (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{hfdata $\ast$}]{d}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_afa4b4d3e6dfb3950eaa7db1a71d18855}
+\hypertarget{maplec_8h_a071c92fbe18b6af03b62c3fa63bfb6b1}{
+\index{maplec.h@{maplec.h}!ToMapleInteger@{ToMapleInteger}}
+\index{ToMapleInteger@{ToMapleInteger}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleInteger}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleInteger (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{M\_\-INT}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a071c92fbe18b6af03b62c3fa63bfb6b1}
+\hypertarget{maplec_8h_a8a7e1f2737ca051dee164a674d9cd4d1}{
+\index{maplec.h@{maplec.h}!ToMapleInteger64@{ToMapleInteger64}}
+\index{ToMapleInteger64@{ToMapleInteger64}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleInteger64}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleInteger64 (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{INTEGER64}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a8a7e1f2737ca051dee164a674d9cd4d1}
+\hypertarget{maplec_8h_ac5c5e2d0d9455d69732f670ea2830e4e}{
+\index{maplec.h@{maplec.h}!ToMapleName@{ToMapleName}}
+\index{ToMapleName@{ToMapleName}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleName}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleName (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{n, }
+\item[{M\_\-BOOL}]{is\_\-global}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ac5c5e2d0d9455d69732f670ea2830e4e}
+\hypertarget{maplec_8h_a13c87c45dab3c6cfb17c31eae993fb8e}{
+\index{maplec.h@{maplec.h}!ToMapleNULL@{ToMapleNULL}}
+\index{ToMapleNULL@{ToMapleNULL}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleNULL}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleNULL (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a13c87c45dab3c6cfb17c31eae993fb8e}
+\hypertarget{maplec_8h_a43a7281cc7b88a6f963d5d2231a887df}{
+\index{maplec.h@{maplec.h}!ToMapleNULLPointer@{ToMapleNULLPointer}}
+\index{ToMapleNULLPointer@{ToMapleNULLPointer}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleNULLPointer}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleNULLPointer (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a43a7281cc7b88a6f963d5d2231a887df}
+\hypertarget{maplec_8h_a54df44559bcf9027dee42cb24122f7f3}{
+\index{maplec.h@{maplec.h}!ToMaplePointer@{ToMaplePointer}}
+\index{ToMaplePointer@{ToMaplePointer}!maplec.h@{maplec.h}}
+\subsubsection[{ToMaplePointer}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMaplePointer (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{void $\ast$}]{v, }
+\item[{M\_\-INT}]{type}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a54df44559bcf9027dee42cb24122f7f3}
+\hypertarget{maplec_8h_a398c47d49ce343a9862d594c628fabf6}{
+\index{maplec.h@{maplec.h}!ToMapleRelation@{ToMapleRelation}}
+\index{ToMapleRelation@{ToMapleRelation}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleRelation}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleRelation (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{const char $\ast$}]{rel, }
+\item[{ALGEB}]{lhs, }
+\item[{ALGEB}]{rhs}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a398c47d49ce343a9862d594c628fabf6}
+\hypertarget{maplec_8h_ab7deb7227be73dfa1c9db502f537e0ef}{
+\index{maplec.h@{maplec.h}!ToMapleString@{ToMapleString}}
+\index{ToMapleString@{ToMapleString}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleString}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleString (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_ab7deb7227be73dfa1c9db502f537e0ef}
+\hypertarget{maplec_8h_a3b390aa8bbfe52de7a63c6c6d1f4017e}{
+\index{maplec.h@{maplec.h}!ToMapleUneval@{ToMapleUneval}}
+\index{ToMapleUneval@{ToMapleUneval}!maplec.h@{maplec.h}}
+\subsubsection[{ToMapleUneval}]{\setlength{\rightskip}{0pt plus 5cm}EXT\_\-DECL ALGEB M\_\-DECL ToMapleUneval (
+\begin{DoxyParamCaption}
+\item[{MKernelVector}]{kv, }
+\item[{ALGEB}]{s}
+\end{DoxyParamCaption}
+)}}
+\label{maplec_8h_a3b390aa8bbfe52de7a63c6c6d1f4017e}

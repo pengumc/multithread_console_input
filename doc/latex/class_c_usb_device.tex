@@ -1,0 +1,110 @@
+\hypertarget{class_c_usb_device}{
+\section{CUsbDevice Class Reference}
+\label{class_c_usb_device}\index{CUsbDevice@{CUsbDevice}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_usb_device_a7d0f11d555238876562b24ea1e39ec0c}{
+int8\_\-t {\bfseries connect} ()}
+\label{class_c_usb_device_a7d0f11d555238876562b24ea1e39ec0c}
+
+\item 
+\hypertarget{class_c_usb_device_a9f9e12007fa75353ce55fd85816797ab}{
+void {\bfseries readServoData} ()}
+\label{class_c_usb_device_a9f9e12007fa75353ce55fd85816797ab}
+
+\item 
+\hypertarget{class_c_usb_device_a15983315244b83b8aa434260f49836e7}{
+void {\bfseries readServoData} (\hyperlink{class_c_servo}{CServo} $\ast$servos)}
+\label{class_c_usb_device_a15983315244b83b8aa434260f49836e7}
+
+\item 
+\hypertarget{class_c_usb_device_a77de8285f37ac6d8c8fe1ebb3246e6be}{
+void {\bfseries sendServoData} ()}
+\label{class_c_usb_device_a77de8285f37ac6d8c8fe1ebb3246e6be}
+
+\item 
+\hypertarget{class_c_usb_device_ad8450d3e6da6bf6a0aa4187c298389d3}{
+void {\bfseries sendServoData} (\hyperlink{class_c_servo}{CServo} $\ast$servos)}
+\label{class_c_usb_device_ad8450d3e6da6bf6a0aa4187c298389d3}
+
+\item 
+\hypertarget{class_c_usb_device_a129cb84b58cfdb272536fe4ab98f3998}{
+void {\bfseries printA} ()}
+\label{class_c_usb_device_a129cb84b58cfdb272536fe4ab98f3998}
+
+\item 
+\hypertarget{class_c_usb_device_aefc74a375701e6300d9bbb7399b645a6}{
+void {\bfseries printB} ()}
+\label{class_c_usb_device_aefc74a375701e6300d9bbb7399b645a6}
+
+\item 
+\hypertarget{class_c_usb_device_a1677e807377057bc3f29f383a1c1afd2}{
+void {\bfseries getData} ()}
+\label{class_c_usb_device_a1677e807377057bc3f29f383a1c1afd2}
+
+\item 
+\hypertarget{class_c_usb_device_ab6b13421bf961840c5c0e8fdd7f65c60}{
+int {\bfseries sendCtrlMsg} (int request, int reqType, int wval, int wind, char $\ast$buffer)}
+\label{class_c_usb_device_ab6b13421bf961840c5c0e8fdd7f65c60}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_usb_device_afcc522725a5d775d178a972bef89961e}{
+int8\_\-t {\bfseries connected}}
+\label{class_c_usb_device_afcc522725a5d775d178a972bef89961e}
+
+\item 
+\hypertarget{class_c_usb_device_a575ceacaba612e42aa56e030a19085b3}{
+usb\_\-dev\_\-handle $\ast$ {\bfseries handle}}
+\label{class_c_usb_device_a575ceacaba612e42aa56e030a19085b3}
+
+\item 
+\hypertarget{class_c_usb_device_a9940b60a5545b5f26a2f83573ef0ea33}{
+char {\bfseries bufferA} \mbox{[}BUFLEN\_\-SERVO\_\-DATA\mbox{]}}
+\label{class_c_usb_device_a9940b60a5545b5f26a2f83573ef0ea33}
+
+\item 
+\hypertarget{class_c_usb_device_ad982a23b2ea28a3230e4f491ce9b39f5}{
+char {\bfseries bufferB} \mbox{[}BUFLEN\_\-SERVO\_\-DATA\mbox{]}}
+\label{class_c_usb_device_ad982a23b2ea28a3230e4f491ce9b39f5}
+
+\item 
+\hypertarget{class_c_usb_device_ac79f1c8a02bd3a08fe7734cbd9cb1cb5}{
+char {\bfseries vendor} \mbox{[}USB\_\-CFG\_\-VENDOR\_\-NAME\_\-LEN+1\mbox{]}}
+\label{class_c_usb_device_ac79f1c8a02bd3a08fe7734cbd9cb1cb5}
+
+\item 
+\hypertarget{class_c_usb_device_a396e47f59dca2d540cc543b667b1bcf6}{
+char {\bfseries product} \mbox{[}USB\_\-CFG\_\-DEVICE\_\-NAME\_\-LEN+1\mbox{]}}
+\label{class_c_usb_device_a396e47f59dca2d540cc543b667b1bcf6}
+
+\item 
+\hypertarget{class_c_usb_device_aad5687c56f3574918fd6240ef67371f3}{
+unsigned char {\bfseries rawVid} \mbox{[}2\mbox{]}}
+\label{class_c_usb_device_aad5687c56f3574918fd6240ef67371f3}
+
+\item 
+\hypertarget{class_c_usb_device_a00dbd139727d46ca716f245d34753bc6}{
+unsigned char {\bfseries rawPid} \mbox{[}2\mbox{]}}
+\label{class_c_usb_device_a00dbd139727d46ca716f245d34753bc6}
+
+\item 
+\hypertarget{class_c_usb_device_a429212758f999036aab9338228230546}{
+int {\bfseries vid}}
+\label{class_c_usb_device_a429212758f999036aab9338228230546}
+
+\item 
+\hypertarget{class_c_usb_device_aedf9528f9be39140c00e46d305b496e7}{
+int {\bfseries pid}}
+\label{class_c_usb_device_aedf9528f9be39140c00e46d305b496e7}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CUsbDevice.cpp\end{DoxyCompactItemize}

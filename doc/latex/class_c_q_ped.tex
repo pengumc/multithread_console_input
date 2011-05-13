@@ -1,0 +1,131 @@
+\hypertarget{class_c_q_ped}{
+\section{CQPed Class Reference}
+\label{class_c_q_ped}\index{CQPed@{CQPed}}
+}
+
+
+quadraped device, currently in 2 leg mode.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_q_ped_a93038e7ebe45982833d8250dfc64fc11}{reset} ()
+\begin{DoxyCompactList}\small\item\em reconnect and reset the entire thing. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_af3a3e9af02572add33090c02648da08a}{
+void \hyperlink{class_c_q_ped_af3a3e9af02572add33090c02648da08a}{printPos} ()}
+\label{class_c_q_ped_af3a3e9af02572add33090c02648da08a}
+
+\begin{DoxyCompactList}\small\item\em prints the x and y positions of all legs. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_adfdd083aee142c9c27f7aeb7c5bae0aa}{
+void \hyperlink{class_c_q_ped_adfdd083aee142c9c27f7aeb7c5bae0aa}{moveRelative} (double X, double Y)}
+\label{class_c_q_ped_adfdd083aee142c9c27f7aeb7c5bae0aa}
+
+\begin{DoxyCompactList}\small\item\em change the x and y position of the center body. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_acb8649785d6f4ec1c6f15735a9e8977f}{
+void \hyperlink{class_c_q_ped_acb8649785d6f4ec1c6f15735a9e8977f}{sendToDev} ()}
+\label{class_c_q_ped_acb8649785d6f4ec1c6f15735a9e8977f}
+
+\begin{DoxyCompactList}\small\item\em send the servo states to the physical device. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_aac05763481aaef8e97cb1491bfca4334}{
+void \hyperlink{class_c_q_ped_aac05763481aaef8e97cb1491bfca4334}{readFromDev} ()}
+\label{class_c_q_ped_aac05763481aaef8e97cb1491bfca4334}
+
+\begin{DoxyCompactList}\small\item\em read servo states from physical device. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a1164619231de4b603e81a9667dd70426}{
+void \hyperlink{class_c_q_ped_a1164619231de4b603e81a9667dd70426}{changeServo} (uint8\_\-t servo, double a)}
+\label{class_c_q_ped_a1164619231de4b603e81a9667dd70426}
+
+\begin{DoxyCompactList}\small\item\em change the angle of a single servo by a. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a5692f3e1bd4f098dd56dcf2501bebca2}{
+void \hyperlink{class_c_q_ped_a5692f3e1bd4f098dd56dcf2501bebca2}{printAngles} ()}
+\label{class_c_q_ped_a5692f3e1bd4f098dd56dcf2501bebca2}
+
+\begin{DoxyCompactList}\small\item\em print the servo angles from memory. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a25df4f0ebb62de1ec8ec07cc3650176e}{
+uint8\_\-t \hyperlink{class_c_q_ped_a25df4f0ebb62de1ec8ec07cc3650176e}{calcAngles} (uint8\_\-t leg)}
+\label{class_c_q_ped_a25df4f0ebb62de1ec8ec07cc3650176e}
+
+\begin{DoxyCompactList}\small\item\em calculate the angles needed for the position specified by x\mbox{[}\mbox{]} and y\mbox{[}\mbox{]} \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a59ff39aab4b6e694c756799106d5bf45}{
+void \hyperlink{class_c_q_ped_a59ff39aab4b6e694c756799106d5bf45}{assignBestAngles} (uint8\_\-t betaServo, uint8\_\-t gammaServo, uint8\_\-t leg)}
+\label{class_c_q_ped_a59ff39aab4b6e694c756799106d5bf45}
+
+\begin{DoxyCompactList}\small\item\em chose the best solution and assign it to the servos \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_ad2448f69b567bd2817b0c04abff90f32}{
+void {\bfseries assignBestAngles3D} (uint8\_\-t alphaServo, uint8\_\-t betaServo, uint8\_\-t gammaServo, uint8\_\-t leg)}
+\label{class_c_q_ped_ad2448f69b567bd2817b0c04abff90f32}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_q_ped_a33d7137c5d392fd900654921e4a7eb3b}{
+\hyperlink{class_c_servo}{CServo} \hyperlink{class_c_q_ped_a33d7137c5d392fd900654921e4a7eb3b}{servoArray} \mbox{[}SERVOS\mbox{]}}
+\label{class_c_q_ped_a33d7137c5d392fd900654921e4a7eb3b}
+
+\begin{DoxyCompactList}\small\item\em array of servos, 3 per leg. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_ac32d01b945471e4a4b752830ca7b8a57}{
+\hyperlink{class_c_usb_device}{CUsbDevice} \hyperlink{class_c_q_ped_ac32d01b945471e4a4b752830ca7b8a57}{usb}}
+\label{class_c_q_ped_ac32d01b945471e4a4b752830ca7b8a57}
+
+\begin{DoxyCompactList}\small\item\em the usb helper. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a066bfd6ea8a409f3db09c329696ab3fd}{
+\hyperlink{class_c_pos_calc}{CPosCalc} \hyperlink{class_c_q_ped_a066bfd6ea8a409f3db09c329696ab3fd}{poscalc}}
+\label{class_c_q_ped_a066bfd6ea8a409f3db09c329696ab3fd}
+
+\begin{DoxyCompactList}\small\item\em Maple powered position calculator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a1456fc9cb85141946f1e21ef6ce86998}{
+double \hyperlink{class_c_q_ped_a1456fc9cb85141946f1e21ef6ce86998}{x} \mbox{[}2\mbox{]}}
+\label{class_c_q_ped_a1456fc9cb85141946f1e21ef6ce86998}
+
+\begin{DoxyCompactList}\small\item\em x positions per leg \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a25b4894a78e003731ce7a20ae57b0cf7}{
+double \hyperlink{class_c_q_ped_a25b4894a78e003731ce7a20ae57b0cf7}{y} \mbox{[}2\mbox{]}}
+\label{class_c_q_ped_a25b4894a78e003731ce7a20ae57b0cf7}
+
+\begin{DoxyCompactList}\small\item\em y positions per leg \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_ae40c62791d6b39e550cb1d72c1872dd3}{
+double \hyperlink{class_c_q_ped_ae40c62791d6b39e550cb1d72c1872dd3}{z} \mbox{[}2\mbox{]}}
+\label{class_c_q_ped_ae40c62791d6b39e550cb1d72c1872dd3}
+
+\begin{DoxyCompactList}\small\item\em z positions per leg \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a02a8f143bfecbe7e2fd0100c7dff24ec}{
+double \hyperlink{class_c_q_ped_a02a8f143bfecbe7e2fd0100c7dff24ec}{A} \mbox{[}Q\_\-LEGS\mbox{]}}
+\label{class_c_q_ped_a02a8f143bfecbe7e2fd0100c7dff24ec}
+
+\begin{DoxyCompactList}\small\item\em length of leg segment 1 (top) per leg. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_ad94807db7fd7b916711f9b430130479c}{
+double \hyperlink{class_c_q_ped_ad94807db7fd7b916711f9b430130479c}{B} \mbox{[}Q\_\-LEGS\mbox{]}}
+\label{class_c_q_ped_ad94807db7fd7b916711f9b430130479c}
+
+\begin{DoxyCompactList}\small\item\em length of leg segment 2 (middle) per leg. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_q_ped_a955e4779b4f4923ad65cf2d4de0c1f18}{
+double \hyperlink{class_c_q_ped_a955e4779b4f4923ad65cf2d4de0c1f18}{C} \mbox{[}Q\_\-LEGS\mbox{]}}
+\label{class_c_q_ped_a955e4779b4f4923ad65cf2d4de0c1f18}
+
+\begin{DoxyCompactList}\small\item\em length of leg segment 3 (bottom) per leg. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+quadraped device, currently in 2 leg mode. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_q_ped_a93038e7ebe45982833d8250dfc64fc11}{
+\index{CQPed@{CQPed}!reset@{reset}}
+\index{reset@{reset}!CQPed@{CQPed}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void CQPed::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_q_ped_a93038e7ebe45982833d8250dfc64fc11}
+
+
+reconnect and reset the entire thing. 
+
+Most default values are hardcoded into this function. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CQPed.cpp\end{DoxyCompactItemize}

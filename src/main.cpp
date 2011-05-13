@@ -17,6 +17,7 @@
 #include "CPosCalc.cpp"
 #include "CUsbDevice.cpp"
 #include "CQPed.cpp"
+#include "CAngle.cpp"
 
 using namespace std;
 

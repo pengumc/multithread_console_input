@@ -1,0 +1,72 @@
+\hypertarget{class_c_pos_calc}{
+\section{CPosCalc Class Reference}
+\label{class_c_pos_calc}\index{CPosCalc@{CPosCalc}}
+}
+
+
+Calculates the necessary servo angles from an XY position.  
+
+
+Inheritance diagram for CPosCalc:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_pos_calc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_pos_calc_a5ca02546e5e3b789235d7c5fe41c4333}{
+void \hyperlink{class_c_pos_calc_a5ca02546e5e3b789235d7c5fe41c4333}{setup} ()}
+\label{class_c_pos_calc_a5ca02546e5e3b789235d7c5fe41c4333}
+
+\begin{DoxyCompactList}\small\item\em Start maple and setup the equations needed. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_pos_calc_a2812aeb0ba09da0b03466878b22544e5}{
+void \hyperlink{class_c_pos_calc_a2812aeb0ba09da0b03466878b22544e5}{setup} (double $\ast$A, double $\ast$B, double $\ast$C, uint8\_\-t number\_\-of\_\-legs)}
+\label{class_c_pos_calc_a2812aeb0ba09da0b03466878b22544e5}
+
+\begin{DoxyCompactList}\small\item\em Start maple and setup the equations needed, A,B,C leglengths. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_pos_calc_a1cf668374c1c6f0cfe0d04e2f2f39d67}{
+uint8\_\-t \hyperlink{class_c_pos_calc_a1cf668374c1c6f0cfe0d04e2f2f39d67}{calculateAngles} (double x, double y, uint8\_\-t leg)}
+\label{class_c_pos_calc_a1cf668374c1c6f0cfe0d04e2f2f39d67}
+
+\begin{DoxyCompactList}\small\item\em Calculate the angles, returns the amount of solutions. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_pos_calc_a40d5a111d816a379a4cdeceb346e41c9}{
+uint8\_\-t {\bfseries calculateAngles} (double x, double y, double z, uint8\_\-t leg)}
+\label{class_c_pos_calc_a40d5a111d816a379a4cdeceb346e41c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_pos_calc_a1fd06482ece8b9e2671e5bf01baa5577}{
+double {\bfseries alpha} \mbox{[}2\mbox{]}}
+\label{class_c_pos_calc_a1fd06482ece8b9e2671e5bf01baa5577}
+
+\item 
+\hypertarget{class_c_pos_calc_ae4645d9df99344e00fe7052d90b76c9e}{
+double {\bfseries beta} \mbox{[}2\mbox{]}}
+\label{class_c_pos_calc_ae4645d9df99344e00fe7052d90b76c9e}
+
+\item 
+\hypertarget{class_c_pos_calc_a2970d95fef1df744a732b4ae376f5c41}{
+double {\bfseries gamma} \mbox{[}2\mbox{]}}
+\label{class_c_pos_calc_a2970d95fef1df744a732b4ae376f5c41}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_pos_calc_ae214a276150b5f8d7a8ae0f532425253}{
+char {\bfseries cmd} \mbox{[}1024\mbox{]}}
+\label{class_c_pos_calc_ae214a276150b5f8d7a8ae0f532425253}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calculates the necessary servo angles from an XY position. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CPosCalc.cpp\end{DoxyCompactItemize}

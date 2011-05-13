@@ -1,0 +1,80 @@
+\hypertarget{class_c_maple}{
+\section{CMaple Class Reference}
+\label{class_c_maple}\index{CMaple@{CMaple}}
+}
+
+
+This class provides access to the maple kernel.  
+
+
+Inheritance diagram for CMaple:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_maple}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_maple_a3a89fdf5121216413142e59ecde9a467}{
+void \hyperlink{class_c_maple_a3a89fdf5121216413142e59ecde9a467}{stop} ()}
+\label{class_c_maple_a3a89fdf5121216413142e59ecde9a467}
+
+\begin{DoxyCompactList}\small\item\em Stop maple. \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_maple_abcf9b69a37815a97a53ac1acad945099}{
+int \hyperlink{class_c_maple_abcf9b69a37815a97a53ac1acad945099}{start} ()}
+\label{class_c_maple_abcf9b69a37815a97a53ac1acad945099}
+
+\begin{DoxyCompactList}\small\item\em Start maple, returns 0 on success. \item\end{DoxyCompactList}\item 
+ALGEB \hyperlink{class_c_maple_a28d25b1bed32ffe1f6147751a4cc7267}{eval} (char $\ast$statement)
+\begin{DoxyCompactList}\small\item\em evaulate a maple statement, returns the output. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_maple_a96dbb623eb13e68f70638ef15bb43a9e}{
+ALGEB \hyperlink{class_c_maple_a96dbb623eb13e68f70638ef15bb43a9e}{a}}
+\label{class_c_maple_a96dbb623eb13e68f70638ef15bb43a9e}
+
+\begin{DoxyCompactList}\small\item\em stores the result of the last evaluated statement \item\end{DoxyCompactList}\item 
+\hypertarget{class_c_maple_a513271174f068931441148860a4b9f26}{
+MKernelVector {\bfseries kv}}
+\label{class_c_maple_a513271174f068931441148860a4b9f26}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_maple_a11c4a23a27f7c3fed32c053fbda0fe23}{
+\hyperlink{struct_m_call_back_vector_desc}{MCallBackVectorDesc} {\bfseries cb}}
+\label{class_c_maple_a11c4a23a27f7c3fed32c053fbda0fe23}
+
+\item 
+\hypertarget{class_c_maple_a8df08a272202133406fa9a09e24c4639}{
+char {\bfseries err} \mbox{[}2048\mbox{]}}
+\label{class_c_maple_a8df08a272202133406fa9a09e24c4639}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides access to the maple kernel. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_maple_a28d25b1bed32ffe1f6147751a4cc7267}{
+\index{CMaple@{CMaple}!eval@{eval}}
+\index{eval@{eval}!CMaple@{CMaple}}
+\subsubsection[{eval}]{\setlength{\rightskip}{0pt plus 5cm}ALGEB CMaple::eval (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{statement}
+\end{DoxyParamCaption}
+)}}
+\label{class_c_maple_a28d25b1bed32ffe1f6147751a4cc7267}
+
+
+evaulate a maple statement, returns the output. 
+
+Use ':' instead of ';' at the end of a statement to prevent printing the output to stdout. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CMaple.cpp\end{DoxyCompactItemize}

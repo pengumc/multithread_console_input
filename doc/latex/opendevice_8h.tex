@@ -1,0 +1,113 @@
+\hypertarget{opendevice_8h}{
+\section{src/opendevice.h File Reference}
+\label{opendevice_8h}\index{src/opendevice.h@{src/opendevice.h}}
+}
+{\ttfamily \#include $<$usb.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{opendevice_8h_a6d38a8c9d2927333c15aee5d4e118e6c}{USBOPEN\_\-SUCCESS}~0
+\item 
+\#define \hyperlink{opendevice_8h_a7740d6b3c1581a07523be3b3d5039c95}{USBOPEN\_\-ERR\_\-ACCESS}~1
+\item 
+\#define \hyperlink{opendevice_8h_a0d2858ff0ca8d95aaf31876e1535a4db}{USBOPEN\_\-ERR\_\-IO}~2
+\item 
+\#define \hyperlink{opendevice_8h_aeffd7f45947b1e146f8dfc1c6d94704e}{USBOPEN\_\-ERR\_\-NOTFOUND}~3
+\item 
+\#define \hyperlink{opendevice_8h_aa2e64eba4eebb9adac118798df28e8f8}{USB\_\-VID\_\-OBDEV\_\-SHARED}~5824
+\item 
+\#define \hyperlink{opendevice_8h_a23f57d0a9608bd47ace38f99c3c55c94}{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CUSTOM}~1500
+\item 
+\#define \hyperlink{opendevice_8h_ae19368147b8342f413dd7b6344a5a93e}{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-HID}~1503
+\item 
+\#define \hyperlink{opendevice_8h_a146854cde323774f09e364b6cb05197c}{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CDCACM}~1505
+\item 
+\#define \hyperlink{opendevice_8h_ae93838e6a6f4fb4abc912165b4d9ee34}{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-MIDI}~1508
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{opendevice_8h_a75b5f0b18368de18125662f87524b5b0}{usbGetStringAscii} (usb\_\-dev\_\-handle $\ast$dev, int index, char $\ast$buf, int buflen)
+\item 
+int \hyperlink{opendevice_8h_acea645564f1dfcd741ff20038d811ac5}{usbOpenDevice} (usb\_\-dev\_\-handle $\ast$$\ast$device, int vendorID, char $\ast$vendorNamePattern, int productID, char $\ast$productNamePattern, char $\ast$serialNamePattern, FILE $\ast$printMatchingDevicesFp, FILE $\ast$warningsFp)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{opendevice_8h_a146854cde323774f09e364b6cb05197c}{
+\index{opendevice.h@{opendevice.h}!USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CDCACM@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CDCACM}}
+\index{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CDCACM@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CDCACM}!opendevice.h@{opendevice.h}}
+\subsubsection[{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CDCACM}]{\setlength{\rightskip}{0pt plus 5cm}\#define USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CDCACM~1505}}
+\label{opendevice_8h_a146854cde323774f09e364b6cb05197c}
+\hypertarget{opendevice_8h_a23f57d0a9608bd47ace38f99c3c55c94}{
+\index{opendevice.h@{opendevice.h}!USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CUSTOM@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CUSTOM}}
+\index{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CUSTOM@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CUSTOM}!opendevice.h@{opendevice.h}}
+\subsubsection[{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CUSTOM}]{\setlength{\rightskip}{0pt plus 5cm}\#define USB\_\-PID\_\-OBDEV\_\-SHARED\_\-CUSTOM~1500}}
+\label{opendevice_8h_a23f57d0a9608bd47ace38f99c3c55c94}
+\hypertarget{opendevice_8h_ae19368147b8342f413dd7b6344a5a93e}{
+\index{opendevice.h@{opendevice.h}!USB\_\-PID\_\-OBDEV\_\-SHARED\_\-HID@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-HID}}
+\index{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-HID@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-HID}!opendevice.h@{opendevice.h}}
+\subsubsection[{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-HID}]{\setlength{\rightskip}{0pt plus 5cm}\#define USB\_\-PID\_\-OBDEV\_\-SHARED\_\-HID~1503}}
+\label{opendevice_8h_ae19368147b8342f413dd7b6344a5a93e}
+\hypertarget{opendevice_8h_ae93838e6a6f4fb4abc912165b4d9ee34}{
+\index{opendevice.h@{opendevice.h}!USB\_\-PID\_\-OBDEV\_\-SHARED\_\-MIDI@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-MIDI}}
+\index{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-MIDI@{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-MIDI}!opendevice.h@{opendevice.h}}
+\subsubsection[{USB\_\-PID\_\-OBDEV\_\-SHARED\_\-MIDI}]{\setlength{\rightskip}{0pt plus 5cm}\#define USB\_\-PID\_\-OBDEV\_\-SHARED\_\-MIDI~1508}}
+\label{opendevice_8h_ae93838e6a6f4fb4abc912165b4d9ee34}
+\hypertarget{opendevice_8h_aa2e64eba4eebb9adac118798df28e8f8}{
+\index{opendevice.h@{opendevice.h}!USB\_\-VID\_\-OBDEV\_\-SHARED@{USB\_\-VID\_\-OBDEV\_\-SHARED}}
+\index{USB\_\-VID\_\-OBDEV\_\-SHARED@{USB\_\-VID\_\-OBDEV\_\-SHARED}!opendevice.h@{opendevice.h}}
+\subsubsection[{USB\_\-VID\_\-OBDEV\_\-SHARED}]{\setlength{\rightskip}{0pt plus 5cm}\#define USB\_\-VID\_\-OBDEV\_\-SHARED~5824}}
+\label{opendevice_8h_aa2e64eba4eebb9adac118798df28e8f8}
+\hypertarget{opendevice_8h_a7740d6b3c1581a07523be3b3d5039c95}{
+\index{opendevice.h@{opendevice.h}!USBOPEN\_\-ERR\_\-ACCESS@{USBOPEN\_\-ERR\_\-ACCESS}}
+\index{USBOPEN\_\-ERR\_\-ACCESS@{USBOPEN\_\-ERR\_\-ACCESS}!opendevice.h@{opendevice.h}}
+\subsubsection[{USBOPEN\_\-ERR\_\-ACCESS}]{\setlength{\rightskip}{0pt plus 5cm}\#define USBOPEN\_\-ERR\_\-ACCESS~1}}
+\label{opendevice_8h_a7740d6b3c1581a07523be3b3d5039c95}
+\hypertarget{opendevice_8h_a0d2858ff0ca8d95aaf31876e1535a4db}{
+\index{opendevice.h@{opendevice.h}!USBOPEN\_\-ERR\_\-IO@{USBOPEN\_\-ERR\_\-IO}}
+\index{USBOPEN\_\-ERR\_\-IO@{USBOPEN\_\-ERR\_\-IO}!opendevice.h@{opendevice.h}}
+\subsubsection[{USBOPEN\_\-ERR\_\-IO}]{\setlength{\rightskip}{0pt plus 5cm}\#define USBOPEN\_\-ERR\_\-IO~2}}
+\label{opendevice_8h_a0d2858ff0ca8d95aaf31876e1535a4db}
+\hypertarget{opendevice_8h_aeffd7f45947b1e146f8dfc1c6d94704e}{
+\index{opendevice.h@{opendevice.h}!USBOPEN\_\-ERR\_\-NOTFOUND@{USBOPEN\_\-ERR\_\-NOTFOUND}}
+\index{USBOPEN\_\-ERR\_\-NOTFOUND@{USBOPEN\_\-ERR\_\-NOTFOUND}!opendevice.h@{opendevice.h}}
+\subsubsection[{USBOPEN\_\-ERR\_\-NOTFOUND}]{\setlength{\rightskip}{0pt plus 5cm}\#define USBOPEN\_\-ERR\_\-NOTFOUND~3}}
+\label{opendevice_8h_aeffd7f45947b1e146f8dfc1c6d94704e}
+\hypertarget{opendevice_8h_a6d38a8c9d2927333c15aee5d4e118e6c}{
+\index{opendevice.h@{opendevice.h}!USBOPEN\_\-SUCCESS@{USBOPEN\_\-SUCCESS}}
+\index{USBOPEN\_\-SUCCESS@{USBOPEN\_\-SUCCESS}!opendevice.h@{opendevice.h}}
+\subsubsection[{USBOPEN\_\-SUCCESS}]{\setlength{\rightskip}{0pt plus 5cm}\#define USBOPEN\_\-SUCCESS~0}}
+\label{opendevice_8h_a6d38a8c9d2927333c15aee5d4e118e6c}
+
+
+\subsection{Function Documentation}
+\hypertarget{opendevice_8h_a75b5f0b18368de18125662f87524b5b0}{
+\index{opendevice.h@{opendevice.h}!usbGetStringAscii@{usbGetStringAscii}}
+\index{usbGetStringAscii@{usbGetStringAscii}!opendevice.h@{opendevice.h}}
+\subsubsection[{usbGetStringAscii}]{\setlength{\rightskip}{0pt plus 5cm}int usbGetStringAscii (
+\begin{DoxyParamCaption}
+\item[{usb\_\-dev\_\-handle $\ast$}]{dev, }
+\item[{int}]{index, }
+\item[{char $\ast$}]{buf, }
+\item[{int}]{buflen}
+\end{DoxyParamCaption}
+)}}
+\label{opendevice_8h_a75b5f0b18368de18125662f87524b5b0}
+\hypertarget{opendevice_8h_acea645564f1dfcd741ff20038d811ac5}{
+\index{opendevice.h@{opendevice.h}!usbOpenDevice@{usbOpenDevice}}
+\index{usbOpenDevice@{usbOpenDevice}!opendevice.h@{opendevice.h}}
+\subsubsection[{usbOpenDevice}]{\setlength{\rightskip}{0pt plus 5cm}int usbOpenDevice (
+\begin{DoxyParamCaption}
+\item[{usb\_\-dev\_\-handle $\ast$$\ast$}]{device, }
+\item[{int}]{vendorID, }
+\item[{char $\ast$}]{vendorNamePattern, }
+\item[{int}]{productID, }
+\item[{char $\ast$}]{productNamePattern, }
+\item[{char $\ast$}]{serialNamePattern, }
+\item[{FILE $\ast$}]{printMatchingDevicesFp, }
+\item[{FILE $\ast$}]{warningsFp}
+\end{DoxyParamCaption}
+)}}
+\label{opendevice_8h_acea645564f1dfcd741ff20038d811ac5}
