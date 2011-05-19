@@ -5,12 +5,10 @@
 
 
 NAME = main
-MAPLE = /home/michiel/maple13/#change to your maple directory
-LD_LIBRARY_PATH = $(MAPLE)bin.X86_64_LINUX/#change to your maple binaries directory
-CFLAGS = -I$(MAPLE)extern/include/ -Isrc 
+CFLAGS = -Iinclude -Isrc 
 CPPFLAGS = $(CFLAGS) -std=c++0x  
 USBLIBS := $(shell libusb-config --libs)
-LIBS =  -L$(LD_LIBRARY_PATH) -lhf -lrt -lprocessor64 -lmaple -lmaplec $(USBLIBS) -lpthread 
+LIBS =  -Llib $(USBLIBS) -lpthread -lgslcblas -lgsl
 #pthread library should be omitted on windows
 COMPILER = g++
 CC = gcc

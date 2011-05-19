@@ -13,8 +13,7 @@
     #include <pthreads_input.cpp>
 #endif
 
-#include "CMaple.cpp"
-#include "CPosCalc.cpp"
+#include "CSolver.cpp"
 #include "CUsbDevice.cpp"
 #include "CQPed.cpp"
 #include "CAngle.cpp"
@@ -30,9 +29,6 @@ int main(int argc, char *argv[]){
     //create thread
     CInputThread inputthread(&key, 200);
     inputthread.start();
-    //create maple object
-    //CPosCalc poscalc;
-    //poscalc.setup();
     //quadraped
     CQPed quadraped;
     printf("%e\n",quadraped.servoArray[2].pulsewidthToAngle(72));

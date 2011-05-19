@@ -12,8 +12,8 @@ class CQPed{
         CServo servoArray[SERVOS];
         ///the usb helper.
         CUsbDevice usb;
-        ///Maple powered position calculator
-        CPosCalc poscalc;
+        ///solver for x,y,z -> a,b,c
+        CSolver solver[Q_LEGS];
         ///prints the x and y positions of all legs.
         void printPos();
         ///change the x and y position of the center body.
@@ -27,24 +27,16 @@ class CQPed{
         ///print the servo angles from memory.
         void printAngles();
         ///calculate the angles needed for the position specified by x[] and y[]
-        uint8_t calcAngles(uint8_t leg);
+        uint8_t calcAngles(uint8_t leg, uint8_t upOrDown);
         ///chose the best solution and assign it to the servos
-        void assignBestAngles(
-            uint8_t betaServo, uint8_t gammaServo, uint8_t leg);
+        void assignAngles(
+            uint8_t s0, uint8_t s1, uint8_t s2, uint8_t leg);
         ///x positions per leg
         double x[2];
         ///y positions per leg
         double y[2];
         ///z positions per leg
         double z[2];
-        ///length of leg segment 1 (top) per leg.
-        double A[Q_LEGS];
-        ///length of leg segment 2 (middle) per leg.
-        double B[Q_LEGS];
-        ///length of leg segment 3 (bottom) per leg.
-        double C[Q_LEGS];
-        void assignBestAngles3D(
-    uint8_t alphaServo, uint8_t betaServo, uint8_t gammaServo, uint8_t leg);
 };
 
 /** Most default values are hardcoded into this function.
@@ -65,22 +57,24 @@ void CQPed::reset(){
     servoArray[5].setAngle(-PI/2);
     x[0] = 9.5;
     x[1] = -8;
-    y[0] = 5.5;
-    y[1] = 5.5;
+    y[0] = -5.5;
+    y[1] = -5.5;
     z[0] = 0;
     z[1] = 0;
     //leg 0
-    A[0] = 3;
-    B[0] = 6.5;
-    C[0] = 5.5;
+    solver[0].p.A = 3;
+    solver[0].p.B = 6.5;
+    solver[0].p.C = 5.5;
     //leg 1
-    A[1] = 3;
-    B[1] = 5;
-    C[1] = 5.5;
-    poscalc.setup(A, B, C, Q_LEGS);
-    //printf("4: max angle=%f\n",servoArray[4].pulsewidthToAngle(96));
-    //printf("4: min angle=%f\n",servoArray[4].pulsewidthToAngle(48));
-    //printf("4: isValid %d\n",servoArray[5].isValidAngle(-1.8));
+    solver[1].p.A = 3;
+    solver[1].p.B = 5;
+    solver[1].p.C = 5.5;
+
+
+}
+
+void CQPed::assignAngles(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t leg){
+
 
 }
 
@@ -89,9 +83,11 @@ void CQPed::moveRelative(double X, double Y){
     x[1] -= X;
     y[0] += Y;
     y[1] += Y;
+    uint8_t up = 0;
+    if (x[0] > -solver[0].p.C ) up =1;
     printf("=== leg 0:\n");
-    if (calcAngles(0)) assignBestAngles(1,2,0);
-    else {
+    if (calcAngles(0, up)==0) assignAngles(0,1,2,0);
+    else {//undo move
         x[0] -= X;
         x[1] += X;
         y[0] -= Y;
@@ -99,8 +95,8 @@ void CQPed::moveRelative(double X, double Y){
         return;
     }
     printf("=== leg 1:\n");
-    if (calcAngles(1)) assignBestAngles(4,5,1);
-    else {
+    if (calcAngles(1,up)==0) assignAngles(3,4,5,1);
+    else {//undo move
         x[0] -= X;
         x[1] += X;
         y[0] -= Y;
@@ -113,58 +109,15 @@ void CQPed::printPos(){
     printf("x0 = %f\ny0 = %f\nx1 = %f\ny1 = %f\n",x[0],y[0],x[1],y[1]);
 }
 
-void CQPed::assignBestAngles3D(
-    uint8_t alphaServo, uint8_t betaServo, uint8_t gammaServo, uint8_t leg){
-
-}
-
-void CQPed::assignBestAngles(
-    uint8_t betaServo, uint8_t gammaServo, uint8_t leg){
+uint8_t CQPed::calcAngles(uint8_t leg, uint8_t upOrDown){
+    double guess =0.001;
+    double alphaGuess =-0;
+    if (upOrDown) guess = 0.001;
+    if (leg%2) alphaGuess = -3;
+    return solver[leg].solveFor(x[leg], y[leg], z[leg], guess, alphaGuess);
+   
     
-    double b = servoArray[betaServo].angle;
-    double c = servoArray[gammaServo].angle;
-    double bDiff0=PI;
-    double bDiff1=PI;
-    //first result
-    if (servoArray[betaServo].isValidAngle(poscalc.beta[0])){
-        if (servoArray[gammaServo].isValidAngle(poscalc.gamma[0])){
-            bDiff0 = b - poscalc.beta[0];
-        }
-    }
-    //second result
-    if (servoArray[betaServo].isValidAngle(poscalc.beta[1])){
-        if (servoArray[gammaServo].isValidAngle(poscalc.gamma[1])){
-            bDiff1 = b - poscalc.beta[1];
-        }
-    }
-    if (bDiff0 == bDiff1 && bDiff1 == PI){
-        //both invalid
-        printf("no valid angles available\n");
-        printf("%f\n",poscalc.beta[0]);
-        printf("%f\n",poscalc.gamma[0]);
-        printf("%f\n",poscalc.beta[1]);
-        printf("%f\n",poscalc.gamma[1]);
-    } else if (fabs(bDiff0) <= fabs(bDiff1)){
-        printf("selected 0\n");
-        printf("%f --> %d\n", poscalc.beta[0], 
-            servoArray[betaServo].angleToPulsewidth(poscalc.beta[0]));
-        printf("%f --> %d\n", poscalc.gamma[0], 
-            servoArray[gammaServo].angleToPulsewidth(poscalc.gamma[0]));
-        servoArray[betaServo].setAngle(poscalc.beta[0]);
-        servoArray[gammaServo].setAngle(poscalc.gamma[0]);
-    } else {
-        printf("selected 1\n");
-        printf("%f --> %d\n", poscalc.beta[1], 
-            servoArray[betaServo].angleToPulsewidth(poscalc.beta[1]));
-        printf("%f --> %d\n", poscalc.gamma[1], 
-            servoArray[gammaServo].angleToPulsewidth(poscalc.gamma[1]));
-        servoArray[betaServo].setAngle(poscalc.beta[1]);
-        servoArray[gammaServo].setAngle(poscalc.gamma[1]);
-    }
-}
-
-uint8_t CQPed::calcAngles(uint8_t leg){
-    return poscalc.calculateAngles(x[leg],y[leg], z[leg], leg);
+    //return poscalc.calculateAngles(x[leg],y[leg], z[leg], leg);
 }
 
 
