@@ -120,9 +120,9 @@ class CUsbDevice{
         int8_t connected;
         int8_t connect();
         void readServoData();
-        void readServoData(CServo *servos);
+        void readServoData(CServo2 *servos);
         void sendServoData();
-        void sendServoData(CServo *servos);
+        void sendServoData(CServo2 *servos);
         void printA();
         void printB();
         void getData();
@@ -210,7 +210,7 @@ void CUsbDevice::readServoData(){
     }else printf("readServoData: device was not ready\n");
 }
 
-void CUsbDevice::readServoData(CServo* servos){
+void CUsbDevice::readServoData(CServo2* servos){
     int i; 
     char k;
     if (sendCtrlMsg(CUSTOM_RQ_LOAD_POS_FROM_I2C, USB_ENDPOINT_IN,0,0,bufferA)==0){
@@ -225,8 +225,8 @@ void CUsbDevice::readServoData(CServo* servos){
             printf("}\n");
             if(k==BUFLEN_SERVO_DATA){
                 for (i=0;i<BUFLEN_SERVO_DATA;i++){
-                    servos[i].pulsewidth = bufferA[i];
-                    servos[i].angle = servos[i].pulsewidthToAngle();
+                    servos[i].setPW( bufferA[i]);
+                    //servos[i].setAngle = servos[i].pulsewidthToAngle();
                 }
             }else {
                 printf("not ready, trying again.\n");
@@ -244,10 +244,10 @@ void CUsbDevice::sendServoData(){
     printf("sendServoData: %d send\n",i);
 }
 
-void CUsbDevice::sendServoData(CServo *servos){
+void CUsbDevice::sendServoData(CServo2 *servos){
     int i;
     for (i=0;i<BUFLEN_SERVO_DATA;i++){
-        bufferA[i] = servos[i].pulsewidth;
+        bufferA[i] = servos[i].getPW();
     }
 
     i = sendCtrlMsg(CUSTOM_RQ_SET_DATA, USB_ENDPOINT_OUT, 0,0,bufferA);

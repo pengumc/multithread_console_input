@@ -25,6 +25,8 @@ class CAngle{
         double get();
         ///print the angle in rad to stdout.
         void printAngle();
+        ///mirror the angle across the y axis of the unity circle
+        void flipY();
         ///check if test lies between min and max.
         char isBetween(double min, double max, double test);
         ///converts s to a value within the -PI..PI range.
@@ -43,6 +45,10 @@ class CAngle{
 
 CAngle::CAngle(double s){
     set(s);
+}
+
+void CAngle::flipY(){
+    set(PI - a);
 }
 
 CAngle CAngle::operator- (double s){
@@ -81,19 +87,20 @@ double CAngle::get(){
 *   isBetween( PI/2, -PI/2, PI) will return 1.<BR>
 */
 char CAngle::isBetween(double min, double max, double test){
+    //printf("%f > %f && %f < %f\n",test, min, test, max);
     min = anglize(min);
     max = anglize(max);
     test = anglize(test);
     //check if we the frame includes PI
     if( min < max){//easy case
-        printf("%f > %f && %f < %f\n",test, min, test, max);
+        //printf("%f > %f && %f < %f\n",test, min, test, max);
         if ( test >= min && test <= max) return 1;
         else return 0;
     }else{//hard case
         double shift =  max + PI;
         min -= shift;
         test = anglize(test - shift);
-        printf("%f > %f && %f < %f\n",test, min, test, PI);
+        //printf("%f > %f && %f < %f\n",test, min, test, PI);
         if ( test >= min && test <= PI) return 1;
         else return 0;
     }

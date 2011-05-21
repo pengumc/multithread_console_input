@@ -1,3 +1,5 @@
+#ifndef __CSOLVER_CPP__
+#define __CSOLVER_CPP__
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -44,7 +46,7 @@ class CSolver{
     public:
         CSolver();
         ~CSolver();
-        int solveFor(double x, double y, double z, double betaGuess, double alphaGuess);
+        int solveFor(double x, double y, double z, double betaGuess );
         double alpha;
         double beta;
         double gamma;
@@ -73,8 +75,8 @@ CSolver::~CSolver(){
     gsl_vector_free(x);
 }
 
-int CSolver::solveFor(double X, double Y, double Z, double betaGuess,double alphaGuess){
-    gsl_vector_set(x,0,alphaGuess);
+int CSolver::solveFor(double X, double Y, double Z, double betaGuess){
+    gsl_vector_set(x,0,0);
     gsl_vector_set(x,1,betaGuess);
     gsl_vector_set(x,2,0);
     p.X = X;
@@ -96,14 +98,17 @@ int CSolver::solveFor(double X, double Y, double Z, double betaGuess,double alph
         gsl_vector_get(s->x,2)
     );
     alpha = gsl_vector_get(s->x, 0);    
-    beta= gsl_vector_get(s->x, 0);    
-    gamma = gsl_vector_get(s->x, 0);    
+    beta= gsl_vector_get(s->x, 1);    
+    gamma = gsl_vector_get(s->x, 2);    
 
     return status;
 }
 
+#endif
+#ifndef __MAIN__
+//testing
 int main(int argc, char *argv[]){
     CSolver solver;
-    solver.solveFor(-8, -4,0.001, 0,-3.14);
+    solver.solveFor(atof(argv[1]),atof(argv[2]),atof(argv[3]),0.1,0);
 }
-
+#endif

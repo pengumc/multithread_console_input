@@ -1,6 +1,7 @@
 //windows: g++ test.cpp -o test.exe
 //linux g++ test.cpp -o test -lpthread
 //------------------------------------------------------------------------------
+#define __MAIN__
 #define PI 3.14159265
 #include <iostream>
 #include <stdint.h>
@@ -14,6 +15,7 @@
 #endif
 
 #include "CSolver.cpp"
+#include "CServo.cpp"
 #include "CUsbDevice.cpp"
 #include "CQPed.cpp"
 #include "CAngle.cpp"
@@ -32,9 +34,7 @@ int main(int argc, char *argv[]){
     //quadraped
     CQPed quadraped;
     printf("%e\n",quadraped.servoArray[2].pulsewidthToAngle(72));
-    printf("%e\n",quadraped.servoArray[2].angle);
     printf("%d\n",quadraped.servoArray[2].angleToPulsewidth(.1));
-    printf("%d\n",quadraped.servoArray[2].pulsewidth);
     //main loop
     #define SPEED 0.2
     while(running){
@@ -122,7 +122,7 @@ int main(int argc, char *argv[]){
             inputthread.reset();
         }else{//input wait
 #define SENS 32
-#define DIV 400
+#define DIV 4000
             char trigger=0;
             if (quadraped.usb.connected>0){
             quadraped.usb.getData();
@@ -144,20 +144,20 @@ int main(int argc, char *argv[]){
             if(!(quadraped.usb.bufferB[2] & 8)){
                 trigger=1;
                 quadraped.x[0] = 9.0 - ((float)temp)/64;
-                quadraped.x[1] = -7.5 + ((float)temp)/64;
+                quadraped.x[1] = -8 - ((float)temp)/64;
                 quadraped.moveRelative(0,0);
             }
             temp =  ((uint8_t)quadraped.usb.bufferB[8]-128);
             if(!(quadraped.usb.bufferB[2] & 8)){//R1
                 trigger=1;
                 quadraped.y[0] = - 5.5 + (float)(temp/64);
-                quadraped.y[1] = 5.5 + (float)(temp/64);
+                quadraped.y[1] = - 5.5 + (float)(temp/64);
                 quadraped.moveRelative(0,0);
             }
             if(trigger){
                 quadraped.sendToDev();
                 trigger=0;
-                usleep(100);
+                usleep(400);
             }
             }
         }

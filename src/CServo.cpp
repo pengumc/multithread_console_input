@@ -1,4 +1,6 @@
 //-----------------------------------------------------------------------------
+#ifndef __CSERVO_CPP__
+#define __CSERVO_CPP__
 #include <stdint.h>
 #include "CAngle.cpp"
 #include <stdlib.h>
@@ -9,13 +11,19 @@ class CServo2{
     public:
         CServo2();
         void reset();
-        double offset;
+        CAngle offset;
         double pulsewidthToAngle(); 
         double pulsewidthToAngle(uint8_t s); 
+        uint8_t angleToPulsewidth();
+        uint8_t angleToPulsewidth(double s);
         uint8_t isValid(double s);
         void setAngle(double s);
         void changeAngle(double s);
-//TODO pw <-> angle
+        void mirrorZ();
+        double getAngle();
+        uint8_t getPW();
+        void setPW(uint8_t p);
+        void flipDirection();
     private:
         double K;
         uint8_t midPulse;
@@ -28,6 +36,7 @@ class CServo2{
 
 CServo2::CServo2(){reset();}
 
+
 void CServo2::reset(){
     minPulse = 48;
     maxPulse = 96;
@@ -37,35 +46,91 @@ void CServo2::reset(){
     K = 0.034;
     angle = 0.0;
     pw = midPulse;
-    printf("mid %d\npw %d\nangle %f\n", midPulse, pw, angle.get());
+    //printf("servo created:\nmid %d\npw %d\nangle %f\n", midPulse, pw, angle.get());
+}
+
+double CServo2::getAngle(){
+    return angle.get();
+}
+
+uint8_t CServo2::getPW(){
+    return pw;
+}
+
+void CServo2::flipDirection(){
+    direction *=-1.0;
+    const uint8_t x = minPulse;
+    minPulse = maxPulse;
+    maxPulse = x;
+}
+void CServo2::mirrorZ(){
+    //flipDirection();
+    offset.flipY();
+    angle = pulsewidthToAngle();
+}
+
+uint8_t CServo2::angleToPulsewidth(){
+    double s = angle.anglize(angle.get()-offset.get());
+    return (((s) / K) / direction) + midPulse;
 }
 
 
+uint8_t CServo2::angleToPulsewidth(double s){
+    s = angle.anglize(s-offset.get());
+    return (((s) / K) / direction) + midPulse;
+}
+
 double CServo2::pulsewidthToAngle(){
-    return (pw - (midPulse)) * direction * K + offset;
+    return (pw - (midPulse)) * direction * K + offset.get();
     
 }
 
 double CServo2::pulsewidthToAngle(uint8_t s){
-    return (s - (midPulse)) * direction * K + offset;
+    return ((s - midPulse) * direction * K + offset.get());
 
 }
 
+
+
 uint8_t CServo2::isValid(double s){
-    return 0;
+    return angle.isBetween(
+        pulsewidthToAngle(minPulse),
+        pulsewidthToAngle(maxPulse),
+        s);
 }
 
 void CServo2::setAngle(double s){
-    
+    if (isValid(s)) {
+        angle = s;
+        pw = angleToPulsewidth();
+    }
+}
+
+void CServo2::setPW(uint8_t p){
+    if (isValid(pulsewidthToAngle(p))){
+        pw = p;
+        angle = pulsewidthToAngle(p);
+    }
 }
 
 void CServo2::changeAngle(double s){
-
+    s = angle.get() +s;
+    if (isValid(s)) {
+        angle = s;
+        pw = angleToPulsewidth();
+   }
 }
 
+#ifndef __MAIN__
+//testing
 int main(int argc, char *argv[]){
     CServo2 S;
-    printf("%f\n",S.pulsewidthToAngle(atoi(argv[1])));
-
+    S.offset =-(PI/2);
+    S.setAngle(-PI/2);
+    S.flipDirection();
+    S.changeAngle(atof(argv[1]));
+    printf("pw %d\nangle %f\n", S.getPW(), S.getAngle());
 }
 
+#endif
+#endif
