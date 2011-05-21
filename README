@@ -17,10 +17,6 @@ psx controller:
  left stick : nothgin
  left stick + R1: absolute control. i.e. stick halfway top right = main body halfway top right 
 
-Should work on windows as well! you need to make some adjustments to the makefile though
-
-MAPLE:
-required environment:
-    MAPLE=maple install dir
-    LD_LIBRARY_PATH=maple binaries dir
+windows compilation not tested yet.
+also, double check library symlinks in lib/
 
