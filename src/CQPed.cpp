@@ -18,7 +18,7 @@ class CQPed{
         ///prints the x and y positions of all legs.
         void printPos();
         ///change the x and y position of the center body.
-        void moveRelative(double X, double Y);
+        void moveRelative(double X, double Y, double Z);
         ///send the servo states to the physical device.
         void sendToDev();
         ///read servo states from physical device.
@@ -114,7 +114,7 @@ void CQPed::assignAngles(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t leg){
 
 }
 
-void CQPed::moveRelative(double X, double Y){
+void CQPed::moveRelative(double X, double Y, double Z){
     //TODO prevent movement on single leg fail
     x[0] += X;
     x[1] += X;

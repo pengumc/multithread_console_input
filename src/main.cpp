@@ -50,19 +50,19 @@ int main(int argc, char *argv[]){
                 case 'c':
                     break;
                 case 'w':
-                    quadraped.moveRelative(0, -SPEED);
+                    quadraped.moveRelative(0, -SPEED,0);
                     quadraped.sendToDev();
                     break;
                 case 's':
-                    quadraped.moveRelative(0, SPEED);
+                    quadraped.moveRelative(0, SPEED,0);
                     quadraped.sendToDev();
                     break;
                 case 'a':
-                    quadraped.moveRelative(SPEED,0);
+                    quadraped.moveRelative(SPEED,0,0);
                     quadraped.sendToDev();
                     break;
                 case 'd':
-                    quadraped.moveRelative(-SPEED, 0);
+                    quadraped.moveRelative(-SPEED, 0,0);
                     quadraped.sendToDev();
                     break;
                case '1':
@@ -133,13 +133,13 @@ int main(int argc, char *argv[]){
             if (abs(temp) > SENS) {
                 trigger=1;
                 printf("%d\n",temp);
-                quadraped.moveRelative(0, ((float)temp)/DIV);
+                quadraped.moveRelative(0, ((float)temp)/DIV,0);
             }
             temp = ((uint8_t)quadraped.usb.bufferB[5]-128);
             if (abs(temp) > SENS) {
                 trigger=1;
                 printf("%d\n",temp);
-                quadraped.moveRelative(-((float)temp)/DIV,0);
+                quadraped.moveRelative(-((float)temp)/DIV,0,0);
             }
             //left stick, absolute control
             temp =  ((uint8_t)quadraped.usb.bufferB[7]-128);
@@ -147,14 +147,14 @@ int main(int argc, char *argv[]){
                 trigger=1;
                 quadraped.x[0] = 9.0 - ((float)temp)/64;
                 quadraped.x[1] = -8 - ((float)temp)/64;
-                quadraped.moveRelative(0,0);
+                quadraped.moveRelative(0,0,0);
             }
             temp =  ((uint8_t)quadraped.usb.bufferB[8]-128);
             if(!(quadraped.usb.bufferB[2] & 8)){//R1
                 trigger=1;
                 quadraped.y[0] = - 5.5 + (float)(temp/64);
                 quadraped.y[1] = - 5.5 + (float)(temp/64);
-                quadraped.moveRelative(0,0);
+                quadraped.moveRelative(0,0,0);
             }
             if(trigger){
                 quadraped.sendToDev();
