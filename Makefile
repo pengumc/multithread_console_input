@@ -8,7 +8,9 @@ NAME = main
 CFLAGS = -Iinclude -Isrc 
 CPPFLAGS = $(CFLAGS) -std=c++0x  
 USBLIBS := $(shell libusb-config --libs)
-LIBS =  -Llib $(USBLIBS) -lpthread -lgslcblas -lgsl
+LIBS =  -Llib -lgslcblas -lgsl $(LINUX) #put either LINUX or WINDOWS here
+LINUX = -lpthread $(USBLIBS)
+WINDOWS = -lusb 
 #pthread library should be omitted on windows
 COMPILER = g++
 CC = gcc
@@ -19,14 +21,14 @@ OBJECTS = opendevice.o $(NAME).o
 .PHONY:all, clean, force
 
 all:bin/$(OUTPUTNAME)
-
+	rm $(OBJECTS)
 force:clean all
 
 bin/$(OUTPUTNAME):$(OBJECTS)
 	$(COMPILER) -o bin/$(OUTPUTNAME) $(OBJECTS) $(LIBS)
 clean:
-	rm bin/$(OUTPUTNAME)
 	rm $(OBJECTS)
+	rm bin/$(OUTPUTNAME)
 
 %.o:src/%.cpp
 	$(COMPILER) $(CPPFLAGS) -c $<

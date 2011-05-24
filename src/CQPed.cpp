@@ -115,6 +115,7 @@ void CQPed::assignAngles(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t leg){
 }
 
 void CQPed::moveRelative(double X, double Y){
+    //TODO prevent movement on single leg fail
     x[0] += X;
     x[1] += X;
     y[0] += Y;

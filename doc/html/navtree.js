@@ -4,29 +4,17 @@ var NAVTREE =
     [ "Class List", "annotated.html", [
       [ "CAngle", "class_c_angle.html", null ],
       [ "CInputThread", "class_c_input_thread.html", null ],
-      [ "CMaple", "class_c_maple.html", null ],
-      [ "CPosCalc", "class_c_pos_calc.html", null ],
       [ "CQPed", "class_c_q_ped.html", null ],
       [ "CServo", "class_c_servo.html", null ],
+      [ "CServo2", "class_c_servo2.html", null ],
+      [ "CSolver", "class_c_solver.html", null ],
       [ "CUsbDevice", "class_c_usb_device.html", null ],
-      [ "MCallBackVectorDesc", "struct_m_call_back_vector_desc.html", null ]
+      [ "PARAMS", "struct_p_a_r_a_m_s.html", null ]
     ] ],
     [ "Class Index", "classes.html", null ],
-    [ "Class Hierarchy", "hierarchy.html", [
-      [ "CAngle", "class_c_angle.html", null ],
-      [ "CInputThread", "class_c_input_thread.html", null ],
-      [ "CMaple", "class_c_maple.html", [
-        [ "CPosCalc", "class_c_pos_calc.html", null ]
-      ] ],
-      [ "CQPed", "class_c_q_ped.html", null ],
-      [ "CServo", "class_c_servo.html", null ],
-      [ "CUsbDevice", "class_c_usb_device.html", null ],
-      [ "MCallBackVectorDesc", "struct_m_call_back_vector_desc.html", null ]
-    ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
       [ "src/i2c_header.h", null, null ],
-      [ "src/maplec.h", null, null ],
       [ "src/opendevice.h", null, null ],
       [ "src/requests.h", null, null ],
       [ "src/usbconfig.h", null, null ]

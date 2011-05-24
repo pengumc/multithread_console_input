@@ -17,6 +17,17 @@ psx controller:
  left stick : nothgin
  left stick + R1: absolute control. i.e. stick halfway top right = main body halfway top right 
 
-windows compilation not tested yet.
-also, double check library symlinks in lib/
+
+WINDOWS (minGW)
+g++ (4 or higher)
+libgmp
+libmpc
+libmpfr
+gcc-core
+gsl libraries: http://gnuwin32.sourceforge.net/packages/gsl.htm
+change switch $(LINUX) with $(WINDOWS) in the makefile
+note: some timings are wrong on windows atm, making input slow
+
+
+
 

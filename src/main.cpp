@@ -6,11 +6,12 @@
 #include <iostream>
 #include <stdint.h>
 #include <math.h>
+#include <stdio.h>
 #ifdef _WIN32
     #include <conio.h>
     #include <win32_input.cpp>
+		#define usleep(x) Sleep(x/1000)
 #else
-    #include <stdio.h>
     #include <pthreads_input.cpp>
 #endif
 
@@ -123,6 +124,7 @@ int main(int argc, char *argv[]){
         }else{//input wait
 #define SENS 32
 #define DIV 4000
+#define sleepytime 300
             char trigger=0;
             if (quadraped.usb.connected>0){
             quadraped.usb.getData();
@@ -157,7 +159,7 @@ int main(int argc, char *argv[]){
             if(trigger){
                 quadraped.sendToDev();
                 trigger=0;
-                usleep(400);
+                usleep(sleepytime);
             }
             }
         }

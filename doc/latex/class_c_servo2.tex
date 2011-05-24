@@ -1,0 +1,128 @@
+\hypertarget{class_c_servo2}{
+\section{CServo2 Class Reference}
+\label{class_c_servo2}\index{CServo2@{CServo2}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_servo2_aa266705a8602cc307b508dd97734aa71}{
+void {\bfseries reset} ()}
+\label{class_c_servo2_aa266705a8602cc307b508dd97734aa71}
+
+\item 
+\hypertarget{class_c_servo2_a3e6f977c73ad5842fffb7d04f7b0d941}{
+double {\bfseries pulsewidthToAngle} ()}
+\label{class_c_servo2_a3e6f977c73ad5842fffb7d04f7b0d941}
+
+\item 
+\hypertarget{class_c_servo2_a40a6384251bb2b9c06fa6453477a8ff1}{
+double {\bfseries pulsewidthToAngle} (uint8\_\-t s)}
+\label{class_c_servo2_a40a6384251bb2b9c06fa6453477a8ff1}
+
+\item 
+\hypertarget{class_c_servo2_a698be98ec12750cb1d52c632ae4cb443}{
+uint8\_\-t {\bfseries angleToPulsewidth} ()}
+\label{class_c_servo2_a698be98ec12750cb1d52c632ae4cb443}
+
+\item 
+\hypertarget{class_c_servo2_a2c37b767d47aead842cc7eb2144820a4}{
+uint8\_\-t {\bfseries angleToPulsewidth} (double s)}
+\label{class_c_servo2_a2c37b767d47aead842cc7eb2144820a4}
+
+\item 
+\hypertarget{class_c_servo2_a1dd315d9bdb7d9a095af6660cb2be710}{
+uint8\_\-t {\bfseries isValid} (double s)}
+\label{class_c_servo2_a1dd315d9bdb7d9a095af6660cb2be710}
+
+\item 
+\hypertarget{class_c_servo2_a0fe2be79d12ff2fa254900125884eb4c}{
+void {\bfseries setAngle} (double s)}
+\label{class_c_servo2_a0fe2be79d12ff2fa254900125884eb4c}
+
+\item 
+\hypertarget{class_c_servo2_a60b06aeebf5966359dcbdcd9b491c68c}{
+void {\bfseries changeAngle} (double s)}
+\label{class_c_servo2_a60b06aeebf5966359dcbdcd9b491c68c}
+
+\item 
+\hypertarget{class_c_servo2_a994b648f9dc7e04008d6a0248722202e}{
+void {\bfseries mirrorZ} ()}
+\label{class_c_servo2_a994b648f9dc7e04008d6a0248722202e}
+
+\item 
+\hypertarget{class_c_servo2_acafd038ae22d86206786c6cb1f5765a6}{
+double {\bfseries getAngle} ()}
+\label{class_c_servo2_acafd038ae22d86206786c6cb1f5765a6}
+
+\item 
+\hypertarget{class_c_servo2_a27d22533a3869156275a5e50c94bdf19}{
+uint8\_\-t {\bfseries getPW} ()}
+\label{class_c_servo2_a27d22533a3869156275a5e50c94bdf19}
+
+\item 
+\hypertarget{class_c_servo2_ad675a0e5812a03ed6bad7fa102bae073}{
+void {\bfseries setPW} (uint8\_\-t p)}
+\label{class_c_servo2_ad675a0e5812a03ed6bad7fa102bae073}
+
+\item 
+\hypertarget{class_c_servo2_aadaa9839321568024a178721dfc360e2}{
+void {\bfseries flipDirection} ()}
+\label{class_c_servo2_aadaa9839321568024a178721dfc360e2}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_servo2_a1ddc2df94150af0f2ad56e712854bfb4}{
+\hyperlink{class_c_angle}{CAngle} {\bfseries offset}}
+\label{class_c_servo2_a1ddc2df94150af0f2ad56e712854bfb4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_servo2_ac0853dd743e7096cd25596cf14c02100}{
+media D git multithread\_\-console\_\-input src \hyperlink{class_c_servo}{CServo} friend class {\bfseries CUsbDevice}}
+\label{class_c_servo2_ac0853dd743e7096cd25596cf14c02100}
+
+\item 
+\hypertarget{class_c_servo2_abf4e2e031526e454a8e57a61bd82daac}{
+double {\bfseries K}}
+\label{class_c_servo2_abf4e2e031526e454a8e57a61bd82daac}
+
+\item 
+\hypertarget{class_c_servo2_a8ce4a299e455893488b09190b38e3e88}{
+uint8\_\-t {\bfseries midPulse}}
+\label{class_c_servo2_a8ce4a299e455893488b09190b38e3e88}
+
+\item 
+\hypertarget{class_c_servo2_a2e7b18f9c1423eaa35328468431d1715}{
+uint8\_\-t {\bfseries minPulse}}
+\label{class_c_servo2_a2e7b18f9c1423eaa35328468431d1715}
+
+\item 
+\hypertarget{class_c_servo2_a6df14acb9e50efe9b6b1bc5a07933700}{
+uint8\_\-t {\bfseries maxPulse}}
+\label{class_c_servo2_a6df14acb9e50efe9b6b1bc5a07933700}
+
+\item 
+\hypertarget{class_c_servo2_acf6790ef97d0fe7b8966463e2b8aca6a}{
+double {\bfseries direction}}
+\label{class_c_servo2_acf6790ef97d0fe7b8966463e2b8aca6a}
+
+\item 
+\hypertarget{class_c_servo2_a3e772749c54a15005829951d7d568a2f}{
+\hyperlink{class_c_angle}{CAngle} {\bfseries angle}}
+\label{class_c_servo2_a3e772749c54a15005829951d7d568a2f}
+
+\item 
+\hypertarget{class_c_servo2_af13f8f9a5bbfd2ab32d379eff678ca75}{
+uint8\_\-t {\bfseries pw}}
+\label{class_c_servo2_af13f8f9a5bbfd2ab32d379eff678ca75}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/CServo.cpp\end{DoxyCompactItemize}

@@ -60,7 +60,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -94,8 +93,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a93038e7ebe45982833d8250dfc64fc11">reset</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">reconnect and reset the entire thing.  <a href="#a93038e7ebe45982833d8250dfc64fc11"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#abc32ad0b6668da1eed281a0ef943eb8b">reset_old</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">reconnect and reset the entire thing.  <a href="#abc32ad0b6668da1eed281a0ef943eb8b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93038e7ebe45982833d8250dfc64fc11"></a><!-- doxytag: member="CQPed::reset" ref="a93038e7ebe45982833d8250dfc64fc11" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3a3e9af02572add33090c02648da08a"></a><!-- doxytag: member="CQPed::printPos" ref="af3a3e9af02572add33090c02648da08a" args="()" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#af3a3e9af02572add33090c02648da08a">printPos</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prints the x and y positions of all legs. <br/></td></tr>
@@ -114,25 +115,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5692f3e1bd4f098dd56dcf2501bebca2"></a><!-- doxytag: member="CQPed::printAngles" ref="a5692f3e1bd4f098dd56dcf2501bebca2" args="()" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a5692f3e1bd4f098dd56dcf2501bebca2">printAngles</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">print the servo angles from memory. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25df4f0ebb62de1ec8ec07cc3650176e"></a><!-- doxytag: member="CQPed::calcAngles" ref="a25df4f0ebb62de1ec8ec07cc3650176e" args="(uint8_t leg)" -->
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a25df4f0ebb62de1ec8ec07cc3650176e">calcAngles</a> (uint8_t leg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff6fe55cbb33d0f31099ea44a09caed1"></a><!-- doxytag: member="CQPed::calcAngles" ref="aff6fe55cbb33d0f31099ea44a09caed1" args="(uint8_t leg, uint8_t upOrDown)" -->
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#aff6fe55cbb33d0f31099ea44a09caed1">calcAngles</a> (uint8_t leg, uint8_t upOrDown)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the angles needed for the position specified by x[] and y[] <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59ff39aab4b6e694c756799106d5bf45"></a><!-- doxytag: member="CQPed::assignBestAngles" ref="a59ff39aab4b6e694c756799106d5bf45" args="(uint8_t betaServo, uint8_t gammaServo, uint8_t leg)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a59ff39aab4b6e694c756799106d5bf45">assignBestAngles</a> (uint8_t betaServo, uint8_t gammaServo, uint8_t leg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f8c4839afeb621c94400a1fceae981c"></a><!-- doxytag: member="CQPed::assignAngles" ref="a9f8c4839afeb621c94400a1fceae981c" args="(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t leg)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a9f8c4839afeb621c94400a1fceae981c">assignAngles</a> (uint8_t s0, uint8_t s1, uint8_t s2, uint8_t leg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">chose the best solution and assign it to the servos <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2448f69b567bd2817b0c04abff90f32"></a><!-- doxytag: member="CQPed::assignBestAngles3D" ref="ad2448f69b567bd2817b0c04abff90f32" args="(uint8_t alphaServo, uint8_t betaServo, uint8_t gammaServo, uint8_t leg)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>assignBestAngles3D</b> (uint8_t alphaServo, uint8_t betaServo, uint8_t gammaServo, uint8_t leg)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33d7137c5d392fd900654921e4a7eb3b"></a><!-- doxytag: member="CQPed::servoArray" ref="a33d7137c5d392fd900654921e4a7eb3b" args="[SERVOS]" -->
-<a class="el" href="class_c_servo.html">CServo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a33d7137c5d392fd900654921e4a7eb3b">servoArray</a> [SERVOS]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c38e5be6a8fff890d22741e256766cd"></a><!-- doxytag: member="CQPed::servoArray" ref="a5c38e5be6a8fff890d22741e256766cd" args="[SERVOS]" -->
+<a class="el" href="class_c_servo2.html">CServo2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a5c38e5be6a8fff890d22741e256766cd">servoArray</a> [SERVOS]</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">array of servos, 3 per leg. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac32d01b945471e4a4b752830ca7b8a57"></a><!-- doxytag: member="CQPed::usb" ref="ac32d01b945471e4a4b752830ca7b8a57" args="" -->
 <a class="el" href="class_c_usb_device.html">CUsbDevice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#ac32d01b945471e4a4b752830ca7b8a57">usb</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">the usb helper. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a066bfd6ea8a409f3db09c329696ab3fd"></a><!-- doxytag: member="CQPed::poscalc" ref="a066bfd6ea8a409f3db09c329696ab3fd" args="" -->
-<a class="el" href="class_c_pos_calc.html">CPosCalc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a066bfd6ea8a409f3db09c329696ab3fd">poscalc</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maple powered position calculator. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50716447d694e13b8818c5213e4d0e44"></a><!-- doxytag: member="CQPed::solver" ref="a50716447d694e13b8818c5213e4d0e44" args="[Q_LEGS]" -->
+<a class="el" href="class_c_solver.html">CSolver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a50716447d694e13b8818c5213e4d0e44">solver</a> [Q_LEGS]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">solver for x,y,z -&gt; a,b,c <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1456fc9cb85141946f1e21ef6ce86998"></a><!-- doxytag: member="CQPed::x" ref="a1456fc9cb85141946f1e21ef6ce86998" args="[2]" -->
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a1456fc9cb85141946f1e21ef6ce86998">x</a> [2]</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">x positions per leg <br/></td></tr>
@@ -142,25 +141,16 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae40c62791d6b39e550cb1d72c1872dd3"></a><!-- doxytag: member="CQPed::z" ref="ae40c62791d6b39e550cb1d72c1872dd3" args="[2]" -->
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#ae40c62791d6b39e550cb1d72c1872dd3">z</a> [2]</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">z positions per leg <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02a8f143bfecbe7e2fd0100c7dff24ec"></a><!-- doxytag: member="CQPed::A" ref="a02a8f143bfecbe7e2fd0100c7dff24ec" args="[Q_LEGS]" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a02a8f143bfecbe7e2fd0100c7dff24ec">A</a> [Q_LEGS]</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">length of leg segment 1 (top) per leg. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad94807db7fd7b916711f9b430130479c"></a><!-- doxytag: member="CQPed::B" ref="ad94807db7fd7b916711f9b430130479c" args="[Q_LEGS]" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#ad94807db7fd7b916711f9b430130479c">B</a> [Q_LEGS]</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">length of leg segment 2 (middle) per leg. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a955e4779b4f4923ad65cf2d4de0c1f18"></a><!-- doxytag: member="CQPed::C" ref="a955e4779b4f4923ad65cf2d4de0c1f18" args="[Q_LEGS]" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_q_ped.html#a955e4779b4f4923ad65cf2d4de0c1f18">C</a> [Q_LEGS]</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">length of leg segment 3 (bottom) per leg. <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>quadraped device, currently in 2 leg mode. </p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a93038e7ebe45982833d8250dfc64fc11"></a><!-- doxytag: member="CQPed::reset" ref="a93038e7ebe45982833d8250dfc64fc11" args="()" -->
+<a class="anchor" id="abc32ad0b6668da1eed281a0ef943eb8b"></a><!-- doxytag: member="CQPed::reset_old" ref="abc32ad0b6668da1eed281a0ef943eb8b" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CQPed::reset </td>
+          <td class="memname">void CQPed::reset_old </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -182,7 +172,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="class_c_q_ped.html">CQPed</a>      </li>
-      <li class="footer">Generated on Thu May 12 2011 17:18:06 for XY control by&#160;
+      <li class="footer">Generated on Sat May 21 2011 19:48:03 for XY control by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>
