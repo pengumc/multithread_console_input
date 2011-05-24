@@ -35,6 +35,7 @@ class CInputThread{
         void stop();
         uint32_t waitForInput(uint32_t ms);
     private:
+        struct termios new_settings, old_settings;
         pthread_t threadID;
 };
 
@@ -49,7 +50,6 @@ CInputThread::CInputThread(int *p, uint32_t ms){
 void CInputThread::start(){
     pthread_mutex_lock(&_runMutex);
     //remove line buffering from terminal
-    struct termios new_settings, old_settings;
     tcgetattr(0, &new_settings);
     tcgetattr(0, &old_settings);
     new_settings.c_lflag &= ~(new_settings.c_lflag|ICANON);
